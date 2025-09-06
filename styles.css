@@ -1,0 +1,47 @@
+:root{
+    --bg:#ededea;
+    --primary:#d1d1cd;
+    --secondary: #4B4376;
+    --tertiary: #6b61a3;
+    --fg: #2C2C2C;
+    --secondary-fg: #767383;
+    --transition-speed: 200ms;
+    --dark : #2C2C2C;
+    --tertiary-light: #a395f3;
+}
+
+@font-face{
+    font-family: 'Exo2';
+    src: url('fonts/Exo_2/Exo2-VariableFont_wght.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: 'Figtree';
+    src: url('/fonts/Figtree/Figtree-VariableFont_wght.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+html, body{
+    background-color: var(--bg);
+    color: var(--fg);
+    font-family: 'Exo2';
+    font-weight: 400;
+    transition: background var(--transition-fast), color var(--transition-fast); 
+    margin: 0;
+    padding: 0;
+
+}
+
+#navbar-desktop{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 5px 25px;
+    background-color: var(--dark);
+    color: var(--bg);
+    border-bottom: 5px solid var(--tertiary-light);
+}
