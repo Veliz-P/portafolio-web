@@ -1,4 +1,6 @@
 const btnToggleMode = document.getElementById('btn-toggle-mode');
+const btnLanguageSwitcher = document.getElementById('language-switcher');
+const DEFAULT_LANG = 'es';
 
 function isDarkMode (){
     const mode = localStorage.getItem('mode');
@@ -32,9 +34,43 @@ if(btnToggleMode){
     });
 }
 
+async function loadLanguage(lang = 'es'){
+    try{
+        const response = await fetch(`/lang/${lang.toLowerCase()}.json`);
+        const transalations = await response.json();
+        document.querySelectorAll('[data-i18n]').forEach(element => {
+            const KEY = element.getAttribute('data-i18n');
+            if(transalations[KEY]){
+                element.textContent = transalations[KEY];
+            }
+        })
+    }catch(error){
+        console.error("Error while loading language and translations", error);
+    }
+}
+
+if(btnLanguageSwitcher){
+    btnLanguageSwitcher.addEventListener('change', (e) => {
+        const LANG = e.target.value;
+        loadLanguage(LANG);
+        localStorage.setItem('lang', LANG);
+    })
+}
+
 function initMode(){
     const mode = isDarkMode() ? 'dark' : 'light';
     setMode(mode);
 }
 
-initMode();
+function initLang(){
+    const lang = localStorage.getItem('lang') || DEFAULT_LANG;
+    loadLanguage(lang);
+    if(btnLanguageSwitcher){
+        btnLanguageSwitcher.value = lang;
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    initMode();
+    initLang();
+})

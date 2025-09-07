@@ -1,5 +1,5 @@
 :root{
-    --bg:#ededea;
+    --bg:#f1f3ef;
     --primary:#e9e9e3;
     --secondary: #958bd6;
     --fg: #2C2C2C;
@@ -15,6 +15,7 @@
     --secondary: #eb4c5f;
     --fg: #ededea;
     --secondary-fg: #edd4d1;
+    --card: #242323;
 }
 
 @font-face{
@@ -27,7 +28,7 @@
 @font-face{
     font-family: 'Figtree';
     src: url('/fonts/Figtree/Figtree-VariableFont_wght.ttf') format('truetype');
-    font-weight: 100;
+    font-weight: 400;
     font-style: normal;
 }
 
@@ -58,13 +59,13 @@ html, body{
     cursor: pointer;
 }
 
-.navbar-link{
+.navbar-item{
     text-decoration: none;
     color: var(--light);
     padding: 4px 10px;
     border-radius: 10px;
 }
-.navbar-link:hover{
+.navbar-item:hover{
     background-color: var(--dark-gray);
 }
 
@@ -78,3 +79,58 @@ html, body{
     scale: 1.1;
 }
 
+#main-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    font-size: 1rem;
+    margin: auto 3rem;
+}
+
+#hero-section{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+#profile-pic{
+    width: 12rem;
+    height: auto;
+    border-radius: 100%;
+}
+
+.neon-secondary{
+    text-shadow: 
+        0 0 0px var(--secondary),
+        0 0 10px var(--secondary)
+}
+
+#hero-text{
+    flex: 1;             
+    min-width: 200px;  
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 4rem;;
+}
+
+#language-switcher{
+    color: var(--light);
+    background-color: var(--dark-gray);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: 'Exo2';
+    text-transform: uppercase;
+    border: 2px solid var(--dark-gray);
+}
+
+#language-switcher:focus {
+  border: 2px solid var(--secondary);
+  accent-color: var(--secondary);
+}
