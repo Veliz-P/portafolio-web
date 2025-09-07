@@ -4,18 +4,27 @@
     <meta charset="UTF-8"/>
     <title>Portfolio - Veliz</title>
     <link rel="stylesheet" href="styles.css"/>
-    <script src="/index.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body id="app">
     <nav id="navbar-desktop">
-      <p style="font-weight: bold; color:var(--tertiary-light); font-size:1.3rem">Portfolio Veliz</p>
-      <ul style="display: flex; flex-wrap: wrap; justify-content: space-between; list-style: none; gap:10px; font-size:16px; font-weight:600">
-        <li>Contacto</li>
-        <li>Competencias</li>
-        <li>Sobre mi</li>
-        <li>Proyectos</li>
-        <li></li>
+      <p style="font-weight: bold; color:var(--secondary); font-size:1.3rem">Portfolio Veliz</p>
+      <ul style="display: flex; flex-wrap: wrap; justify-content: space-between; list-style: none; gap:5px; font-size:16px; font-weight:600; align-items: center; color:#ededea">
+        <li><a class="navbar-link" href="">Contacto</a></li>
+        <li> <a class="navbar-link" href="">Competencias</a></li>
+        <li><a class="navbar-link" href="">Sobre mi</a></li>
+        <li><a  class="navbar-link" href="">Proyectos</a></li>
+        <li>
+          <button style="background-color: transparent; border: none;outline: none" class="pointer" id="btn-toggle-mode">
+            <img id="moon-icon" class="toggle-icon" src="/icons/moon.png">
+            <img id="sun-icon" class="toggle-icon" src="/icons/sun.png">
+          </button>
+        </li>
       </ul>
     </nav>
+    <main>
+        
+    </main>
+    <script src="/index.js"></script>
   </body>
 </html>
