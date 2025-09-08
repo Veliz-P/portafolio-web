@@ -4,7 +4,8 @@
     "education": "Educación",
     "experience": "Experiencia",
     "language": "Lenguaje",
-    "hi": "Hola",
+    "hi": "Hola,",
     "name": "Soy Carlos Paucar",
-    "presentation": "Soy un profesional apasionado por el desarrollo de software, con habilidades en programación de aplicaciones web, análisis de sistemas y diseño de bases de datos. \nMe siento comprometido con el aprendizaje continuo y la aplicación de las mejores prácticas tecnológicas para crear soluciones eficientes y escalables."
+    "presentation-1": "Soy un profesional apasionado por el desarrollo de software, con habilidades en programación de aplicaciones web, análisis de sistemas y diseño de bases de datos.",
+    "presentation-2": "Me siento comprometido con el aprendizaje continuo y la aplicación de las mejores prácticas tecnológicas para crear soluciones eficientes y escalables."
 }
