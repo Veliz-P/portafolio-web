@@ -7,5 +7,13 @@
     "hi": "Hola,",
     "name": "Soy Carlos Paucar",
     "presentation-1": "Soy un profesional apasionado por el desarrollo de software, con habilidades en programación de aplicaciones web, análisis de sistemas y diseño de bases de datos.",
-    "presentation-2": "Me siento comprometido con el aprendizaje continuo y la aplicación de las mejores prácticas tecnológicas para crear soluciones eficientes y escalables."
+    "presentation-2": "Me siento comprometido con el aprendizaje continuo y la aplicación de las mejores prácticas tecnológicas para crear soluciones eficientes y escalables.",
+    "web-development": "Aplicaciones web",
+    "web-development-description": "Desarrollo backend y frontend",
+    "database-management": "Gestión de bases de datos",
+    "database-management-description": "Relacionales y no relacionales",
+    "agile": "Metodologías ágiles",
+    "agile-description": "Seguimiento de prácticas, valores y enfoques que permitan crear productos de calidad",
+    "backend": "Backend",
+    "frontend": "Frontend"
 }

@@ -12,11 +12,14 @@
     }
     #hero-section{
         margin-top: 1rem;
+        gap: 0rem;
+        margin-bottom: 0rem;
     }
     #hero-text{
         margin: 0 0.9rem;
         text-align: center;
         font-size: 1rem;
+        padding: 15px;
     }
     #profile-pic{
         width: 10rem;
@@ -57,5 +60,13 @@
         border-right: 7px solid var(--secondary);
         transition: transform 0.3s ease-in-out;
         z-index: 1;
+    }
+    #skills{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1rem;
+    }
+    .skill-card{
+        height: auto;
     }
 }

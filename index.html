@@ -1,91 +1,248 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8"/>
-    <title>Portfolio - Veliz</title>
-    <link rel="stylesheet" href="styles.css"/>
-    <link rel="stylesheet" href="mobile.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  </head>
-  <body id="app">
-    <nav id="navbar-desktop">
-      <p style="font-weight: bold; color:var(--secondary); font-size:1.3rem">Portfolio</p>
-      <ul style="display: flex; flex-wrap: wrap; justify-content: space-between; list-style: none; gap:5px; font-size:16px; font-weight:600; align-items: center; color:#ededea">
-        <li><a class="navbar-item" href="" data-i18n="contact">Contacto</a></li>
-        <li> <a class="navbar-item" href="" data-i18n="skills">Habilidades</a></li>
-        <li><a class="navbar-item" href="" data-i18n="education">Formación</a></li>
-        <li><a  class="navbar-item" href="" data-i18n="experience">Experiencia</a></li>
-        <li>
-          <button style="background-color: transparent; border: none;outline: none" class="pointer btn-toggle-mode">
-            <img class="moon-icon toggle-icon" src="/icons/moon.png">
-            <img class="sun-icon toggle-icon" src="/icons/sun.png">
-          </button>
-        </li>
-        <li>
-          <select name="language" class="navbar-item language-switcher">
-            <option value="es">Español</option>
-            <option value="en">English</option>
-          </select>
-        </li>
-      </ul>
-    </nav>
-    <div id="overlay" style="display:none;position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5);">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Portfolio - Veliz</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="mobile.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <nav id="navbar-desktop">
+    <p style="font-weight: bold; color:var(--secondary); font-size:1.3rem">Portfolio</p>
+    <ul
+      style="display: flex; flex-wrap: wrap; justify-content: space-between; list-style: none; gap:5px; font-size:16px; font-weight:600; align-items: center; color:#ededea">
+      <li><a class="navbar-item" href="" data-i18n="contact">Contacto</a></li>
+      <li> <a class="navbar-item" href="" data-i18n="skills">Habilidades</a></li>
+      <li><a class="navbar-item" href="" data-i18n="education">Formación</a></li>
+      <li><a class="navbar-item" href="" data-i18n="experience">Experiencia</a></li>
+      <li>
+        <button style="background-color: transparent; border: none;outline: none" class="pointer btn-toggle-mode">
+          <img class="moon-icon toggle-icon" src="/icons/moon.png">
+          <img class="sun-icon toggle-icon" src="/icons/sun.png">
+        </button>
+      </li>
+      <li>
+        <select name="language" class="navbar-item language-switcher">
+          <option value="es">Español</option>
+          <option value="en">English</option>
+        </select>
+      </li>
+    </ul>
+  </nav>
+  <div id="overlay"
+    style="display:none;position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5);">
+  </div>
+  <nav id="navbar-mobile">
+    <p style="font-weight: bold; color:var(--secondary); font-size:1.2rem;position:relative">Portfolio</p>
+    <ul style="list-style: none; display:flex; align-items: center; gap:0.1rem; flex-wrap:wrap">
+      <li>
+        <button style="background-color: transparent; border: none;outline: none" class="pointer btn-toggle-mode">
+          <img class="moon-icon toggle-icon" src="/icons/moon.png">
+          <img class="sun-icon toggle-icon" src="/icons/sun.png">
+        </button>
+      </li>
+      <li>
+        <select name="language" class="navbar-item language-switcher">
+          <option value="es">Español</option>
+          <option value="en">English</option>
+        </select>
+      </li>
+      <li>
+        <button style="border:none; background-color: transparent; outline: none" id="btn-open-menu">
+          <svg xmlns="http://www.w3.org/2000/svg" width="35" height="40" viewBox="0 0 48 48" aria-hidden="true"
+            focusable="false">
+            <circle cx="24" cy="24" r="22" fill="#f3f4f6" />
+            <rect x="12" y="16" width="24" height="2.6" rx="1.3" fill="#111" />
+            <rect x="12" y="23" width="24" height="2.6" rx="1.3" fill="#111" />
+            <rect x="12" y="30" width="24" height="2.6" rx="1.3" fill="#111" />
+          </svg>
+        </button>
+      </li>
+    </ul>
+  </nav>
+  <aside id="menu-mobile">
+    <div
+      style="display:flex; font-weight: 600; word-break: break-all ; flex-direction: column; height: 100%; justify-content: space-around; align-items: center; font-size:1rem; width:100%">
+      <a class="navbar-item" href="" data-i18n="contact">Contacto</a></li>
+      <a class="navbar-item" href="" data-i18n="skills">Habilidades</a></li>
+      <a class="navbar-item" href="" data-i18n="education">Formación</a></li>
+      <a class="navbar-item" href="" data-i18n="experience">Experiencia</a></li>
     </div>
-    <nav id="navbar-mobile">
-      <p style="font-weight: bold; color:var(--secondary); font-size:1.2rem;position:relative">Portfolio</p>
-      <ul style="list-style: none; display:flex; align-items: center; gap:0.1rem; flex-wrap:wrap">
-        <li>
-          <button style="background-color: transparent; border: none;outline: none" class="pointer btn-toggle-mode">
-            <img class="moon-icon toggle-icon" src="/icons/moon.png">
-            <img class="sun-icon toggle-icon" src="/icons/sun.png">
-          </button>
-        </li>
-        <li>
-          <select name="language" class="navbar-item language-switcher">
-            <option value="es">Español</option>
-            <option value="en">English</option>
-          </select>
-        </li>
-        <li>
-          <button style="border:none; background-color: transparent; outline: none" id="btn-open-menu">
-            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="40" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
-              <circle cx="24" cy="24" r="22" fill="#f3f4f6"/>
-              <rect x="12" y="16" width="24" height="2.6" rx="1.3" fill="#111"/>
-              <rect x="12" y="23" width="24" height="2.6" rx="1.3" fill="#111"/>
-              <rect x="12" y="30" width="24" height="2.6" rx="1.3" fill="#111"/>
-            </svg>
-          </button>
-        </li>
-      </ul>
-    </nav>
-    <aside id="menu-mobile" >
-      <div style="display:flex; font-weight: 600; word-break: break-all ; flex-direction: column; height: 100%; justify-content: space-around; align-items: center; font-size:1rem; width:100%">
-        <a class="navbar-item" href="" data-i18n="contact">Contacto</a></li>
-        <a class="navbar-item" href="" data-i18n="skills">Habilidades</a></li>
-        <a class="navbar-item" href="" data-i18n="education">Formación</a></li>
-        <a class="navbar-item" href="" data-i18n="experience">Experiencia</a></li>
-      </div>
-    </aside>
-    <main id="main-container">
-      <div id="hero-section">
-        <img id="profile-pic" src="/icons/photo.png" alt="Profile Pic" >
-        <div id="hero-text">
-          <h1 id="hero-title">
-            <span data-i18n="hi">Hola,</span>
-            <span style="color: var(--secondary);" class="neon-secondary" data-i18n="name">soy Carlos Paucar</span>
-            !
-          </h1>
+  </aside>
+  <main id="main-container">
+    <div id="hero-section">
+      <img id="profile-pic" src="/icons/photo.png" alt="Profile Pic">
+      <div id="hero-text">
+        <h1 id="hero-title">
+          <span data-i18n="hi">Hola,</span>
+          <span style="color: var(--secondary);" class="neon-secondary" data-i18n="name">soy Carlos Paucar</span>
+          !
+        </h1>
+        <div class="card" id="presentation-text">
           <p style="text-align: center" data-i18n="presentation-1">
             Soy un profesional apasionado por el desarrollo de software, con habilidades
-            en programación de aplicaciones web, análisis de sistemas y diseño de bases de datos. 
+            en programación de aplicaciones web, análisis de sistemas y diseño de bases de datos.
           </p>
           <p style="text-align: center" data-i18n="presentation-2" style="text-align: center;">
-            Me siento comprometido con el aprendizaje continuo y la aplicación de las mejores prácticas tecnológicas 
+            Me siento comprometido con el aprendizaje continuo y la aplicación de las mejores prácticas tecnológicas
             para crear soluciones eficientes y escalables.
           </p>
         </div>
       </div>
-    </main>
-    <script src="/index.js"></script>
-  </body>
+    </div>
+
+    <div id="skills">
+      <h2 style="grid-column: 1/-1; text-align:left; color: var(--secondary); text-transform: uppercase;"
+        class="underline" data-i18n="skills">Habilidades</h2>
+      <div class="skill-card" style="text-align: center;">
+        <h3 data-i18n="web-development" style="text-align: center; text-transform: uppercase; font-family: 'Exo2'">
+          Desarrollo Web</h3>
+        <p data-i18n="web-development-description"
+          style="text-align: center; color: var(--secondary-fg); font-weight:bold">Especializado en desarrollo backend y
+          frontend</p>
+        <div style="display:flex; flex-direction:column; align-items:start; width: 100%; gap:1rem; ">
+            <div style="display: flex;width: 100%;">
+              <span style="display: flex; flex-direction:column; align-items: center; gap:0.2rem">
+                <img src="/icons/django.png" alt="Django Icon" style="width: 2.5rem;">
+                <span style="font-weight: bold; font-size:0.9rem">Django</span>
+              </span>
+              <div class="progress">
+                <div class="segment beginner level-active"></div>
+                <div class="segment intermediate level-active intermediate-text"></div>
+                <div class="segment advanced"></div>
+              </div>
+            </div>
+            
+
+            <div style="display: flex; width: 100%;">
+              <span style="display: flex; flex-direction:column; align-items: center; gap:0.2rem">
+                <img src="/icons/vuejs.png" alt="Vue.js Icon" style="width: 2.5rem;">
+                <span style="font-weight: bold; font-size:0.9rem">Vue.js</span>
+              </span>
+              <div class="progress">
+                <div class="segment beginner level-active"></div>
+                <div class="segment intermediate level-active intermediate-text"></div>
+                <div class="segment advanced"></div>
+              </div>
+            </div>
+
+            <div style="display: flex; width: 100%;">
+              <span
+                style="display: flex; flex-direction:column; align-items: center; gap:0.2rem; justify-content: start">
+                <img src="/icons/tailwindcss.png" alt="Tailwind CSS Icon" style="width: 2.5rem;">
+                <span style="font-weight: bold; font-size:0.9rem; ">Tailwind</span>
+              </span>
+              <div class="progress">
+                <div class="segment beginner level-active beginner-text"></div>
+                <div class="segment intermediate"></div>
+                <div class="segment advanced"></div>
+              </div>
+            </div>
+
+            <div style="display: flex; flex-direction:column; align-items:center; width: 100%;">
+              <span style="display: flex; flex-direction:column; align-items: start; gap:0.2rem">
+                <div style="display: flex; flex-wrap:wrap ;align-items: center; font-size:1.2rem; font-weight: bold">
+                  <img src="/icons/html.png" alt="HTML Icon" style="width: 2.5rem;">
+                  +
+                  <img src="/icons/css.png" alt="CSS Icon" style="width: 2.5rem;">
+                  +
+                  <img src="/icons/js.png" alt="JavaScript Icon" style="width: 2.5rem;">
+                </div>
+                <span style="font-weight: bold; font-size:0.9rem">HTML, CSS, JavaScript</span>
+              </span>
+              <div class="progress" style="margin-bottom: 2rem;">
+                <div class="segment"></div>
+                <div class="segment level-active intermediate-text"></div>
+                <div class="segment"></div>
+              </div>
+            </div>
+          
+        </div>
+      </div>
+      <div class="skill-card">
+        <h3 data-i18n="database-management" style="text-align: center; text-transform: uppercase; font-family: 'Exo2'">
+          Manejo de bases de datos</h3>
+        <p data-i18n="database-management-description"
+          style="text-align: center; color: var(--secondary-fg); font-weight:bold">Relacionales y no relacionales</p>
+        <div style="display:flex; flex-direction:column; align-items:start; width: 100%; gap:1rem; text-align: center; ">
+          
+            <div style="display: flex; width: 100%;">
+              <span style="display: flex; flex-direction:column; align-items: center; gap:0.2rem">
+                <img src="/icons/mysql.png" alt="MySQL Icon" style="width: 2.5rem;">
+                <span style="font-weight: bold; font-size:0.9rem">MySQL</span>
+              </span>
+              <div class="progress">
+                <div class="segment"></div>
+                <div class="segment level-active intermediate-text"></div>
+                <div class="segment"></div>
+              </div>
+            </div>
+
+            <div style="display: flex; width: 100%;">
+              <span style="display: flex; flex-direction:column; align-items: center; gap:0.2rem">
+                <img src="/icons/sqlserver.png" alt="SQL Server Icon" style="width: 2.5rem;">
+                <span style="font-weight: bold; font-size:1rem; text-align: center">SQL <br> Server</span>
+              </span>
+              <div class="progress">
+                <div class="segment"></div>
+                <div class="segment level-active intermediate-text"></div>
+                <div class="segment"></div>
+              </div>
+            </div>
+
+            <div style="display: flex; width: 100%;">
+              <span style="display: flex; flex-direction:column; align-items: center; gap:0.2rem">
+                <img src="/icons/mongodb.png" alt="Mongo DB Icon" style="width: 2.5rem;">
+                <span style="font-weight: bold; font-size:1rem; text-align: center">Mongo <br> DB</span>
+              </span>
+              <div class="progress">
+                <div class="segment beginner-text level-active"></div>
+                <div class="segment"></div>
+                <div class="segment"></div>
+              </div>
+            </div>
+          
+        </div>
+
+      </div>
+      <div class="skill-card">
+        <h3 data-i18n="agile" style="text-align: center; text-transform: uppercase;font-family: 'Exo2'">Desarrollo Web
+        </h3>
+        <p data-i18n="agile-description" style="text-align: center; color: var(--secondary-fg); font-weight:bold">
+          Metodologías ágiles</p>
+          <div style="display:flex; flex-direction:column; align-items:start; width: 100%; gap:1rem; text-align: center; ">
+          
+            <div style="display: flex; width: 100%;">
+              <span style="display: flex; flex-direction:column; align-items: center; gap:0.2rem">
+                <img src="/icons/xp.png" alt="MySQL Icon" style="width: 2.5rem;">
+                <span style="font-weight: bold; font-size:0.9rem">XP</span>
+              </span>
+              <div class="progress">
+                <div class="segment level-active"></div>
+                <div class="segment level-active intermediate-text"></div>
+                <div class="segment"></div>
+              </div>
+            </div>
+
+            <div style="display: flex; width: 100%;">
+              <span style="display: flex; flex-direction:column; align-items: center; gap:0.2rem">
+                <img src="/icons/scrum.png" alt="SQL Server Icon" style="width: 2.5rem;">
+                <span style="font-weight: bold; font-size:1rem; text-align: center">Scrum</span>
+              </span>
+              <div class="progress">
+                <div class="segment beginner-text level-active"></div>
+                <div class="segment"></div>
+                <div class="segment"></div>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="/index.js"></script>
+</body>
+
 </html>
