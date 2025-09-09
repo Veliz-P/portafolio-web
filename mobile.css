@@ -1,4 +1,4 @@
-@media (max-width: 640px) {
+@media (max-width: 768px) {
 
     body{
         font-size: 0.8rem;
@@ -27,6 +27,12 @@
     #hero-title{
         font-size: 1.7rem;
     }
+    h2{
+        font-size: 1.3rem;
+    }
+    h3{
+        font-size: 1rem;
+    }
 
     #profile-pic{
         width: 7rem;
@@ -36,6 +42,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        position: sticky;
         top: 0;
         font-family: 'Exo2';
         flex-wrap: wrap;
@@ -68,5 +75,15 @@
     }
     .skill-card{
         height: auto;
+        padding-bottom: 1rem;
+    }
+    .skill-card img{
+    width: 3rem;
+}
+    .moon-icon{
+        width: 3.5rem;
+    }
+    .sun-icon{
+        width: 3.5rem;
     }
 }
