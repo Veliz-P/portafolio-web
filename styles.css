@@ -8,6 +8,7 @@
     --light: #ffffff;
     --dark-gray: #3c3a43;
     --card: #f9f9f9;
+    --hero-section-bg: #ecece5;
 }
 
 [data-theme="dark"]{
@@ -16,7 +17,8 @@
     --secondary: #eb4c5f;
     --fg: #ededea;
     --secondary-fg: #d2cfcf;
-    --card: #242323;
+    --card: #383838;
+    --hero-section-bg: #232323;
 }
 
 @font-face{
@@ -104,13 +106,48 @@ html, body{
     align-items: center;
     margin-top: 3rem;
     margin-bottom: 5rem;
-    gap:1rem
+    background-color: var(--card);
+    gap:1rem;
+    width: 100%;
+    padding: 1.5rem 0;
+    border-radius: 1rem;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+    border-right: solid 0.4rem var(--secondary);
+    
+}
+
+#hero-button{
+    align-self: start; 
+    padding: 0.5rem 1rem;
+    outline:none;
+    border: none;
+    color: var(--light);
+    background-color: var(--dark);
+    font-family: "Exo2";
+    font-weight: bold;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    margin-top: 1rem;
+    text-transform: uppercase;
+    border: 1px solid var(--fg);
+    opacity: 0.9
+}
+
+#hero-button:hover{
+    background-color: var(--secondary);
+    box-shadow: 5px 8px 0px var(--secondary);
+    transition: all 0.2s ease-in-out;
+    
 }
 
 #profile-pic{
-    width: 12rem;
-    height: auto;
+    width: 15rem;
+    height: 20rem;
     border-radius: 100%;
+    padding: 0 1rem;
+    z-index: 1;
+    position: relative;
 }
 
 .neon-secondary{
@@ -128,6 +165,9 @@ html, body{
     align-items: center;
     margin: 0 4rem;;
     font-size: 1.1rem;
+}
+#presentation-text{
+    letter-spacing: 1.5px;
 }
 .language-switcher{
     color: var(--light);
@@ -147,7 +187,6 @@ html, body{
 }
 
 .card{
-    background-color: var(--card);
     border-radius: 10px;
     box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
     padding: 20px;
@@ -167,13 +206,13 @@ html, body{
 .skill-card{
     border-radius: 15px;
     padding: 0rem 1rem;
-    border: 3px solid var(--secondary);
-    background-color: var(--card);
     height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-bottom: 1rem;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    background-color:  var(--card);
 }
 
 .skill-card img{
@@ -181,7 +220,7 @@ html, body{
 }
 
 .skill-card:hover{
-    box-shadow: 0 0 15px var(--secondary);
+    box-shadow: 0 0 20px var(--secondary);
     transition: box-shadow 0.3s ease-in-out;
 }
 
@@ -212,3 +251,36 @@ html, body{
 .beginner-text::after { content: "Beginner"; font-size: 12px;  display: block; margin-top: 1rem;  }
 .intermediate-text::after { content: "Medium"; font-size: 12px;  display: block; margin-top: 1rem; }
 .advanced-text::after { content: "Advanced"; font-size: 12px;  display: block; margin-top: 1rem; }
+
+
+#social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  width: 100%;
+  justify-content: start;
+  opacity: 0.9;
+  flex-wrap: wrap;
+}
+
+#social-icons a {
+  color: var(--secondary);
+  font-size: 1.8rem;
+  transition: transform 0.2s, color 0.3s;
+}
+
+#social-icons a:hover {
+  transform: scale(1.2);
+  color: var(--fg);
+}
+
+.shape {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, var(--secondary), var(--card));
+  border-radius: 100% 40% 30% 90% / 95% 90% 30% 30%;
+  position: absolute; 
+  z-index: 0;
+  opacity: 0.9;
+  inset: 0;
+}

@@ -7,10 +7,11 @@
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="mobile.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
-  <nav id="navbar-desktop">
+  <nav id="navbar-desktop" style="z-index: 2;">
     <p style="font-weight: bold; color:var(--secondary); font-size:1.3rem">Portfolio</p>
     <ul
       style="display: flex; flex-wrap: wrap; justify-content: space-between; list-style: none; gap:5px; font-size:16px; font-weight:600; align-items: center; color:#ededea">
@@ -67,23 +68,30 @@
   </aside>
   <main id="main-container">
     <div id="hero-section">
-      <img id="profile-pic" src="/icons/photo.png" alt="Profile Pic">
-      <div id="hero-text">
-        <h1 id="hero-title">
-          <span data-i18n="hi">Hola,</span>
-          <span style="color: var(--secondary);" class="neon-secondary" data-i18n="name">soy Carlos Paucar</span>
-          !
-        </h1>
-        <div class="card" id="presentation-text">
-          <p style="text-align: center" data-i18n="presentation-1">
-            Soy un profesional apasionado por el desarrollo de software, con habilidades
-            en programación de aplicaciones web, análisis de sistemas y diseño de bases de datos.
-          </p>
-          <p style="text-align: center" data-i18n="presentation-2" style="text-align: center;">
-            Me siento comprometido con el aprendizaje continuo y la aplicación de las mejores prácticas tecnológicas
-            para crear soluciones eficientes y escalables.
-          </p>
+      <div style="position: relative;">
+        <div id="shape-hero" class="shape">
         </div>
+        <img id="profile-pic" src="/icons/photo.png" alt="Profile Pic">
+      </div>
+      <div id="hero-text">
+        <h1 id="hero-title" style="text-transform: uppercase;">
+          <span data-i18n="hi">Hola,</span>
+          <span style="color: var(--secondary);" class="neon-secondary" data-i18n="name">soy Carlos Paucar</span>!
+        </h1>
+        <div id="presentation-text">
+          <span style="text-align: left; line-height: 2;" data-i18n="presentation-1">
+            Soy un programador apasionado por la programación, análisis de sistemas y diseño de bases de datos.
+          </span>
+          <i class="fa-solid fa-code" style="font-size: 1.2rem;"></i>
+        </div>
+        <div id="social-icons">
+          <a href="https://github.com/tuusuario" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://linkedin.com/in/tuusuario" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://twitter.com/tuusuario" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+        </div>
+        <button id="hero-button" data-i18n="projects"> 
+          Proyectos
+        </button>
       </div>
     </div>
 
@@ -93,13 +101,14 @@
       <div class="skill-card" style="text-align: center;">
         <h3 data-i18n="web-development" style="text-align: center; text-transform: uppercase; font-family: 'Exo2'">
           Desarrollo Web</h3>
-        <p data-i18n="web-development-description"
-          style="text-align: center; color: var(--secondary-fg);">Especializado en desarrollo backend y
+        <p data-i18n="web-development-description" style="text-align: center; color: var(--secondary-fg);">Especializado
+          en desarrollo backend y
           frontend</p>
-        <div style="display:flex; flex-direction:column; align-items:start; width: 100%; gap:1rem; ">
+        <div
+          style="display:flex; flex-direction:column; align-items:start; width: 100%; gap:1rem; color: var(--secondary-fg); ">
           <div style="display: flex;width: 100%;">
             <span style="display: flex; flex-direction:column; align-items: center; gap:0.2rem">
-              <img src="/icons/django.png" alt="Django Icon" >
+              <img src="/icons/django.png" alt="Django Icon">
               <span style="font-weight: bold; font-size:0.9rem">Django</span>
             </span>
             <div class="progress">
@@ -112,7 +121,7 @@
 
           <div style="display: flex; width: 100%;">
             <span style="display: flex; flex-direction:column; align-items: center; gap:0.2rem">
-              <img src="/icons/vuejs.png" alt="Vue.js Icon" >
+              <img src="/icons/vuejs.png" alt="Vue.js Icon">
               <span style="font-weight: bold; font-size:0.9rem">Vue.js</span>
             </span>
             <div class="progress">
@@ -124,7 +133,7 @@
 
           <div style="display: flex; width: 100%;">
             <span style="display: flex; flex-direction:column; align-items: center; gap:0.2rem; justify-content: start">
-              <img src="/icons/tailwindcss.png" alt="Tailwind CSS Icon" >
+              <img src="/icons/tailwindcss.png" alt="Tailwind CSS Icon">
               <span style="font-weight: bold; font-size:0.9rem; ">Tailwind <br> CSS</span>
             </span>
             <div class="progress">
@@ -137,11 +146,11 @@
           <div style="display: flex; flex-direction:column; align-items:center; width: 100%;">
             <span style="display: flex; flex-direction:column; align-items: start; gap:0.2rem">
               <div style="display: flex; flex-wrap:wrap ;align-items: center; font-size:1.2rem; font-weight: bold">
-                <img src="/icons/html.png" alt="HTML Icon" >
+                <img src="/icons/html.png" alt="HTML Icon">
                 +
-                <img src="/icons/css.png" alt="CSS Icon" >
+                <img src="/icons/css.png" alt="CSS Icon">
                 +
-                <img src="/icons/js.png" alt="JavaScript Icon" >
+                <img src="/icons/js.png" alt="JavaScript Icon">
               </div>
               <span style="font-weight: bold; font-size:0.9rem">HTML, CSS, JavaScript</span>
             </span>
@@ -157,14 +166,14 @@
       <div class="skill-card">
         <h3 data-i18n="database-management" style="text-align: center; text-transform: uppercase; font-family: 'Exo2'">
           Manejo de bases de datos</h3>
-        <p data-i18n="database-management-description"
-          style="text-align: center; color: var(--secondary-fg);">Relacionales y no relacionales</p>
+        <p data-i18n="database-management-description" style="text-align: center; color: var(--secondary-fg);">
+          Relacionales y no relacionales</p>
         <div
-          style="display:flex; flex-direction:column; align-items:start; width: 100%; gap:1rem; text-align: center; ">
+          style="display:flex; flex-direction:column; align-items:start; width: 100%; gap:1rem; text-align: center; color: var(--secondary-fg); ">
 
           <div style="display: flex; width: 100%;">
             <span style="display: flex; flex-direction:column; align-items: center; gap:0.2rem">
-              <img src="/icons/mysql.png" alt="MySQL Icon" >
+              <img src="/icons/mysql.png" alt="MySQL Icon">
               <span style="font-weight: bold; font-size:0.9rem">MySQL</span>
             </span>
             <div class="progress">
@@ -176,7 +185,7 @@
 
           <div style="display: flex; width: 100%;">
             <span style="display: flex; flex-direction:column; align-items: center; gap:0.2rem">
-              <img src="/icons/sqlserver.png" alt="SQL Server Icon" >
+              <img src="/icons/sqlserver.png" alt="SQL Server Icon">
               <span style="font-weight: bold; font-size:1rem; text-align: center">SQL <br> Server</span>
             </span>
             <div class="progress">
@@ -188,7 +197,7 @@
 
           <div style="display: flex; width: 100%;">
             <span style="display: flex; flex-direction:column; align-items: center; gap:0.2rem">
-              <img src="/icons/mongodb.png" alt="Mongo DB Icon" >
+              <img src="/icons/mongodb.png" alt="Mongo DB Icon">
               <span style="font-weight: bold; font-size:1rem; text-align: center">Mongo <br> DB</span>
             </span>
             <div class="progress">
@@ -207,11 +216,11 @@
         <p data-i18n="agile-description" style="text-align: center; color: var(--secondary-fg);">
           Metodologías ágiles</p>
         <div
-          style="display:flex; flex-direction:column; align-items:start; width: 100%; gap:1rem; text-align: center; ">
+          style="display:flex; flex-direction:column; align-items:start; width: 100%; gap:1rem; text-align: center; color: var(--secondary-fg); ">
 
           <div style="display: flex; width: 100%;">
             <span style="display: flex; flex-direction:column; align-items: center; gap:0.2rem">
-              <img src="/icons/xp.png" alt="MySQL Icon" >
+              <img src="/icons/xp.png" alt="MySQL Icon">
               <span style="font-weight: bold; font-size:0.9rem">XP</span>
             </span>
             <div class="progress">
@@ -223,7 +232,7 @@
 
           <div style="display: flex; width: 100%;">
             <span style="display: flex; flex-direction:column; align-items: center; gap:0.2rem">
-              <img src="/icons/scrum.png" alt="SQL Server Icon" >
+              <img src="/icons/scrum.png" alt="SQL Server Icon">
               <span style="font-weight: bold; font-size:1rem; text-align: center">Scrum</span>
             </span>
             <div class="progress">
