@@ -16,5 +16,21 @@
     "agile": "Metodologías ágiles",
     "agile-description": "Implementación de enfoques colaborativos que impulsan la calidad, eficiencia y valor del producto.",
     "backend": "Desarrollo Backend",
-    "frontend": "Desarrollo Frontend"
+    "frontend": "Desarrollo Frontend",
+    "project-1":{
+        "title": "Proyecto 1",
+        "description": "Este es el proyecto 1"
+    },
+    "project-2":{
+        "title": "Proyecto 2",
+        "description": "Este es el proyecto 2"
+    },
+    "project-3":{
+        "title": "Proyecto 3",
+        "description": "Este es el proyecto 3"
+    },
+    "project-4":{
+        "title": "Proyecto 4",
+        "description": "Este es el proyecto 4"
+    }
 }

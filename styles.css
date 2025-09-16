@@ -5,10 +5,11 @@
     --fg: #2C2C2C;
     --secondary-fg: #767383;
     --dark : #2C2C2C;
-    --light: #ffffff;
+    --light: #f9f5f5;
     --dark-gray: #3c3a43;
     --card: #f9f9f9;
     --hero-section-bg: #ecece5;
+    --secondary-bg : #7A85C1;
 }
 
 [data-theme="dark"]{
@@ -19,6 +20,7 @@
     --secondary-fg: #d2cfcf;
     --card: #383838;
     --hero-section-bg: #232323;
+    --secondary-bg : #d74455;
 }
 
 @font-face{
@@ -96,7 +98,7 @@ html, body{
     align-items: center;
     gap: 10px;
     font-size: 1rem;
-    margin: auto 3rem;
+    /*margin: auto 3rem;*/
 }
 
 #hero-section{
@@ -104,12 +106,10 @@ html, body{
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    margin-top: 3rem;
-    margin-bottom: 5rem;
     background-color: var(--card);
     gap:1rem;
-    width: 100%;
-    padding: 1.5rem 0;
+    margin: 2.5rem 3rem 5rem 3rem;
+    padding: 1.5rem 2rem;
     border-radius: 1rem;
     box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
     border-right: solid 0.4rem var(--secondary);
@@ -200,7 +200,7 @@ html, body{
     gap: 1rem;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    margin: auto 2.5rem;
 }
 
 .skill-card{
@@ -213,6 +213,7 @@ html, body{
     margin-bottom: 1rem;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
     background-color:  var(--card);
+    border: 0.1rem solid transparent   ;
 }
 
 .skill-card img{
@@ -222,6 +223,7 @@ html, body{
 .skill-card:hover{
     box-shadow: 0 0 20px var(--secondary);
     transition: box-shadow 0.3s ease-in-out;
+    border: 0.1rem solid var(--secondary);
 }
 
 .underline{
@@ -283,4 +285,104 @@ html, body{
   z-index: 0;
   opacity: 0.9;
   inset: 0;
+}
+
+#projects-container{
+    margin-top: 2rem;
+    background-color: var(--secondary-bg);
+    width: 100%;
+    position: relative;
+}
+
+#projects{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: start;
+    margin: auto 2.5rem;
+    gap: 1rem;
+    padding: 1rem 0;
+    height: 100%;
+}
+
+#project-selection{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    position: relative;
+    flex-grow: 1;
+    z-index: 1; 
+}
+#line{
+    position: absolute;
+    content : "";
+    width: 3px;
+    height: 100%;
+    background-color: var(--light);
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 0;
+}
+
+#project-selection:hover #line{
+    box-shadow: 0px 0px 10px var(--light);
+    transition: all 0.2s ease-in-out;
+}
+
+.project-button{
+    background-color: var(--secondary-bg);
+    border: none;
+    outline: none;
+    padding: 0.5rem 0.8rem;
+    border-radius: 15px;
+    font-size: 1.5rem;
+    font-family: "Exo2";
+    color: var(--light);
+    border: 3px dashed var(--light);
+    cursor: pointer;
+    font-weight: bold;
+    z-index: 1;
+}
+
+.project-button:hover{
+    border: 3px solid var(--light);
+    box-shadow: 0px 0px 10px var(--light);
+    transition: all 0.2s ease-in-out;
+}
+
+#project-cards-container{
+    flex-grow: 2;
+    padding: 1.5rem;
+    position: relative;
+    display: flex;
+    justify-content: start;
+}
+
+.project-card{
+    border-radius: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: var(--card);
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 0.5rem;
+    position : absolute;
+    box-shadow:  0 0 25px rgba(0, 0, 0, 0.2);
+    width: 80%;
+}
+
+.project-button-active{
+    border: 3px solid var(--light);
+    box-shadow: 0px 0px 10px var(--light);
+}
+
+@keyframes fadeIn{
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+}
+
+.fade-in{
+    animation: fadeIn 0.3s ease-in-out;
 }
