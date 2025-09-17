@@ -83,14 +83,9 @@
         border-top: 0.3rem solid var(--secondary);
         border-radius: 0.5rem;
     }
-    .skill-card:hover{
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-        border: none;
-        border-top: 0.3rem solid var(--secondary);
-    }
     .skill-card img{
     width: 3rem;
-}
+    }
     .moon-icon{
         width: 3.5rem;
     }
@@ -111,7 +106,7 @@
         flex-grow: 0;
     }
     #line{
-        rotate: 90deg;
+        display: none;
     }
     
     #project-cards-container{
@@ -125,11 +120,20 @@
         font-size: 1rem;
     }
 
+    #project-shape{
+        display: none;
+    }
+    
+
     #contact-section{
         margin: 1rem auto;
     }
     #form{
         gap: 0.5rem;
+    }
+    #submit-btn{
+        padding: 0.5rem 2rem; 
+        font-size: 0.9rem;
     }
     .field-div{
         font-size: 0.9rem;

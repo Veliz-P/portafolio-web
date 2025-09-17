@@ -60,6 +60,7 @@ html, body{
     background-color: #1b1a1a;
     color: var(--fg);
     border-bottom: 7px solid var(--secondary);
+    opacity: 0.9;
 }
 
 #navbar-mobile{
@@ -128,7 +129,7 @@ html, body{
     font-weight: bold;
     border-radius: 20px;
     cursor: pointer;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     margin-top: 1rem;
     text-transform: uppercase;
     border: 2px solid var(--bg);
@@ -212,9 +213,10 @@ html, body{
     flex-direction: column;
     align-items: center;
     margin-bottom: 1rem;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 6px 8px 0px rgba(0, 0, 0, 0.1);
     background-color:  var(--card);
-    border: 0.1rem solid transparent   ;
+    border: 0.1rem solid transparent;
+    border-top: 5px solid var(--secondary);
 }
 
 .skill-card img{
@@ -222,9 +224,8 @@ html, body{
 }
 
 .skill-card:hover{
-    box-shadow: 0 0 20px var(--secondary);
+    box-shadow: 6px 8px 0px var(--secondary);
     transition: box-shadow 0.3s ease-in-out;
-    border: 0.1rem solid var(--secondary);
 }
 
 .underline{
@@ -324,12 +325,26 @@ html, body{
     top: 0;
     left: 50%;
     transform: translateX(-50%);
+    box-shadow: 0px 0px 10px var(--fg);
     z-index: 0;
 }
 
 #project-selection:hover #line{
-    box-shadow: 0px 0px 10px var(--light);
+    
     transition: all 0.2s ease-in-out;
+}
+
+#project-shape {
+  width: 80%;
+  height: 90%;
+  background: linear-gradient(135deg, var(--secondary), var(--light));
+  border-radius: 50% 70% 60% 40% / 40% 60% 70% 50%;
+  position: absolute; 
+  z-index: 0;
+  opacity: 0.75;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .project-button{
@@ -430,7 +445,7 @@ textarea{
 
 #submit-btn{
     outline: none; border:none; 
-    padding: 10px 15px; 
+    padding: 1rem 5rem; 
     background-color: var(--secondary);
     border-radius: 10px;
     color: var(--light);
@@ -438,12 +453,16 @@ textarea{
     font-size: 1rem;
     cursor: pointer;
     margin: auto;
+    margin-top: 1rem;
     border: 2px solid var(--bg);
+    text-transform: uppercase;
     box-shadow: 5px 5px 0 var(--secondary);
 }
 
 #submit-btn:hover{
-    scale: 1.07;
+    scale: 1.05;
+    background-color: var(--secondary-bg);
+    box-shadow: 5px 5px 0 var(--secondary-bg);
     transition: all 0.2s ease-in-out;
 }
 

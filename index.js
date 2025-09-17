@@ -209,7 +209,10 @@ function renderProjectCardButtons() {
   });
   const div = document.createElement("div");
   div.id = "line";
+  const div2 = document.createElement("div");
+  div2.id = "project-shape";
   projectselection.appendChild(div);
+  projectselection.appendChild(div2);
 }
 
 document.addEventListener("DOMContentLoaded", () => {
