@@ -32,5 +32,9 @@
   "project-4":{
       "title": "Project 4",
       "description": "This is project 4"
-  }
+  },
+  "name-field": "Name: ",
+  "subject-field": "Subject: ",
+  "message-field": "Message: ",
+  "send": "Send"
 }

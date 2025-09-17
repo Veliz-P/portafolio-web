@@ -89,7 +89,7 @@
           <a href="https://linkedin.com/in/tuusuario" target="_blank"><i class="fab fa-linkedin"></i></a>
           <a href="https://twitter.com/tuusuario" target="_blank"><i class="fa-brands fa-facebook"></i></a>
         </div>
-        <button id="hero-button" data-i18n="projects"> 
+        <button id="hero-button" data-i18n="projects">
           Proyectos
         </button>
       </div>
@@ -259,7 +259,50 @@
         </div>
       </div>
     </div>
+
+    <div id="contact-section">
+      <h2 style=" text-align:center; color: var(--secondary); text-transform: uppercase;" class="underline"
+        data-i18n="contact">Contacto</h2>
+      <form id="form">
+        <div class="field-div">
+          <label for="name" style="font-weight: bold;" data-i18n="name-field">Nombre: </label>
+          <input type="text" id="name" required minlength="5" maxlength="50">
+        </div>
+        <div class="field-div">
+          <label for="email" style="font-weight: bold;">Email: </label>
+          <input type="email" id="email" required maxlength="255">
+        </div>
+        <div class="field-div">
+          <label for="subject" style="font-weight: bold;" data-i18n="subject-field">Asunto: </label>
+          <input type="text" id="subject" required minlength="10" maxlength="60">
+        </div>
+        <div class="field-div">
+          <label for="message" style="font-weight: bold;" data-i18n="message-field">Mensaje: </label>
+          <textarea id="message" rows="4" cols="60" minlength="15" maxlength="500" required></textarea>
+        </div>
+        <button id="submit-btn" type="submit" data-i18n="send">Enviar</button>
+      </form>
+    </div>
+    <div id="message-result">
+      <p style="padding: 0.5rem 0.2rem;">
+        <span id="message-text">
+          Hi this is the message
+        </span>
+        <span id="success-icon"><i class="fa-solid fa-circle-check"></i></span>
+        <span id="error-icon"><i class="fa-solid fa-circle-xmark"></i></span>
+      </p>
+      <button id="close-message-btn">&times;</button>
+    </div>
   </main>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+  </script>
+  <script type="text/javascript">
+    (function () {
+      emailjs.init({
+        publicKey: "0M9Na40wF8jJMXTCc",
+      });
+    })();
+  </script>
   <script src="/index.js"></script>
 </body>
 
