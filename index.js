@@ -77,8 +77,8 @@ if (btnsLanguageSwitcher) {
 
 if (overlay) {
   overlay.addEventListener("click", () => {
-    menuMobile.style.display = menuOpen ? "none" : "flex";
-    messageResult.style.display = resultMessageOpen ? "none" : "flex";
+    menuMobile.style.display = "none";
+    messageResult.style.display = "none";
     menuOpen = false;
     resultMessageOpen = false;
     overlay.style.display = "none";

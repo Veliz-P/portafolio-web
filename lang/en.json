@@ -3,6 +3,7 @@
   "skills": "Skills",
   "education": "Education",
   "experience": "Experience",
+  "about": "About Me",
   "language": "Languages",
   "hi": "Hello!",
   "name": "I'm Carlos Paucar",
@@ -36,5 +37,14 @@
   "name-field": "Name: ",
   "subject-field": "Subject: ",
   "message-field": "Message: ",
-  "send": "Send"
+  "send": "Send",
+  "about-description-1-1": "I’m motivated by knowing that my ideas can turn into apps that make people’s lives easier.",
+  "about-description-2-1": "My goal is to become a",
+  "about-description-2-2": "full stack developer",
+  "about-description-2-3": ", I’m interested in understanding the logic behind every application and, at the same time, I strive to learn more about",
+  "about-description-2-4": "UI/UX design",
+  "about-description-2-5": "so I can accurately reflect users’ needs and develop my own style.",
+  "about-description-3-1": "In my free time, I enjoy",
+  "about-description-3-2": "drawing and learning languages"
+
 }

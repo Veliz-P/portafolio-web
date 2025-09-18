@@ -3,6 +3,7 @@
     "skills": "Habilidades",
     "education": "Educación",
     "experience": "Experiencia",
+    "about": "Sobre mí",
     "language": "Idiomas",
     "hi": "¡Hola",
     "name": "Soy Carlos Paucar",
@@ -36,5 +37,13 @@
     "name-field": "Nombre: ",
     "subject-field": "Asunto: ",
     "message-field": "Mensaje: ",
-    "send": "Enviar"
+    "send": "Enviar",
+    "about-description-1-1": "Me motiva saber que mis ideas pueden convertirse en apps que faciliten la vida de las personas.",
+    "about-description-2-1": "Mi meta es convertirme en",
+    "about-description-2-2": "desarrollador full stack",
+    "about-description-2-3": ", me interesa entender la lógica que hay detrás de cada aplicación y, al mismo tiempo, me esfuerzo en aprender más sobre",
+    "about-description-2-4": "diseño UI/UX",
+    "about-description-2-5": "para poder plasmar con precisión las necesidades de los usuarios y desarrollar un estilo propio.",
+    "about-description-3-1": "En mi tiempo libre, disfruto",
+    "about-description-3-2": "del dibujo y el aprendizaje de idiomas"
 }
