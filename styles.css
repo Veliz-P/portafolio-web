@@ -635,3 +635,10 @@ textarea{
     top: 42%;
     right: 20%;
 }
+
+
+#footer{
+    margin-top: 2rem;
+    background-color: var(--primary);
+    width: 100%;
+}
