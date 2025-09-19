@@ -152,11 +152,11 @@
   #about {
     height: auto;
   }
-  #about-icons-container{
+  #about-icons-container {
     padding: 2rem;
   }
 
-  #dark{
+  #dark {
     font-size: 1.4rem;
     display: flex;
     justify-content: start;
@@ -194,7 +194,7 @@
     transform: none;
   }
 
-  #light{
+  #light {
     font-size: 1.4rem;
     display: flex;
     justify-content: end;
@@ -221,5 +221,4 @@
     transform: none;
     margin-right: 10%;
   }
-
 }

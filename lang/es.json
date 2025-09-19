@@ -1,50 +1,50 @@
 {
-    "contact": "Contacto",
-    "skills": "Habilidades",
-    "education": "Educación",
-    "experience": "Experiencia",
-    "about": "Sobre mí",
-    "language": "Idiomas",
-    "hi": "¡Hola",
-    "name": "Soy Carlos Paucar",
-    "presentation-1": "Soy un desarrollador web que disfruta convertir ideas en proyectos reales, combinando mi pasión por la programación, el análisis de sistemas y el diseño de bases de datos.",
-    "presentation-2": "Estoy comprometido con el aprendizaje continuo y con la aplicación de buenas prácticas que permitan construir soluciones innovadoras, eficientes y escalables.",
-    "projects": "Proyectos",
-    "web-development": "Desarrollo de aplicaciones web",
-    "web-development-description": "Diseño y programación de soluciones backend y frontend adaptadas a las necesidades del proyecto.",
-    "database-management": "Administración de bases de datos",
-    "database-management-description": "Diseño, gestión y optimización de bases de datos relacionales y no relacionales.",
-    "agile": "Metodologías ágiles",
-    "agile-description": "Implementación de enfoques colaborativos que impulsan la calidad, eficiencia y valor del producto.",
-    "backend": "Desarrollo Backend",
-    "frontend": "Desarrollo Frontend",
-    "project-1":{
-        "title": "Proyecto 1",
-        "description": "Este es el proyecto 1"
-    },
-    "project-2":{
-        "title": "Proyecto 2",
-        "description": "Este es el proyecto 2"
-    },
-    "project-3":{
-        "title": "Proyecto 3",
-        "description": "Este es el proyecto 3"
-    },
-    "project-4":{
-        "title": "Proyecto 4",
-        "description": "Este es el proyecto 4"
-    },
-    "name-field": "Nombre: ",
-    "subject-field": "Asunto: ",
-    "message-field": "Mensaje: ",
-    "send": "Enviar",
-    "about-description-1-1": "Me motiva saber que mis ideas pueden convertirse en apps que faciliten la vida de las personas.",
-    "about-description-2-1": "Mi meta es convertirme en",
-    "about-description-2-2": "desarrollador full stack",
-    "about-description-2-3": ", me interesa entender la lógica que hay detrás de cada aplicación y, al mismo tiempo, me esfuerzo en aprender más sobre",
-    "about-description-2-4": "diseño UI/UX",
-    "about-description-2-5": "para poder plasmar con precisión las necesidades de los usuarios y desarrollar un estilo propio.",
-    "about-description-3-1": "En mi tiempo libre, disfruto",
-    "about-description-3-2": "del dibujo y el aprendizaje de idiomas",
-    "all-rights-reserved": "Todos los derechos reservados."
+  "contact": "Contacto",
+  "skills": "Habilidades",
+  "education": "Educación",
+  "experience": "Experiencia",
+  "about": "Sobre mí",
+  "language": "Idiomas",
+  "hi": "¡Hola",
+  "name": "Soy Carlos Paucar",
+  "presentation-1": "Soy un desarrollador web que disfruta convertir ideas en proyectos reales, combinando mi pasión por la programación, el análisis de sistemas y el diseño de bases de datos.",
+  "presentation-2": "Estoy comprometido con el aprendizaje continuo y con la aplicación de buenas prácticas que permitan construir soluciones innovadoras, eficientes y escalables.",
+  "projects": "Proyectos",
+  "web-development": "Desarrollo de aplicaciones web",
+  "web-development-description": "Diseño y programación de soluciones backend y frontend adaptadas a las necesidades del proyecto.",
+  "database-management": "Administración de bases de datos",
+  "database-management-description": "Diseño, gestión y optimización de bases de datos relacionales y no relacionales.",
+  "agile": "Metodologías ágiles",
+  "agile-description": "Implementación de enfoques colaborativos que impulsan la calidad, eficiencia y valor del producto.",
+  "backend": "Desarrollo Backend",
+  "frontend": "Desarrollo Frontend",
+  "project-1": {
+    "title": "Proyecto 1",
+    "description": "Este es el proyecto 1"
+  },
+  "project-2": {
+    "title": "Proyecto 2",
+    "description": "Este es el proyecto 2"
+  },
+  "project-3": {
+    "title": "Proyecto 3",
+    "description": "Este es el proyecto 3"
+  },
+  "project-4": {
+    "title": "Proyecto 4",
+    "description": "Este es el proyecto 4"
+  },
+  "name-field": "Nombre: ",
+  "subject-field": "Asunto: ",
+  "message-field": "Mensaje: ",
+  "send": "Enviar",
+  "about-description-1-1": "Me motiva saber que mis ideas pueden convertirse en apps que faciliten la vida de las personas.",
+  "about-description-2-1": "Mi meta es convertirme en",
+  "about-description-2-2": "desarrollador full stack",
+  "about-description-2-3": ", me interesa entender la lógica que hay detrás de cada aplicación y, al mismo tiempo, me esfuerzo en aprender más sobre",
+  "about-description-2-4": "diseño UI/UX",
+  "about-description-2-5": "para poder plasmar con precisión las necesidades de los usuarios y desarrollar un estilo propio.",
+  "about-description-3-1": "En mi tiempo libre, disfruto",
+  "about-description-3-2": "del dibujo y el aprendizaje de idiomas",
+  "all-rights-reserved": "Todos los derechos reservados."
 }

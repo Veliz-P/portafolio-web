@@ -86,11 +86,11 @@ if (overlay) {
 }
 
 if (closeMessageBtn) {
-    closeMessageBtn.addEventListener("click", () => {
-        resultMessageOpen = false;
-        if(overlay) overlay.style.display = "none";
-        if(messageResult) messageResult.style.display = "none";
-    });
+  closeMessageBtn.addEventListener("click", () => {
+    resultMessageOpen = false;
+    if (overlay) overlay.style.display = "none";
+    if (messageResult) messageResult.style.display = "none";
+  });
 }
 
 if (btnOpenMenu) {
@@ -252,20 +252,19 @@ document.addEventListener("DOMContentLoaded", () => {
         errorIcon.style.display = "inline";
         messageText.textContent = "Error sending message, try again later.";
       }
-        if(overlay) overlay.style.display = "flex";
-        if(messageResult) messageResult.style.display = "flex";
-        resultMessageOpen = true;
-        setTimeout(() => {
-            if(resultMessageOpen){
-                resultMessageOpen = false;
-                if(overlay) overlay.style.display = "none";
-                if(messageResult) messageResult.style.display = "none";
-                successIcon.style.display = "none";
-                errorIcon.style.display = "none";
-                messageText.textContent = "";
-            }
-        }, 3500);
+      if (overlay) overlay.style.display = "flex";
+      if (messageResult) messageResult.style.display = "flex";
+      resultMessageOpen = true;
+      setTimeout(() => {
+        if (resultMessageOpen) {
+          resultMessageOpen = false;
+          if (overlay) overlay.style.display = "none";
+          if (messageResult) messageResult.style.display = "none";
+          successIcon.style.display = "none";
+          errorIcon.style.display = "none";
+          messageText.textContent = "";
+        }
+      }, 3500);
     });
   }
-
 });

@@ -1,363 +1,685 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Portfolio - Veliz</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="mobile.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <title>Portfolio - Veliz</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="mobile.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-</head>
-
-<body>
-  <nav id="navbar-desktop" style="z-index: 2;">
-    <p style="font-weight: bold; color:var(--secondary); font-size:1.3rem">Portfolio</p>
-    <ul
-      style="display: flex; flex-wrap: wrap; justify-content: space-between; list-style: none; gap:5px; font-size:16px; font-weight:600; align-items: center; color:#ededea">
-      <li><a class="navbar-item" href="" data-i18n="contact">Contacto</a></li>
-      <li> <a class="navbar-item" href="#skills" data-i18n="skills">Habilidades</a></li>
-      <li><a class="navbar-item" href="" data-i18n="education">Formación</a></li>
-      <li><a class="navbar-item" href="" data-i18n="projects">Proyectos</a></li>
-      <li>
-        <button style="background-color: transparent; border: none;outline: none" class="pointer btn-toggle-mode">
-          <img class="moon-icon toggle-icon" src="/icons/moon.png">
-          <img class="sun-icon toggle-icon" src="/icons/sun.png">
+  <body>
+    <nav id="navbar-desktop" style="z-index: 2">
+      <p style="font-weight: bold; color: var(--secondary); font-size: 1.3rem">
+        Portfolio
+      </p>
+      <ul
+        style="
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          list-style: none;
+          gap: 5px;
+          font-size: 16px;
+          font-weight: 600;
+          align-items: center;
+          color: #ededea;
+        "
+      >
+        <li><a class="navbar-item" href="" data-i18n="contact">Contacto</a></li>
+        <li>
+          <a class="navbar-item" href="#skills" data-i18n="skills"
+            >Habilidades</a
+          >
+        </li>
+        <li>
+          <a class="navbar-item" href="" data-i18n="education">Formación</a>
+        </li>
+        <li>
+          <a class="navbar-item" href="" data-i18n="projects">Proyectos</a>
+        </li>
+        <li>
+          <button
+            style="background-color: transparent; border: none; outline: none"
+            class="pointer btn-toggle-mode"
+          >
+            <img class="moon-icon toggle-icon" src="/icons/moon.png" />
+            <img class="sun-icon toggle-icon" src="/icons/sun.png" />
+          </button>
+        </li>
+        <li>
+          <select name="language" class="navbar-item language-switcher">
+            <option value="es">Español</option>
+            <option value="en">English</option>
+          </select>
+        </li>
+      </ul>
+    </nav>
+    <div
+      id="overlay"
+      style="
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 3;
+      "
+    ></div>
+    <nav id="navbar-mobile">
+      <p
+        style="
+          font-weight: bold;
+          color: var(--secondary);
+          font-size: 1.2rem;
+          position: relative;
+        "
+      >
+        Portfolio
+      </p>
+      <button
+        style="border: none; background-color: transparent; outline: none"
+        id="btn-open-menu"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="35"
+          height="40"
+          viewBox="0 0 48 48"
+          aria-hidden="true"
+          focusable="false"
+        >
+          <circle cx="24" cy="24" r="22" fill="#f3f4f6" />
+          <rect x="12" y="16" width="24" height="2.6" rx="1.3" fill="#111" />
+          <rect x="12" y="23" width="24" height="2.6" rx="1.3" fill="#111" />
+          <rect x="12" y="30" width="24" height="2.6" rx="1.3" fill="#111" />
+        </svg>
+      </button>
+    </nav>
+    <aside id="menu-mobile">
+      <div
+        style="
+          display: flex;
+          font-weight: 600;
+          word-break: break-all;
+          flex-direction: column;
+          height: 100%;
+          justify-content: space-around;
+          align-items: center;
+          font-size: 1rem;
+          width: 100%;
+        "
+      >
+        <button
+          style="background-color: transparent; border: none; outline: none"
+          class="pointer btn-toggle-mode"
+        >
+          <img class="moon-icon toggle-icon" src="/icons/moon.png" />
+          <img class="sun-icon toggle-icon" src="/icons/sun.png" />
         </button>
-      </li>
-      <li>
         <select name="language" class="navbar-item language-switcher">
           <option value="es">Español</option>
           <option value="en">English</option>
         </select>
-      </li>
-    </ul>
-  </nav>
-  <div id="overlay"
-    style="display:none;position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5);z-index: 3">
-  </div>
-  <nav id="navbar-mobile">
-    <p style="font-weight: bold; color:var(--secondary); font-size:1.2rem;position:relative">Portfolio</p>
-    <button style="border:none; background-color: transparent; outline: none" id="btn-open-menu">
-      <svg xmlns="http://www.w3.org/2000/svg" width="35" height="40" viewBox="0 0 48 48" aria-hidden="true"
-        focusable="false">
-        <circle cx="24" cy="24" r="22" fill="#f3f4f6" />
-        <rect x="12" y="16" width="24" height="2.6" rx="1.3" fill="#111" />
-        <rect x="12" y="23" width="24" height="2.6" rx="1.3" fill="#111" />
-        <rect x="12" y="30" width="24" height="2.6" rx="1.3" fill="#111" />
-      </svg>
-    </button>
-
-  </nav>
-  <aside id="menu-mobile">
-    <div
-      style="display:flex; font-weight: 600; word-break: break-all ; flex-direction: column; height: 100%; justify-content: space-around; align-items: center; font-size:1rem; width:100%;">
-      <button style="background-color: transparent; border: none;outline: none" class="pointer btn-toggle-mode">
-        <img class="moon-icon toggle-icon" src="/icons/moon.png">
-        <img class="sun-icon toggle-icon" src="/icons/sun.png">
-      </button>
-      <select name="language" class="navbar-item language-switcher">
-        <option value="es">Español</option>
-        <option value="en">English</option>
-      </select>
-      <a class="navbar-item" href="" data-i18n="contact">Contacto</a>
-      <a class="navbar-item" href="#skills" data-i18n="skills">Habilidades</a>
-      <a class="navbar-item" href="" data-i18n="education">Formación</a>
-      <a class="navbar-item" href="" data-i18n="projects">Proyectos</a>
-    </div>
-  </aside>
-  <main id="main-container">
-    <div id="hero-section">
-      <div style="position: relative;">
-        <div id="shape-hero" class="shape">
-        </div>
-        <img id="profile-pic" src="/icons/photo.png" alt="Profile Pic">
+        <a class="navbar-item" href="" data-i18n="contact">Contacto</a>
+        <a class="navbar-item" href="#skills" data-i18n="skills">Habilidades</a>
+        <a class="navbar-item" href="" data-i18n="education">Formación</a>
+        <a class="navbar-item" href="" data-i18n="projects">Proyectos</a>
       </div>
-      <div id="hero-text">
-        <h1 id="hero-title" style="text-transform: uppercase;">
-          <span data-i18n="hi">Hola,</span>
-          <span style="color: var(--secondary);" class="neon-secondary" data-i18n="name">soy Carlos Paucar</span>!
-        </h1>
-        <div id="presentation-text">
-          <span style="text-align: left; line-height: 2;" data-i18n="presentation-1">
-            Soy un programador apasionado por la programación, análisis de sistemas y diseño de bases de datos.
-          </span>
-          <i class="fa-solid fa-code" style="font-size: 1.2rem;"></i>
+    </aside>
+    <main id="main-container">
+      <div id="hero-section">
+        <div style="position: relative">
+          <div id="shape-hero" class="shape"></div>
+          <img id="profile-pic" src="/icons/photo.png" alt="Profile Pic" />
         </div>
-        <div id="social-icons">
-          <a href="https://github.com/tuusuario" target="_blank"><i class="fab fa-github"></i></a>
-          <a href="https://linkedin.com/in/tuusuario" target="_blank"><i class="fab fa-linkedin"></i></a>
-          <a href="https://twitter.com/tuusuario" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+        <div id="hero-text">
+          <h1 id="hero-title" style="text-transform: uppercase">
+            <span data-i18n="hi">Hola,</span>
+            <span
+              style="color: var(--secondary)"
+              class="neon-secondary"
+              data-i18n="name"
+              >soy Carlos Paucar</span
+            >!
+          </h1>
+          <div id="presentation-text">
+            <span
+              style="text-align: left; line-height: 2"
+              data-i18n="presentation-1"
+            >
+              Soy un programador apasionado por la programación, análisis de
+              sistemas y diseño de bases de datos.
+            </span>
+            <i class="fa-solid fa-code" style="font-size: 1.2rem"></i>
+          </div>
+          <div id="social-icons">
+            <a href="https://github.com/tuusuario" target="_blank"
+              ><i class="fab fa-github"></i
+            ></a>
+            <a href="https://linkedin.com/in/tuusuario" target="_blank"
+              ><i class="fab fa-linkedin"></i
+            ></a>
+            <a href="https://twitter.com/tuusuario" target="_blank"
+              ><i class="fa-brands fa-facebook"></i
+            ></a>
+          </div>
+          <button id="hero-button" data-i18n="projects">Proyectos</button>
         </div>
-        <button id="hero-button" data-i18n="projects">
-          Proyectos
-        </button>
       </div>
-    </div>
 
-    <div id="skills">
-      <h2 style="grid-column: 1/-1; text-align:center; color: var(--secondary); text-transform: uppercase;"
-        class="underline"><span data-i18n="skills">Habilidades</span> <i style="margin-left: 5px;"
-          class="fa-solid fa-toolbox"></i></h2>
-      <div class="skill-card" style="text-align: center;">
-        <h3 data-i18n="web-development" style="text-align: center; text-transform: uppercase; font-family: 'Exo2'">
-          Desarrollo Web</h3>
-        <p data-i18n="web-development-description" style="text-align: center; color: var(--secondary-fg);">Especializado
-          en desarrollo backend y
-          frontend</p>
-        <div
-          style="display:flex; flex-direction:column; align-items:start; width: 100%; gap:1rem; color: var(--secondary-fg); ">
-          <div style="display: flex;width: 100%;">
-            <span style="display: flex; flex-direction:column; align-items: center; gap:0.2rem">
-              <img src="/icons/django.png" alt="Django Icon">
-              <span style="font-weight: bold; font-size:0.9rem">Django</span>
-            </span>
-            <div class="progress">
-              <div class="segment beginner level-active"></div>
-              <div class="segment intermediate level-active intermediate-text"></div>
-              <div class="segment advanced"></div>
-            </div>
-          </div>
-
-
-          <div style="display: flex; width: 100%;">
-            <span style="display: flex; flex-direction:column; align-items: center; gap:0.2rem">
-              <img src="/icons/vuejs.png" alt="Vue.js Icon">
-              <span style="font-weight: bold; font-size:0.9rem">Vue.js</span>
-            </span>
-            <div class="progress">
-              <div class="segment beginner level-active"></div>
-              <div class="segment intermediate level-active intermediate-text"></div>
-              <div class="segment advanced"></div>
-            </div>
-          </div>
-
-          <div style="display: flex; width: 100%;">
-            <span style="display: flex; flex-direction:column; align-items: center; gap:0.2rem; justify-content: start">
-              <img src="/icons/tailwindcss.png" alt="Tailwind CSS Icon">
-              <span style="font-weight: bold; font-size:0.9rem; ">Tailwind <br> CSS</span>
-            </span>
-            <div class="progress">
-              <div class="segment beginner level-active beginner-text"></div>
-              <div class="segment intermediate"></div>
-              <div class="segment advanced"></div>
-            </div>
-          </div>
-
-          <div style="display: flex; flex-direction:column; align-items:center; width: 100%;">
-            <span style="display: flex; flex-direction:column; align-items: start; gap:0.2rem">
-              <div style="display: flex; flex-wrap:wrap ;align-items: center; font-size:1.2rem; font-weight: bold">
-                <img src="/icons/html.png" alt="HTML Icon">
-                +
-                <img src="/icons/css.png" alt="CSS Icon">
-                +
-                <img src="/icons/js.png" alt="JavaScript Icon">
+      <div id="skills">
+        <h2
+          style="
+            grid-column: 1/-1;
+            text-align: center;
+            color: var(--secondary);
+            text-transform: uppercase;
+          "
+          class="underline"
+        >
+          <span data-i18n="skills">Habilidades</span>
+          <i style="margin-left: 5px" class="fa-solid fa-toolbox"></i>
+        </h2>
+        <div class="skill-card" style="text-align: center">
+          <h3
+            data-i18n="web-development"
+            style="
+              text-align: center;
+              text-transform: uppercase;
+              font-family: 'Exo2';
+            "
+          >
+            Desarrollo Web
+          </h3>
+          <p
+            data-i18n="web-development-description"
+            style="text-align: center; color: var(--secondary-fg)"
+          >
+            Especializado en desarrollo backend y frontend
+          </p>
+          <div
+            style="
+              display: flex;
+              flex-direction: column;
+              align-items: start;
+              width: 100%;
+              gap: 1rem;
+              color: var(--secondary-fg);
+            "
+          >
+            <div style="display: flex; width: 100%">
+              <span
+                style="
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                  gap: 0.2rem;
+                "
+              >
+                <img src="/icons/django.png" alt="Django Icon" />
+                <span style="font-weight: bold; font-size: 0.9rem">Django</span>
+              </span>
+              <div class="progress">
+                <div class="segment beginner level-active"></div>
+                <div
+                  class="segment intermediate level-active intermediate-text"
+                ></div>
+                <div class="segment advanced"></div>
               </div>
-              <span style="font-weight: bold; font-size:0.9rem">HTML, CSS, JavaScript</span>
-            </span>
-            <div class="progress" style="margin-bottom: 2rem;">
-              <div class="segment level-active"></div>
-              <div class="segment level-active intermediate-text"></div>
-              <div class="segment"></div>
+            </div>
+
+            <div style="display: flex; width: 100%">
+              <span
+                style="
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                  gap: 0.2rem;
+                "
+              >
+                <img src="/icons/vuejs.png" alt="Vue.js Icon" />
+                <span style="font-weight: bold; font-size: 0.9rem">Vue.js</span>
+              </span>
+              <div class="progress">
+                <div class="segment beginner level-active"></div>
+                <div
+                  class="segment intermediate level-active intermediate-text"
+                ></div>
+                <div class="segment advanced"></div>
+              </div>
+            </div>
+
+            <div style="display: flex; width: 100%">
+              <span
+                style="
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                  gap: 0.2rem;
+                  justify-content: start;
+                "
+              >
+                <img src="/icons/tailwindcss.png" alt="Tailwind CSS Icon" />
+                <span style="font-weight: bold; font-size: 0.9rem"
+                  >Tailwind <br />
+                  CSS</span
+                >
+              </span>
+              <div class="progress">
+                <div class="segment beginner level-active beginner-text"></div>
+                <div class="segment intermediate"></div>
+                <div class="segment advanced"></div>
+              </div>
+            </div>
+
+            <div
+              style="
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+              "
+            >
+              <span
+                style="
+                  display: flex;
+                  flex-direction: column;
+                  align-items: start;
+                  gap: 0.2rem;
+                "
+              >
+                <div
+                  style="
+                    display: flex;
+                    flex-wrap: wrap;
+                    align-items: center;
+                    font-size: 1.2rem;
+                    font-weight: bold;
+                  "
+                >
+                  <img src="/icons/html.png" alt="HTML Icon" />
+                  +
+                  <img src="/icons/css.png" alt="CSS Icon" />
+                  +
+                  <img src="/icons/js.png" alt="JavaScript Icon" />
+                </div>
+                <span style="font-weight: bold; font-size: 0.9rem"
+                  >HTML, CSS, JavaScript</span
+                >
+              </span>
+              <div class="progress" style="margin-bottom: 2rem">
+                <div class="segment level-active"></div>
+                <div class="segment level-active intermediate-text"></div>
+                <div class="segment"></div>
+              </div>
             </div>
           </div>
+        </div>
+        <div class="skill-card">
+          <h3
+            data-i18n="database-management"
+            style="
+              text-align: center;
+              text-transform: uppercase;
+              font-family: 'Exo2';
+            "
+          >
+            Manejo de bases de datos
+          </h3>
+          <p
+            data-i18n="database-management-description"
+            style="text-align: center; color: var(--secondary-fg)"
+          >
+            Relacionales y no relacionales
+          </p>
+          <div
+            style="
+              display: flex;
+              flex-direction: column;
+              align-items: start;
+              width: 100%;
+              gap: 1rem;
+              text-align: center;
+              color: var(--secondary-fg);
+            "
+          >
+            <div style="display: flex; width: 100%">
+              <span
+                style="
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                  gap: 0.2rem;
+                "
+              >
+                <img src="/icons/mysql.png" alt="MySQL Icon" />
+                <span style="font-weight: bold; font-size: 0.9rem">MySQL</span>
+              </span>
+              <div class="progress">
+                <div class="segment"></div>
+                <div class="segment level-active intermediate-text"></div>
+                <div class="segment"></div>
+              </div>
+            </div>
 
+            <div style="display: flex; width: 100%">
+              <span
+                style="
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                  gap: 0.2rem;
+                "
+              >
+                <img src="/icons/sqlserver.png" alt="SQL Server Icon" />
+                <span
+                  style="font-weight: bold; font-size: 1rem; text-align: center"
+                  >SQL <br />
+                  Server</span
+                >
+              </span>
+              <div class="progress">
+                <div class="segment"></div>
+                <div class="segment level-active intermediate-text"></div>
+                <div class="segment"></div>
+              </div>
+            </div>
+
+            <div style="display: flex; width: 100%">
+              <span
+                style="
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                  gap: 0.2rem;
+                "
+              >
+                <img src="/icons/mongodb.png" alt="Mongo DB Icon" />
+                <span
+                  style="font-weight: bold; font-size: 1rem; text-align: center"
+                  >Mongo <br />
+                  DB</span
+                >
+              </span>
+              <div class="progress">
+                <div class="segment beginner-text level-active"></div>
+                <div class="segment"></div>
+                <div class="segment"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="skill-card">
+          <h3
+            data-i18n="agile"
+            style="
+              text-align: center;
+              text-transform: uppercase;
+              font-family: 'Exo2';
+            "
+          >
+            Desarrollo Web
+          </h3>
+          <p
+            data-i18n="agile-description"
+            style="text-align: center; color: var(--secondary-fg)"
+          >
+            Metodologías ágiles
+          </p>
+          <div
+            style="
+              display: flex;
+              flex-direction: column;
+              align-items: start;
+              width: 100%;
+              gap: 1rem;
+              text-align: center;
+              color: var(--secondary-fg);
+            "
+          >
+            <div style="display: flex; width: 100%">
+              <span
+                style="
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                  gap: 0.2rem;
+                "
+              >
+                <img src="/icons/xp.png" alt="MySQL Icon" />
+                <span style="font-weight: bold; font-size: 0.9rem">XP</span>
+              </span>
+              <div class="progress">
+                <div class="segment level-active"></div>
+                <div class="segment level-active intermediate-text"></div>
+                <div class="segment"></div>
+              </div>
+            </div>
+
+            <div style="display: flex; width: 100%">
+              <span
+                style="
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                  gap: 0.2rem;
+                "
+              >
+                <img src="/icons/scrum.png" alt="SQL Server Icon" />
+                <span
+                  style="font-weight: bold; font-size: 1rem; text-align: center"
+                  >Scrum</span
+                >
+              </span>
+              <div class="progress">
+                <div class="segment beginner-text level-active"></div>
+                <div class="segment"></div>
+                <div class="segment"></div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="skill-card">
-        <h3 data-i18n="database-management" style="text-align: center; text-transform: uppercase; font-family: 'Exo2'">
-          Manejo de bases de datos</h3>
-        <p data-i18n="database-management-description" style="text-align: center; color: var(--secondary-fg);">
-          Relacionales y no relacionales</p>
-        <div
-          style="display:flex; flex-direction:column; align-items:start; width: 100%; gap:1rem; text-align: center; color: var(--secondary-fg); ">
 
-          <div style="display: flex; width: 100%;">
-            <span style="display: flex; flex-direction:column; align-items: center; gap:0.2rem">
-              <img src="/icons/mysql.png" alt="MySQL Icon">
-              <span style="font-weight: bold; font-size:0.9rem">MySQL</span>
-            </span>
-            <div class="progress">
-              <div class="segment"></div>
-              <div class="segment level-active intermediate-text"></div>
-              <div class="segment"></div>
-            </div>
+      <div id="projects-container">
+        <h2
+          style="
+            text-align: center;
+            color: var(--light);
+            text-transform: uppercase;
+            width: 100%;
+            text-align: center;
+          "
+          class="underline"
+        >
+          <span data-i18n="projects">Proyectos</span>
+          <i style="margin-left: 5px" class="fa-solid fa-file-circle-check"></i>
+        </h2>
+        <div id="projects">
+          <div id="project-selection">
+            <div id="line" class="active"></div>
+            <div id="project-shape"></div>
           </div>
-
-          <div style="display: flex; width: 100%;">
-            <span style="display: flex; flex-direction:column; align-items: center; gap:0.2rem">
-              <img src="/icons/sqlserver.png" alt="SQL Server Icon">
-              <span style="font-weight: bold; font-size:1rem; text-align: center">SQL <br> Server</span>
-            </span>
-            <div class="progress">
-              <div class="segment"></div>
-              <div class="segment level-active intermediate-text"></div>
-              <div class="segment"></div>
-            </div>
-          </div>
-
-          <div style="display: flex; width: 100%;">
-            <span style="display: flex; flex-direction:column; align-items: center; gap:0.2rem">
-              <img src="/icons/mongodb.png" alt="Mongo DB Icon">
-              <span style="font-weight: bold; font-size:1rem; text-align: center">Mongo <br> DB</span>
-            </span>
-            <div class="progress">
-              <div class="segment beginner-text level-active"></div>
-              <div class="segment"></div>
-              <div class="segment"></div>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-      <div class="skill-card">
-        <h3 data-i18n="agile" style="text-align: center; text-transform: uppercase;font-family: 'Exo2'">Desarrollo Web
-        </h3>
-        <p data-i18n="agile-description" style="text-align: center; color: var(--secondary-fg);">
-          Metodologías ágiles</p>
-        <div
-          style="display:flex; flex-direction:column; align-items:start; width: 100%; gap:1rem; text-align: center; color: var(--secondary-fg); ">
-
-          <div style="display: flex; width: 100%;">
-            <span style="display: flex; flex-direction:column; align-items: center; gap:0.2rem">
-              <img src="/icons/xp.png" alt="MySQL Icon">
-              <span style="font-weight: bold; font-size:0.9rem">XP</span>
-            </span>
-            <div class="progress">
-              <div class="segment level-active"></div>
-              <div class="segment level-active intermediate-text"></div>
-              <div class="segment"></div>
-            </div>
-          </div>
-
-          <div style="display: flex; width: 100%;">
-            <span style="display: flex; flex-direction:column; align-items: center; gap:0.2rem">
-              <img src="/icons/scrum.png" alt="SQL Server Icon">
-              <span style="font-weight: bold; font-size:1rem; text-align: center">Scrum</span>
-            </span>
-            <div class="progress">
-              <div class="segment beginner-text level-active"></div>
-              <div class="segment"></div>
-              <div class="segment"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div id="projects-container">
-      <h2 style="text-align:center; color: var(--light); text-transform: uppercase; width: 100%; text-align: center;"
-        class="underline"><span data-i18n="projects">Proyectos</span> <i style="margin-left: 5px;"
-          class="fa-solid fa-file-circle-check"></i></h2>
-      <div id="projects">
-
-        <div id="project-selection">
-          <div id="line" class="active"></div>
-          <div id="project-shape"></div>
-        </div>
-        <div id="project-cards-container">
-          <!--<div id="project-card">
+          <div id="project-cards-container">
+            <!--<div id="project-card">
             <p>fjdkf</p>
           </div> -->
+          </div>
         </div>
       </div>
-    </div>
 
-    <div id="contact-section">
-      <h2 style=" text-align:center; color: var(--secondary); text-transform: uppercase;" class="underline"><span
-          data-i18n="contact">Contacto</span> <i style="margin-left: 5px;" class="fa-solid fa-address-card"></i></h2>
-      <form id="form">
-        <div class="field-div">
-          <label for="name" style="font-weight: bold;" data-i18n="name-field">Nombre: </label>
-          <input type="text" id="name" required minlength="5" maxlength="50">
-        </div>
-        <div class="field-div">
-          <label for="email" style="font-weight: bold;">Email: </label>
-          <input type="email" id="email" required maxlength="255">
-        </div>
-        <div class="field-div">
-          <label for="subject" style="font-weight: bold;" data-i18n="subject-field">Asunto: </label>
-          <input type="text" id="subject" required minlength="10" maxlength="60">
-        </div>
-        <div class="field-div">
-          <label for="message" style="font-weight: bold;" data-i18n="message-field">Mensaje: </label>
-          <textarea id="message" rows="4" cols="60" minlength="15" maxlength="500" required></textarea>
-        </div>
-        <button id="submit-btn" type="submit" data-i18n="send">Enviar</button>
-      </form>
-    </div>
-    <div id="message-result">
-      <p style="padding: 0.5rem 0.2rem;">
-        <span id="message-text">
-          Hi this is the message
-        </span>
-        <span id="success-icon"><i class="fa-solid fa-circle-check"></i></span>
-        <span id="error-icon"><i class="fa-solid fa-circle-xmark"></i></span>
-      </p>
-      <button id="close-message-btn">&times;</button>
-    </div>
+      <div id="contact-section">
+        <h2
+          style="
+            text-align: center;
+            color: var(--secondary);
+            text-transform: uppercase;
+          "
+          class="underline"
+        >
+          <span data-i18n="contact">Contacto</span>
+          <i style="margin-left: 5px" class="fa-solid fa-address-card"></i>
+        </h2>
+        <form id="form">
+          <div class="field-div">
+            <label for="name" style="font-weight: bold" data-i18n="name-field"
+              >Nombre:
+            </label>
+            <input
+              type="text"
+              id="name"
+              required
+              minlength="5"
+              maxlength="50"
+            />
+          </div>
+          <div class="field-div">
+            <label for="email" style="font-weight: bold">Email: </label>
+            <input type="email" id="email" required maxlength="255" />
+          </div>
+          <div class="field-div">
+            <label
+              for="subject"
+              style="font-weight: bold"
+              data-i18n="subject-field"
+              >Asunto:
+            </label>
+            <input
+              type="text"
+              id="subject"
+              required
+              minlength="10"
+              maxlength="60"
+            />
+          </div>
+          <div class="field-div">
+            <label
+              for="message"
+              style="font-weight: bold"
+              data-i18n="message-field"
+              >Mensaje:
+            </label>
+            <textarea
+              id="message"
+              rows="4"
+              cols="60"
+              minlength="15"
+              maxlength="500"
+              required
+            ></textarea>
+          </div>
+          <button id="submit-btn" type="submit" data-i18n="send">Enviar</button>
+        </form>
+      </div>
+      <div id="message-result">
+        <p style="padding: 0.5rem 0.2rem">
+          <span id="message-text"> Hi this is the message </span>
+          <span id="success-icon"
+            ><i class="fa-solid fa-circle-check"></i
+          ></span>
+          <span id="error-icon"><i class="fa-solid fa-circle-xmark"></i></span>
+        </p>
+        <button id="close-message-btn">&times;</button>
+      </div>
 
-    <div id="about">
-      <h2 style=" text-align:center;color: var(--fg); text-transform: uppercase;" class="underline">
-        <span data-i18n="about">Sobre mí</span>
-        <i class="fa-solid fa-user" style="margin-left: 5px;"></i>
-      </h2>
-      <div id="about-container">
-        <div id="about-icons-container">
-          <div id="dark" >
+      <div id="about">
+        <h2
+          style="
+            text-align: center;
+            color: var(--fg);
+            text-transform: uppercase;
+          "
+          class="underline"
+        >
+          <span data-i18n="about">Sobre mí</span>
+          <i class="fa-solid fa-user" style="margin-left: 5px"></i>
+        </h2>
+        <div id="about-container">
+          <div id="about-icons-container">
+            <div id="dark">
               <i id="pencil-icon" class="fa-solid fa-pencil"></i>
-              <i id="paint-icon" class="fa-solid fa-palette"></i> 
+              <i id="paint-icon" class="fa-solid fa-palette"></i>
               <i id="mobile-icon" class="fa-solid fa-mobile-screen"></i>
               <i id="laptop-icon" class="fa-solid fa-laptop-code"></i>
-              <i id="ruler-icon" class="fa-solid fa-ruler-combined"></i> 
+              <i id="ruler-icon" class="fa-solid fa-ruler-combined"></i>
+            </div>
+            <div id="light">
+              <i id="terminal-icon" class="fa-solid fa-terminal"></i>
+              <i id="database-icon" class="fa-solid fa-database"></i>
+              <i id="server-icon" class="fa-solid fa-server"></i>
+              <i id="cogs-icon" class="fa-solid fa-gears"></i>
+              <i id="network-icon" class="fa-solid fa-network-wired"></i>
+            </div>
           </div>
-          <div id="light">
-            <i id="terminal-icon" class="fa-solid fa-terminal"></i>
-            <i id="database-icon" class="fa-solid fa-database"></i> 
-            <i id="server-icon" class="fa-solid fa-server"></i> 
-            <i id="cogs-icon" class="fa-solid fa-gears"></i>
-            <i id="network-icon" class="fa-solid fa-network-wired"></i> 
+          <div id="about-text">
+            <p data-i18n="about-description-1-1">
+              Me motiva saber que mis ideas pueden convertirse en sistemas que
+              faciliten la vida de las personas.
+            </p>
+            <p>
+              <span data-i18n="about-description-2-1"
+                >Actualmente mi meta es convertirme en</span
+              >
+              <span style="font-weight: bold" data-i18n="about-description-2-2"
+                >Desarrollador Full Stack</span
+              >
+              <span data-i18n="about-description-2-3"
+                >porque me interesa entender la lógica que hay detrás de cada
+                aplicación. Al mismo tiempo, me esfuerzo en aprender más
+                sobre</span
+              >
+              <span style="font-weight: bold" data-i18n="about-description-2-4"
+                >diseño UI/UX</span
+              >
+              <span data-i18n="about-description-2-5"
+                >con el objetivo de desarrollar un estilo propio y plasmar con
+                precisión las necesidades de los usuarios.</span
+              >
+            </p>
+            <p>
+              <span data-i18n="about-description-3-1"
+                >En mi tiempo libre, disfruto</span
+              >
+              <span style="font-weight: bold" data-i18n="about-description-3-2"
+                >del dibujo y el aprendizaje de idiomas</span
+              >.
+            </p>
           </div>
-        </div>
-        <div id="about-text">
-          <p data-i18n="about-description-1-1">Me motiva saber que mis ideas pueden convertirse en sistemas que
-            faciliten la vida de las personas.</p>
-          <p>
-            <span data-i18n="about-description-2-1">Actualmente mi meta es convertirme en</span>
-            <span style="font-weight: bold;" data-i18n="about-description-2-2">Desarrollador Full Stack</span>
-            <span data-i18n="about-description-2-3">porque me interesa entender la lógica que hay detrás de cada
-              aplicación. Al mismo tiempo, me esfuerzo en aprender más sobre</span>
-            <span style="font-weight: bold;" data-i18n="about-description-2-4">diseño UI/UX</span>
-            <span data-i18n="about-description-2-5">con el objetivo de desarrollar un estilo propio y plasmar con
-              precisión las necesidades de los usuarios.</span>
-          </p>
-          <p>
-            <span data-i18n="about-description-3-1">En mi tiempo libre, disfruto</span>
-            <span style="font-weight: bold;" data-i18n="about-description-3-2">del dibujo y el aprendizaje de
-              idiomas</span>.
-          </p>
         </div>
       </div>
 
-    </div>
-
       <footer id="footer">
-        <p style="font-size: 0.9rem; text-align: center; color: var(--secondary-fg);">
-          &copy; 2025 Carlos Paucar. <span data-i18n="all-rights-reserved">Todos los derechos reservados.</span>
+        <p
+          style="
+            font-size: 0.9rem;
+            text-align: center;
+            color: var(--secondary-fg);
+          "
+        >
+          &copy; 2025 Carlos Paucar.
+          <span data-i18n="all-rights-reserved"
+            >Todos los derechos reservados.</span
+          >
         </p>
       </footer>
-  </main>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
-  </script>
-  <script type="text/javascript">
-    (function () {
-      emailjs.init({
-        publicKey: "0M9Na40wF8jJMXTCc",
-      });
-    })();
-  </script>
-  <script src="/index.js"></script>
-</body>
-
+    </main>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init({
+          publicKey: "0M9Na40wF8jJMXTCc",
+        });
+      })();
+    </script>
+    <script src="/index.js"></script>
+  </body>
 </html>
