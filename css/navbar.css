@@ -19,6 +19,7 @@
 }
 #menu-mobile {
   display: none;
+  opacity: 0;
 }
 
 .pointer {
@@ -33,6 +34,18 @@
 }
 .navbar-item:hover {
   background-color: var(--dark-gray);
+}
+
+#navbar-items{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  list-style: none;
+  gap: 5px;
+  font-size: 16px;
+  font-weight: 600;
+  align-items: center;
+  color: #ededea;
 }
 
 .toggle-icon {
@@ -83,31 +96,26 @@
   color: var(--fg);
 }
 
-@media (max-width: 768px) {
-  #navbar-desktop {
-    display: none;
-  }
+#btn-open-menu {
+  display: none;
+}
 
-  #navbar-mobile {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    font-family: "Exo2";
-    flex-wrap: wrap;
-    padding: 0px 10px;
-    background-color: #1b1a1a;
-    color: var(--fg);
-    border-bottom: 7px solid var(--secondary);
-    z-index: 2;
+@media (max-width: 768px) {
+  #btn-open-menu {
+    display: block;
+  }
+  #navbar-items{
+    display: none;
   }
   #menu-mobile {
     display: none;
     flex-direction: column;
-    align-items: start;
-    justify-content: start;
     position: fixed;
+    font-weight: 600;
+    word-break: break-all;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 0.9rem;
     top: 0;
     left: 0;
     width: 40vw;
@@ -117,6 +125,7 @@
     border-right: 7px solid var(--secondary);
     transition: transform 0.3s ease-in-out;
     z-index: 10;
+    opacity: 1;
   }
   .moon-icon {
     width: 3.5rem;

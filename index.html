@@ -6,16 +6,17 @@
     <link rel="stylesheet" href="/css/base.css" />
     <link rel="stylesheet" href="/css/mobile.css" />
     <link rel="stylesheet" href="/css/navbar.css" />
-    <link rel="stylesheet" href="/css/hero-section.css"/>
-    <link rel="stylesheet" href="/css/skills.css">
-    <link rel="stylesheet" href="/css/projects.css">
-    <link rel="stylesheet" href="/css/contact.css">
-    <link rel="stylesheet" href="/css/about.css">
-    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/hero-section.css" />
+    <link rel="stylesheet" href="/css/skills.css" />
+    <link rel="stylesheet" href="/css/projects.css" />
+    <link rel="stylesheet" href="/css/contact.css" />
+    <link rel="stylesheet" href="/css/about.css" />
+    <link rel="stylesheet" href="/css/footer.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
   </head>
 
   <body>
@@ -23,30 +24,18 @@
       <p style="font-weight: bold; color: var(--secondary); font-size: 1.3rem">
         Portfolio
       </p>
-      <ul
-        style="
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: space-between;
-          list-style: none;
-          gap: 5px;
-          font-size: 16px;
-          font-weight: 600;
-          align-items: center;
-          color: #ededea;
-        "
-      >
-        <li><a class="navbar-item" href="" data-i18n="contact">Contacto</a></li>
+      <ul id="navbar-items">
         <li>
-          <a class="navbar-item" href="#skills" data-i18n="skills"
-            >Habilidades</a
-          >
+          <a class="navbar-item" href="#about" data-i18n="about">Sobre mí</a>
         </li>
         <li>
-          <a class="navbar-item" href="" data-i18n="education">Formación</a>
+          <a class="navbar-item" href="#skills" data-i18n="skills">Habilidades</a>
         </li>
         <li>
-          <a class="navbar-item" href="" data-i18n="projects">Proyectos</a>
+          <a class="navbar-item" href="#contact-section" data-i18n="contact">Formación</a>
+        </li>
+        <li>
+          <a class="navbar-item" href="#projects" data-i18n="projects">Proyectos</a>
         </li>
         <li>
           <button
@@ -64,31 +53,6 @@
           </select>
         </li>
       </ul>
-    </nav>
-    <div
-      id="overlay"
-      style="
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.5);
-        z-index: 3;
-      "
-    ></div>
-    <nav id="navbar-mobile">
-      <p
-        style="
-          font-weight: bold;
-          color: var(--secondary);
-          font-size: 1.2rem;
-          position: relative;
-        "
-      >
-        Portfolio
-      </p>
       <button
         style="border: none; background-color: transparent; outline: none"
         id="btn-open-menu"
@@ -108,20 +72,8 @@
         </svg>
       </button>
     </nav>
+    <div id="overlay"></div>
     <aside id="menu-mobile">
-      <div
-        style="
-          display: flex;
-          font-weight: 600;
-          word-break: break-all;
-          flex-direction: column;
-          height: 100%;
-          justify-content: space-around;
-          align-items: center;
-          font-size: 1rem;
-          width: 100%;
-        "
-      >
         <button
           style="background-color: transparent; border: none; outline: none"
           class="pointer btn-toggle-mode"
@@ -133,11 +85,11 @@
           <option value="es">Español</option>
           <option value="en">English</option>
         </select>
-        <a class="navbar-item" href="" data-i18n="contact">Contacto</a>
+        <a class="navbar-item" href="#contact-section" data-i18n="contact">Contacto</a>
         <a class="navbar-item" href="#skills" data-i18n="skills">Habilidades</a>
-        <a class="navbar-item" href="" data-i18n="education">Formación</a>
-        <a class="navbar-item" href="" data-i18n="projects">Proyectos</a>
-      </div>
+        <a class="navbar-item" href="#about" data-i18n="about">Sobre mí</a>
+        <a class="navbar-item" href="#projects" data-i18n="projects">Proyectos</a>
+      
     </aside>
     <main id="main-container">
       <div id="hero-section">
