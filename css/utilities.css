@@ -1,0 +1,75 @@
+.uppercase{
+    text-transform: uppercase;
+}
+.bold{
+    font-weight: bold;
+}
+.text-center{
+    text-align: center;
+}
+.text-left{
+    text-align: left;
+}
+.text-right{
+    text-align: right;
+}
+
+.text-secondary-fg{
+    color: var(--secondary-fg);
+}
+.text-secondary{
+    color: var(--secondary);
+}
+.text-primary{
+    color: var(--fg);
+}
+
+.text-light{
+    color: var(--light);
+}
+
+.text-dark{
+    color: var(--dark);
+}
+
+.bg-secondary{
+    background-color: var(--secondary);
+}
+
+.bg-primary{
+    background-color: var(--bg);
+}
+
+.bg-card{
+    background-color: var(--card);
+}
+
+.bg-light{
+    background-color: var(--light);
+}
+.bg-dark{
+    background-color: var(--dark);
+}
+.pointer {
+  cursor: pointer;
+}
+.font-exo2{
+    font-family: "Exo2";
+}
+
+.font-figtree{
+    font-family: "Figtree";
+}
+
+.rounded{
+    border-radius: 1rem;
+}
+
+.w-max{
+    width: 100%;
+}
+
+.h-max{
+    height: 100%;
+}
+

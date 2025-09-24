@@ -4,14 +4,13 @@
     <meta charset="UTF-8" />
     <title>Portfolio - Veliz</title>
     <link rel="stylesheet" href="/css/base.css" />
-    <link rel="stylesheet" href="/css/mobile.css" />
     <link rel="stylesheet" href="/css/navbar.css" />
     <link rel="stylesheet" href="/css/hero-section.css" />
     <link rel="stylesheet" href="/css/skills.css" />
     <link rel="stylesheet" href="/css/projects.css" />
     <link rel="stylesheet" href="/css/contact.css" />
     <link rel="stylesheet" href="/css/about.css" />
-    <link rel="stylesheet" href="/css/footer.css" />
+    <link rel="stylesheet" href="/css/utilities.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="stylesheet"
@@ -20,8 +19,8 @@
   </head>
 
   <body>
-    <nav id="navbar-desktop">
-      <p id="logo">Portfolio</p>
+    <nav id="navbar-desktop" class="font-exo2">
+      <p id="logo" class="bold text-secondary">Portfolio</p>
       <ul id="navbar-items">
         <li>
           <a class="navbar-item" href="#about" data-i18n="about">Sobre mí</a>
@@ -37,7 +36,6 @@
         </li>
         <li>
           <button
-            style="background-color: transparent; border: none; outline: none"
             class="pointer btn-toggle-mode"
           >
             <img class="moon-icon toggle-icon" src="/icons/moon.png" />
@@ -45,7 +43,7 @@
           </button>
         </li>
         <li>
-          <select name="language" class="navbar-item language-switcher">
+          <select name="language" class="navbar-item language-switcher bold font-exo2 uppercase pointer">
             <option value="es">Español</option>
             <option value="en">English</option>
           </select>
@@ -67,12 +65,12 @@
       </button>
     </nav>
     <div id="overlay"></div>
-    <aside id="menu-mobile">
+    <aside id="menu-mobile" class="bold">
         <button class="pointer btn-toggle-mode">
           <img class="moon-icon toggle-icon" src="/icons/moon.png" />
           <img class="sun-icon toggle-icon" src="/icons/sun.png" />
         </button>
-        <select name="language" class="navbar-item language-switcher">
+        <select name="language" class="navbar-item language-switcher bold">
           <option value="es">Español</option>
           <option value="en">English</option>
         </select>
@@ -82,22 +80,21 @@
         <a class="navbar-item" href="#projects" data-i18n="projects">Proyectos</a>
     </aside>
     <main id="main-container">
-      <div id="hero-section">
+      <div id="hero-section" class="rounded">
         <div style="position: relative">
           <div id="shape-hero" class="shape"></div>
           <img id="profile-pic" src="/icons/photo.png" alt="Profile Pic" />
         </div>
         <div id="hero-text">
-          <h1 id="hero-title" style="text-transform: uppercase">
+          <h1 id="hero-title" class="uppercase text-left w-max">
             <span data-i18n="hi">Hola,</span>
             <span
-              style="color: var(--secondary)"
-              class="neon-secondary"
+              class="neon-secondary text-secondary"
               data-i18n="name"
               >soy Carlos Paucar</span
             >!
           </h1>
-          <div id="presentation-text">
+          <div id="presentation-text" class="text-secondary-fg text-left">
             <span data-i18n="presentation-1">
               Soy un programador apasionado por la programación, análisis de
               sistemas y diseño de bases de datos.
@@ -109,28 +106,26 @@
             <a href="https://linkedin.com/in/tuusuario" target="_blank"><i class="fab fa-linkedin"></i></a>
             <a href="https://twitter.com/tuusuario" target="_blank"><i class="fa-brands fa-facebook"></i></a>
           </div>
-          <a href="#projects" id="hero-button">Proyectos</a>
+          <a href="#projects" id="hero-button" class="rounded uppercase text-light bold font-exo2 pointer" data-i18n="projects">Proyectos</a>
         </div>
       </div>
 
       <div id="skills">
-        <h2 class="underline title-h2">
+        <h2 class="underline title-h2 text-secondary">
           <span data-i18n="skills">Habilidades</span>
           <i style="margin-left: 5px" class="fa-solid fa-toolbox"></i>
         </h2>
         <div class="skill-card" >
           <h3 data-i18n="web-development" class="title-h3"> Desarrollo Web </h3>
-          <p
-            data-i18n="web-development-description"
-            style="text-align: center; color: var(--secondary-fg)"
-          >
+          <p class="text-center text-secondary-fg"
+            data-i18n="web-development-description">
             Especializado en desarrollo backend y frontend
           </p>
           <div class="skill-list">
             <div class="skill-list-row">
               <span class="skill-icon-name">
                 <img src="/icons/django.png" alt="Django Icon" />
-                <span style="font-weight: bold;">Django</span>
+                <span class="bold">Django</span>
               </span>
               <div class="progress">
                 <div class="segment beginner level-active"></div>
@@ -144,7 +139,7 @@
             <div class="skill-list-row">
               <span class="skill-icon-name">
                 <img src="/icons/vuejs.png" alt="Vue.js Icon" />
-                <span style="font-weight: bold;">Vue.js</span>
+                <span class="bold">Vue.js</span>
               </span>
               <div class="progress">
                 <div class="segment beginner level-active"></div>
@@ -158,8 +153,7 @@
             <div class="skill-list-row">
               <span class="skill-icon-name">
                 <img src="/icons/tailwindcss.png" alt="Tailwind CSS Icon" />
-                <span style="font-weight: bold; font-size: 0.9rem; text-align: center" 
-                  >Tailwind <br/>
+                <span class="bold text-center" style="font-weight: bold;" >Tailwind <br/>
                   CSS
                 </span>
               </span>
@@ -185,7 +179,7 @@
                   +
                   <img src="/icons/js.png" alt="JavaScript Icon" />
                 </div>
-                <span style="font-weight: bold;"
+                <span class="bold"
                   >HTML, CSS, JavaScript</span
                 >
               </span>
@@ -199,17 +193,15 @@
         </div>
         <div class="skill-card">
           <h3 data-i18n="database-management" class="title-h3"> Manejo de bases de datos</h3>
-          <p
-            data-i18n="database-management-description"
-            style="text-align: center; color: var(--secondary-fg)"
-          >
+          <p class="text-center text-secondary-fg"
+            data-i18n="database-management-description">
             Relacionales y no relacionales
           </p>
           <div class="skill-list">
             <div class="skill-list-row">
               <span class="skill-icon-name">
                 <img src="/icons/mysql.png" alt="MySQL Icon" />
-                <span style="font-weight: bold;">MySQL</span>
+                <span class="bold">MySQL</span>
               </span>
               <div class="progress">
                 <div class="segment level-active"></div>
@@ -221,11 +213,10 @@
             <div class="skill-list-row">
               <span class="skill-icon-name">
                 <img src="/icons/sqlserver.png" alt="SQL Server Icon" />
-                <span
-                  style="font-weight: bold; text-align: center"
-                  >SQL <br />
-                  Server</span
-                >
+                <span class="bold text-center">
+                  SQL <br />
+                  Server
+                </span>
               </span>
               <div class="progress">
                 <div class="segment level-active"></div>
@@ -237,11 +228,10 @@
             <div class="skill-list-row">
               <span class="skill-icon-name">
                 <img src="/icons/mongodb.png" alt="Mongo DB Icon" />
-                <span
-                  style="font-weight: bold; text-align: center"
-                  >Mongo <br />
-                  DB</span
-                >
+                <span class="bold text-center" >
+                  Mongo <br/>
+                  DB
+                </span>
               </span>
               <div class="progress">
                 <div class="segment beginner-text level-active"></div>
@@ -252,18 +242,17 @@
           </div>
         </div>
         <div class="skill-card">
-          <h3 data-i18n="agile" class="title-h3"> Desarrollo Web </h3>
-          <p
-            data-i18n="agile-description"
-            style="text-align: center; color: var(--secondary-fg)"
-          >
-            Metodologías ágiles
+          <h3 data-i18n="agile" class="title-h3"> Metodologías ágiles </h3>
+          <p class="text-center text-secondary-fg"
+            data-i18n="agile-description">
+            Implementación de enfoques colaborativos que impulsan la calidad, 
+            eficiencia y valor del producto.
           </p>
           <div class="skill-list">
             <div class="skill-list-row">
               <span class="skill-icon-name">
                 <img src="/icons/xp.png" alt="MySQL Icon" />
-                <span style="font-weight: bold">XP</span>
+                <span class="bold">XP</span>
               </span>
               <div class="progress">
                 <div class="segment level-active"></div>
@@ -275,9 +264,8 @@
             <div class="skill-list-row">
               <span class="skill-icon-name">
                 <img src="/icons/scrum.png" alt="SQL Server Icon" />
-                <span
-                  style="font-weight: bold;; text-align: center"
-                  >Scrum
+                <span class="bold text-center">
+                  Scrum
                 </span>
               </span>
               <div class="progress">
@@ -290,17 +278,8 @@
         </div>
       </div>
 
-      <div id="projects-container">
-        <h2
-          style="
-            text-align: center;
-            color: var(--light);
-            text-transform: uppercase;
-            width: 100%;
-            text-align: center;
-          "
-          class="underline title-h2"
-        >
+      <div id="projects-container" class="w-max">
+        <h2 class="underline title-h2 text-light">
           <span data-i18n="projects">Proyectos</span>
           <i style="margin-left: 5px" class="fa-solid fa-file-circle-check"></i>
         </h2>
@@ -314,22 +293,13 @@
       </div>
 
       <div id="contact-section">
-        <h2
-          style="
-            text-align: center;
-            color: var(--secondary);
-            text-transform: uppercase;
-          "
-          class="underline title-h2"
-        >
+        <h2 class="underline title-h2 text-secondary">
           <span data-i18n="contact">Contacto</span>
           <i style="margin-left: 5px" class="fa-solid fa-address-card"></i>
         </h2>
         <form id="form">
           <div class="field-div">
-            <label for="name" style="font-weight: bold" data-i18n="name-field"
-              >Nombre:
-            </label>
+            <label for="name" class="bold" data-i18n="name-field">Nombre:</label>
             <input
               type="text"
               id="name"
@@ -339,16 +309,11 @@
             />
           </div>
           <div class="field-div">
-            <label for="email" style="font-weight: bold">Email: </label>
+            <label for="email" class="bold">Email: </label>
             <input type="email" id="email" required maxlength="255" />
           </div>
           <div class="field-div">
-            <label
-              for="subject"
-              style="font-weight: bold"
-              data-i18n="subject-field"
-              >Asunto:
-            </label>
+            <label for="subject" class="bold" data-i18n="subject-field">Asunto: </label>
             <input
               type="text"
               id="subject"
@@ -358,12 +323,7 @@
             />
           </div>
           <div class="field-div">
-            <label
-              for="message"
-              style="font-weight: bold"
-              data-i18n="message-field"
-              >Mensaje:
-            </label>
+            <label for="message" class="bold" data-i18n="message-field">Mensaje:</label>
             <textarea
               id="message"
               rows="4"
@@ -377,38 +337,31 @@
         </form>
       </div>
       <div id="message-result">
-        <p style="padding: 0.5rem 0.2rem">
-          <span id="message-text"> Hi this is the message </span>
+        <p>
+          <span id="message-text"> Example message </span>
           <span id="success-icon"
             ><i class="fa-solid fa-circle-check"></i
           ></span>
           <span id="error-icon"><i class="fa-solid fa-circle-xmark"></i></span>
         </p>
-        <button id="close-message-btn">&times;</button>
+        <button id="close-message-btn" class="bold text-secondary pointer">&times;</button>
       </div>
 
       <div id="about">
-        <h2
-          style="
-            text-align: center;
-            color: var(--fg);
-            text-transform: uppercase;
-          "
-          class="underline title-h2"
-        >
+        <h2 class="underline title-h2">
           <span data-i18n="about">Sobre mí</span>
           <i class="fa-solid fa-user" style="margin-left: 5px"></i>
         </h2>
         <div id="about-container">
-          <div id="about-icons-container">
-            <div id="dark">
+          <div id="about-icons-container" class="w-max h-max rounded bg-light">
+            <div id="dark" class="h-max bg-dark text-light">
               <i id="pencil-icon" class="fa-solid fa-pencil"></i>
               <i id="paint-icon" class="fa-solid fa-palette"></i>
               <i id="mobile-icon" class="fa-solid fa-mobile-screen"></i>
               <i id="laptop-icon" class="fa-solid fa-laptop-code"></i>
               <i id="ruler-icon" class="fa-solid fa-ruler-combined"></i>
             </div>
-            <div id="light">
+            <div id="light" class="h-max bg-light text-dark">
               <i id="terminal-icon" class="fa-solid fa-terminal"></i>
               <i id="database-icon" class="fa-solid fa-database"></i>
               <i id="server-icon" class="fa-solid fa-server"></i>
@@ -416,7 +369,7 @@
               <i id="network-icon" class="fa-solid fa-network-wired"></i>
             </div>
           </div>
-          <div id="about-text">
+          <div id="about-text" class="font-exo2">
             <p data-i18n="about-description-1-1">
               Me motiva saber que mis ideas pueden convertirse en sistemas que
               faciliten la vida de las personas.
@@ -424,13 +377,13 @@
             <p>
               <span data-i18n="about-description-2-1"
                 >Actualmente mi meta es convertirme en</span>
-              <span style="font-weight: bold" data-i18n="about-description-2-2"
+              <span class="bold" data-i18n="about-description-2-2"
                 >Desarrollador Full Stack</span>
               <span data-i18n="about-description-2-3"
                 >porque me interesa entender la lógica que hay detrás de cada
                 aplicación. Al mismo tiempo, me esfuerzo en aprender más
                 sobre</span>
-              <span style="font-weight: bold" data-i18n="about-description-2-4"
+              <span class="bold" data-i18n="about-description-2-4"
                 >diseño UI/UX</span>
               <span data-i18n="about-description-2-5"
                 >con el objetivo de desarrollar un estilo propio y plasmar con
@@ -439,21 +392,15 @@
             <p>
               <span data-i18n="about-description-3-1"
                 >En mi tiempo libre, disfruto</span>
-              <span style="font-weight: bold" data-i18n="about-description-3-2"
+              <span class="bold" data-i18n="about-description-3-2"
                 >del dibujo y el aprendizaje de idiomas</span>.
             </p>
           </div>
         </div>
       </div>
 
-      <footer id="footer">
-        <p
-          style="
-            font-size: 0.9rem;
-            text-align: center;
-            color: var(--secondary-fg);
-          "
-        >
+      <footer id="footer" class="w-max bg-primary" style="margin-top: 2rem; background-color: var(--primary);">
+        <p class="text-center text-secondary-fg" style="font-size: 0.875rem;">
           &copy; 2025 Carlos Paucar.
           <span data-i18n="all-rights-reserved"
             >Todos los derechos reservados.</span

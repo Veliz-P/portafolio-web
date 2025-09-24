@@ -1,7 +1,7 @@
 #skills {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 1rem;
+  gap: 1.5rem;
   justify-content: center;
   align-items: center;
   margin: auto 2.5rem;
@@ -9,13 +9,10 @@
 
 #skills h2 {
   grid-column: 1/-1;
-  text-align: center;
-  color: var(--secondary);
-  text-transform: uppercase;
 }
 
 .skill-card {
-  border-radius: 15px;
+  border-radius: 1rem;
   padding: 0rem 1rem;
   height: 100%;
   display: flex;

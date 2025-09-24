@@ -18,19 +18,14 @@
 }
 
 #about-text {
-  font-family: "Exo2";
   line-height: 2;
 }
 
 #about-icons-container {
-  width: 100%;
-  height: 100%;
   padding: 1.5rem;
-  border-radius: 1rem;
   display: flex;
   position: relative;
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.2), -7px -7px 0 var(--secondary);
-  background-color: var(--light);
 }
 
 #dark {
@@ -38,10 +33,7 @@
   left: 0;
   top: 0;
   width: 60%;
-  height: 100%;
-  background-color: var(--dark);
   border-radius: 1rem 100% 1% 1rem / 1rem 100% 1% 1rem;
-  color: var(--light);
   font-size: 2rem;
 }
 
@@ -50,10 +42,7 @@
   right: 0;
   top: 0;
   width: 40%;
-  height: 100%;
-  background-color: var(--light);
   border-radius: 0 1rem 1rem 0;
-  color: var(--dark);
   font-size: 2rem;
 }
 

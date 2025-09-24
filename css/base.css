@@ -115,6 +115,13 @@ button, input, textarea{
   z-index: 3;
 }
 
+.title-h2{
+  text-transform: uppercase;
+  width: 100%;
+  text-align: center;
+  text-decoration: underline;
+}
+
 @media (max-width:768px) {
   .title-h2{
     font-size: 1.25rem;
