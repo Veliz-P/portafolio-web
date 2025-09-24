@@ -20,10 +20,8 @@
   </head>
 
   <body>
-    <nav id="navbar-desktop" style="z-index: 2">
-      <p style="font-weight: bold; color: var(--secondary); font-size: 1.3rem">
-        Portfolio
-      </p>
+    <nav id="navbar-desktop">
+      <p id="logo">Portfolio</p>
       <ul id="navbar-items">
         <li>
           <a class="navbar-item" href="#about" data-i18n="about">Sobre mí</a>
@@ -53,18 +51,14 @@
           </select>
         </li>
       </ul>
-      <button
-        style="border: none; background-color: transparent; outline: none"
-        id="btn-open-menu"
-      >
+      <button id="btn-open-menu">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="35"
           height="40"
           viewBox="0 0 48 48"
           aria-hidden="true"
-          focusable="false"
-        >
+          focusable="false">
           <circle cx="24" cy="24" r="22" fill="#f3f4f6" />
           <rect x="12" y="16" width="24" height="2.6" rx="1.3" fill="#111" />
           <rect x="12" y="23" width="24" height="2.6" rx="1.3" fill="#111" />
@@ -74,10 +68,7 @@
     </nav>
     <div id="overlay"></div>
     <aside id="menu-mobile">
-        <button
-          style="background-color: transparent; border: none; outline: none"
-          class="pointer btn-toggle-mode"
-        >
+        <button class="pointer btn-toggle-mode">
           <img class="moon-icon toggle-icon" src="/icons/moon.png" />
           <img class="sun-icon toggle-icon" src="/icons/sun.png" />
         </button>
@@ -89,7 +80,6 @@
         <a class="navbar-item" href="#skills" data-i18n="skills">Habilidades</a>
         <a class="navbar-item" href="#about" data-i18n="about">Sobre mí</a>
         <a class="navbar-item" href="#projects" data-i18n="projects">Proyectos</a>
-      
     </aside>
     <main id="main-container">
       <div id="hero-section">
@@ -108,79 +98,37 @@
             >!
           </h1>
           <div id="presentation-text">
-            <span
-              style="text-align: left; line-height: 2"
-              data-i18n="presentation-1"
-            >
+            <span data-i18n="presentation-1">
               Soy un programador apasionado por la programación, análisis de
               sistemas y diseño de bases de datos.
             </span>
             <i class="fa-solid fa-code" style="font-size: 1rem"></i>
           </div>
           <div id="social-icons">
-            <a href="https://github.com/tuusuario" target="_blank"
-              ><i class="fab fa-github"></i
-            ></a>
-            <a href="https://linkedin.com/in/tuusuario" target="_blank"
-              ><i class="fab fa-linkedin"></i
-            ></a>
-            <a href="https://twitter.com/tuusuario" target="_blank"
-              ><i class="fa-brands fa-facebook"></i
-            ></a>
+            <a href="https://github.com/tuusuario" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://linkedin.com/in/tuusuario" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://twitter.com/tuusuario" target="_blank"><i class="fa-brands fa-facebook"></i></a>
           </div>
-          <button id="hero-button" data-i18n="projects">Proyectos</button>
+          <a href="#projects" id="hero-button">Proyectos</a>
         </div>
       </div>
 
       <div id="skills">
-        <h2
-          style="
-            grid-column: 1/-1;
-            text-align: center;
-            color: var(--secondary);
-            text-transform: uppercase;
-          "
-          class="underline title-h2"
-        >
+        <h2 class="underline title-h2">
           <span data-i18n="skills">Habilidades</span>
           <i style="margin-left: 5px" class="fa-solid fa-toolbox"></i>
         </h2>
-        <div class="skill-card" style="text-align: center">
-          <h3
-            data-i18n="web-development"
-            style="
-              text-align: center;
-              text-transform: uppercase;
-              font-family: 'Exo2';
-            "
-            class="title-h3">
-            Desarrollo Web
-          </h3>
+        <div class="skill-card" >
+          <h3 data-i18n="web-development" class="title-h3"> Desarrollo Web </h3>
           <p
             data-i18n="web-development-description"
             style="text-align: center; color: var(--secondary-fg)"
           >
             Especializado en desarrollo backend y frontend
           </p>
-          <div
-            style="
-              display: flex;
-              flex-direction: column;
-              align-items: start;
-              width: 100%;
-              gap: 1rem;
-              color: var(--secondary-fg);
-            "
-          >
-            <div style="display: flex; width: 100%;">
-              <span
-                style="
-                  display: flex;
-                  flex-direction: column;
-                  align-items: center;
-                  gap: 0.2rem;
-                "
-              >
+          <div class="skill-list">
+            <div class="skill-list-row">
+              <span class="skill-icon-name">
                 <img src="/icons/django.png" alt="Django Icon" />
                 <span style="font-weight: bold;">Django</span>
               </span>
@@ -193,15 +141,8 @@
               </div>
             </div>
 
-            <div style="display: flex; width: 100%">
-              <span
-                style="
-                  display: flex;
-                  flex-direction: column;
-                  align-items: center;
-                  gap: 0.2rem;
-                "
-              >
+            <div class="skill-list-row">
+              <span class="skill-icon-name">
                 <img src="/icons/vuejs.png" alt="Vue.js Icon" />
                 <span style="font-weight: bold;">Vue.js</span>
               </span>
@@ -214,21 +155,13 @@
               </div>
             </div>
 
-            <div style="display: flex; width: 100%">
-              <span
-                style="
-                  display: flex;
-                  flex-direction: column;
-                  align-items: center;
-                  gap: 0.2rem;
-                  justify-content: start;
-                "
-              >
+            <div class="skill-list-row">
+              <span class="skill-icon-name">
                 <img src="/icons/tailwindcss.png" alt="Tailwind CSS Icon" />
-                <span style="font-weight: bold; font-size: 0.9rem"
-                  >Tailwind <br />
-                  CSS</span
-                >
+                <span style="font-weight: bold; font-size: 0.9rem; text-align: center" 
+                  >Tailwind <br/>
+                  CSS
+                </span>
               </span>
               <div class="progress">
                 <div class="segment beginner level-active beginner-text"></div>
@@ -237,31 +170,15 @@
               </div>
             </div>
 
-            <div
-              style="
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                width: 100%;
-              "
-            >
-              <span
-                style="
-                  display: flex;
-                  flex-direction: column;
-                  align-items: start;
-                  gap: 0.2rem;
-                "
-              >
+            <div class="skill-list-row" style="flex-direction: column;">
+              <span class="skill-icon-name">
                 <div
                   style="
                     display: flex;
                     flex-wrap: wrap;
                     align-items: center;
                     font-size: 1.2rem;
-                    font-weight: bold;
-                  "
-                >
+                  ">
                   <img src="/icons/html.png" alt="HTML Icon" />
                   +
                   <img src="/icons/css.png" alt="CSS Icon" />
@@ -281,42 +198,16 @@
           </div>
         </div>
         <div class="skill-card">
-          <h3
-            data-i18n="database-management"
-            style="
-              text-align: center;
-              text-transform: uppercase;
-              font-family: 'Exo2';
-            "
-          class="title-h3">
-            Manejo de bases de datos
-          </h3>
+          <h3 data-i18n="database-management" class="title-h3"> Manejo de bases de datos</h3>
           <p
             data-i18n="database-management-description"
             style="text-align: center; color: var(--secondary-fg)"
           >
             Relacionales y no relacionales
           </p>
-          <div
-            style="
-              display: flex;
-              flex-direction: column;
-              align-items: start;
-              width: 100%;
-              gap: 1rem;
-              text-align: center;
-              color: var(--secondary-fg);
-            "
-          >
-            <div style="display: flex; width: 100%">
-              <span
-                style="
-                  display: flex;
-                  flex-direction: column;
-                  align-items: center;
-                  gap: 0.2rem;
-                "
-              >
+          <div class="skill-list">
+            <div class="skill-list-row">
+              <span class="skill-icon-name">
                 <img src="/icons/mysql.png" alt="MySQL Icon" />
                 <span style="font-weight: bold;">MySQL</span>
               </span>
@@ -327,15 +218,8 @@
               </div>
             </div>
 
-            <div style="display: flex; width: 100%">
-              <span
-                style="
-                  display: flex;
-                  flex-direction: column;
-                  align-items: center;
-                  gap: 0.2rem;
-                "
-              >
+            <div class="skill-list-row">
+              <span class="skill-icon-name">
                 <img src="/icons/sqlserver.png" alt="SQL Server Icon" />
                 <span
                   style="font-weight: bold; text-align: center"
@@ -350,15 +234,8 @@
               </div>
             </div>
 
-            <div style="display: flex; width: 100%">
-              <span
-                style="
-                  display: flex;
-                  flex-direction: column;
-                  align-items: center;
-                  gap: 0.2rem;
-                "
-              >
+            <div class="skill-list-row">
+              <span class="skill-icon-name">
                 <img src="/icons/mongodb.png" alt="Mongo DB Icon" />
                 <span
                   style="font-weight: bold; text-align: center"
@@ -375,42 +252,16 @@
           </div>
         </div>
         <div class="skill-card">
-          <h3
-            data-i18n="agile"
-            style="
-              text-align: center;
-              text-transform: uppercase;
-              font-family: 'Exo2';
-            "
-            class="title-h3">
-            Desarrollo Web
-          </h3>
+          <h3 data-i18n="agile" class="title-h3"> Desarrollo Web </h3>
           <p
             data-i18n="agile-description"
             style="text-align: center; color: var(--secondary-fg)"
           >
             Metodologías ágiles
           </p>
-          <div
-            style="
-              display: flex;
-              flex-direction: column;
-              align-items: start;
-              width: 100%;
-              gap: 1rem;
-              text-align: center;
-              color: var(--secondary-fg);
-            "
-          >
-            <div style="display: flex; width: 100%">
-              <span
-                style="
-                  display: flex;
-                  flex-direction: column;
-                  align-items: center;
-                  gap: 0.2rem;
-                "
-              >
+          <div class="skill-list">
+            <div class="skill-list-row">
+              <span class="skill-icon-name">
                 <img src="/icons/xp.png" alt="MySQL Icon" />
                 <span style="font-weight: bold">XP</span>
               </span>
@@ -421,20 +272,13 @@
               </div>
             </div>
 
-            <div style="display: flex; width: 100%">
-              <span
-                style="
-                  display: flex;
-                  flex-direction: column;
-                  align-items: center;
-                  gap: 0.2rem;
-                "
-              >
+            <div class="skill-list-row">
+              <span class="skill-icon-name">
                 <img src="/icons/scrum.png" alt="SQL Server Icon" />
                 <span
                   style="font-weight: bold;; text-align: center"
-                  >Scrum</span
-                >
+                  >Scrum
+                </span>
               </span>
               <div class="progress">
                 <div class="segment beginner-text level-active"></div>
@@ -465,11 +309,7 @@
             <div id="line" class="active"></div>
             <div id="project-shape"></div>
           </div>
-          <div id="project-cards-container">
-            <!--<div id="project-card">
-            <p>fjdkf</p>
-          </div> -->
-          </div>
+          <div id="project-cards-container"></div>
         </div>
       </div>
 
@@ -583,31 +423,24 @@
             </p>
             <p>
               <span data-i18n="about-description-2-1"
-                >Actualmente mi meta es convertirme en</span
-              >
+                >Actualmente mi meta es convertirme en</span>
               <span style="font-weight: bold" data-i18n="about-description-2-2"
-                >Desarrollador Full Stack</span
-              >
+                >Desarrollador Full Stack</span>
               <span data-i18n="about-description-2-3"
                 >porque me interesa entender la lógica que hay detrás de cada
                 aplicación. Al mismo tiempo, me esfuerzo en aprender más
-                sobre</span
-              >
+                sobre</span>
               <span style="font-weight: bold" data-i18n="about-description-2-4"
-                >diseño UI/UX</span
-              >
+                >diseño UI/UX</span>
               <span data-i18n="about-description-2-5"
                 >con el objetivo de desarrollar un estilo propio y plasmar con
-                precisión las necesidades de los usuarios.</span
-              >
+                precisión las necesidades de los usuarios.</span>
             </p>
             <p>
               <span data-i18n="about-description-3-1"
-                >En mi tiempo libre, disfruto</span
-              >
+                >En mi tiempo libre, disfruto</span>
               <span style="font-weight: bold" data-i18n="about-description-3-2"
-                >del dibujo y el aprendizaje de idiomas</span
-              >.
+                >del dibujo y el aprendizaje de idiomas</span>.
             </p>
           </div>
         </div>
