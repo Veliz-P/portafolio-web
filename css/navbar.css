@@ -75,26 +75,6 @@
   accent-color: var(--secondary);
 }
 
-#social-icons {
-  display: flex;
-  gap: 1rem;
-  margin-top: 1.5rem;
-  width: 100%;
-  justify-content: start;
-  opacity: 0.9;
-  flex-wrap: wrap;
-}
-
-#social-icons a {
-  color: var(--secondary);
-  font-size: 1.8rem;
-  transition: transform 0.2s, color 0.3s;
-}
-
-#social-icons a:hover {
-  transform: scale(1.2);
-  color: var(--fg);
-}
 
 #btn-open-menu {
   display: none;
