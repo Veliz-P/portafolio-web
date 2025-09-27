@@ -1,6 +1,7 @@
 const btnsToggleMode = document.querySelectorAll(".btn-toggle-mode");
 const btnsLanguageSwitcher = document.querySelectorAll(".language-switcher");
 const DEFAULT_LANG = "es";
+let translations = null;
 const btnOpenMenu = document.getElementById("btn-open-menu");
 let menuOpen = false;
 let resultMessageOpen = false;
@@ -49,8 +50,11 @@ if (btnsToggleMode) {
 
 async function loadLanguage(lang = "es") {
   try {
-    const response = await fetch(`/lang/${lang.toLowerCase()}.json`);
-    const translations = await response.json();
+    const savedLang = localStorage.getItem("lang") || DEFAULT_LANG;
+    if(!translations || lang !== savedLang) {
+      const response = await fetch(`/lang/${lang.toLowerCase()}.json`);
+      translations = await response.json();
+    }
     // Update project card buttons and projects after loading new language
     renderProjectCardButtons();
     renderprojects();
@@ -100,7 +104,6 @@ if (btnOpenMenu) {
       ? (overlay.style.display = "block")
       : (overlay.style.display = "none");
     menuMobile.style.display = menuOpen ? "flex" : "none";
-    console.log(menuOpen);
   });
 }
 
@@ -129,25 +132,15 @@ const projectCardsContainer = document.getElementById(
   "project-cards-container"
 );
 const projectselection = document.getElementById("project-selection");
-async function getProjectTranslations(id) {
-  const LANG = (await localStorage.getItem("lang"))
-    ? localStorage.getItem("lang")
-    : DEFAULT_LANG;
-  let translations = {};
-  try {
-    const response = await fetch(`/lang/${LANG}.json`);
-    const allTranslations = await response.json();
-    const KEY = `project-${id}`;
-    translations = allTranslations[KEY];
-  } catch (error) {
-    console.error("Error while loading language and translations", error);
-  }
-  return translations;
+function getProjectTranslations(id) {
+  let project_translations = {};
+  const KEY = `project-${id}`;
+  project_translations = translations[KEY];
+  return project_translations;
 }
-async function renderProjectCard(id, x_percent = 0, y_percent = 0) {
+function renderProjectCard(id, x_percent = 0, y_percent = 0) {
   if (!projectCardsContainer) return;
-
-  const translations = await getProjectTranslations(id);
+  const translations =  getProjectTranslations(id);
   if (!translations) return;
   const projectCard = document.createElement("div");
   projectCard.style.translate = `${x_percent}% ${y_percent}%`;
