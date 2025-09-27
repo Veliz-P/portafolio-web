@@ -1,50 +1,49 @@
-{
+{ 
   "contact": "Contact",
   "skills": "Skills",
   "education": "Education",
   "experience": "Experience",
   "about": "About Me",
   "language": "Languages",
-  "hi": "Hello!",
+  "hi": "Hello",
   "name": "I'm Carlos Paucar",
-  "presentation-1": "I am a software developer passionate about technology, with experience in building web applications, system analysis, and database design.",
-  "presentation-2": "I am committed to continuous learning and the application of best practices to create innovative, efficient, and scalable solutions.",
+  "presentation-1": "I'm a web developer passionate about transforming ideas into real projects, combining programming, systems analysis, and database design.",
   "projects": "Projects",
-  "web-development": "Web Application Development",
-  "web-development-description": "Design and development of backend and frontend solutions tailored to project needs.",
+  "web-development": "Web Development",
+  "web-development-description": "Designing and developing backend and frontend solutions tailored to each project's requirements.",
   "database-management": "Database Management",
-  "database-management-description": "Design, administration, and optimization of relational and non-relational databases.",
+  "database-management-description": "Designing, managing, and optimizing both relational and non-relational databases.",
   "agile": "Agile Methodologies",
-  "agile-description": "Implementation of collaborative approaches that enhance product quality, efficiency, and value.",
+  "agile-description": "Applying collaborative approaches that enhance product quality, efficiency, and overall value.",
   "backend": "Backend Development",
   "frontend": "Frontend Development",
   "project-1": {
     "title": "Project 1",
-    "description": "This is project 1"
+    "description": "An overview of project 1"
   },
   "project-2": {
     "title": "Project 2",
-    "description": "This is project 2"
+    "description": "An overview of project 2"
   },
   "project-3": {
     "title": "Project 3",
-    "description": "This is project 3"
+    "description": "An overview of project 3"
   },
   "project-4": {
     "title": "Project 4",
-    "description": "This is project 4"
+    "description": "An overview of project 4"
   },
   "name-field": "Name: ",
   "subject-field": "Subject: ",
   "message-field": "Message: ",
   "send": "Send",
-  "about-description-1-1": "I’m motivated by knowing that my ideas can turn into apps that make people’s lives easier.",
+  "about-description-1-1": "I’m driven by the idea that my concepts can turn into apps that genuinely improve people’s lives.",
   "about-description-2-1": "My goal is to become a",
-  "about-description-2-2": "full stack developer",
-  "about-description-2-3": ", I’m interested in understanding the logic behind every application and, at the same time, I strive to learn more about",
+  "about-description-2-2": "full-stack developer",
+  "about-description-2-3": ", exploring the logic behind each application while expanding my knowledge in",
   "about-description-2-4": "UI/UX design",
-  "about-description-2-5": "so I can accurately reflect users’ needs and develop my own style.",
+  "about-description-2-5": "to accurately meet users' needs and craft my own design style.",
   "about-description-3-1": "In my free time, I enjoy",
-  "about-description-3-2": "drawing and learning languages",
+  "about-description-3-2": "drawing and learning new languages",
   "all-rights-reserved": "All rights reserved."
 }
