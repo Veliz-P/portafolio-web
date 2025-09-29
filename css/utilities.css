@@ -1,75 +1,78 @@
-.uppercase{
-    text-transform: uppercase;
-}
-.bold{
-    font-weight: bold;
-}
-.text-center{
-    text-align: center;
-}
-.text-left{
-    text-align: left;
-}
-.text-right{
-    text-align: right;
+.uppercase {
+  text-transform: uppercase;
 }
 
-.text-secondary-fg{
-    color: var(--secondary-fg);
+.bold {
+  font-weight: bold;
 }
-.text-secondary{
-    color: var(--secondary);
+
+.text-center {
+  text-align: center;
 }
-.text-primary{
-    color: var(--fg);
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-primary {
+  color: var(--primary);
+}
+.text-primary-dark {
+  color: var(--primary-dark);
+}
+.text-primary-light {
+  color: var(--primary-light);
+}
+
+.text {
+  color: var(--text);
+}
+.text-muted {
+  color: var(--text-muted);
 }
 
 .text-light{
-    color: var(--light);
+  color: var(--light);
 }
 
-.text-dark{
-    color: var(--dark);
+.bg-dark {
+  background-color: var(--bg-dark);
+}
+.bg {
+  background-color: var(--bg);
+}
+.bg-light {
+  background-color: var(--bg-light);
 }
 
-.bg-secondary{
-    background-color: var(--secondary);
+.bg-full-dark{
+  background-color: var(--dark);
 }
 
-.bg-primary{
-    background-color: var(--bg);
-}
-
-.bg-card{
-    background-color: var(--card);
-}
-
-.bg-light{
-    background-color: var(--light);
-}
-.bg-dark{
-    background-color: var(--dark);
-}
 .pointer {
   cursor: pointer;
 }
-.font-exo2{
-    font-family: "Exo2";
+
+.font-exo2 {
+  font-family: "Exo2";
 }
 
-.font-figtree{
-    font-family: "Figtree";
+.font-figtree {
+  font-family: "Figtree";
 }
 
-.rounded{
-    border-radius: 1rem;
+.rounded {
+  border-radius: 1rem;
 }
 
-.w-max{
-    width: 100%;
+.w-max {
+  width: 100%;
 }
 
-.h-max{
-    height: 100%;
+.h-max {
+  height: 100%;
 }
-

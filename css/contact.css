@@ -26,15 +26,16 @@
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
   font-family: "Figtree";
   font-size: 0.875rem;
-  background-color: var(--form-field-bg);
-  border: 2px solid transparent;
+  background-color: var(--bg-light);
+  color: var(--text);
+  border: 0.5px solid var(--border);
   width: 100%;
 }
 
 #form input:focus,
 #form textarea:focus {
-  box-shadow: 0 0 2px var(--secondary);
-  border: 2px solid var(--secondary);
+  box-shadow: 0 0 2px var(--primary);
+  border: 1.5px solid var(--primary);
 }
 
 textarea {
@@ -43,7 +44,7 @@ textarea {
 
 #submit-btn {
   padding: 1rem 5rem;
-  background-color: var(--secondary);
+  background-color: var(--primary);
   border-radius: 10px;
   color: var(--light);
   font-weight: 700;
@@ -51,20 +52,20 @@ textarea {
   cursor: pointer;
   margin: auto;
   margin-top: 1rem;
-  border: 2px solid var(--bg);
+  border: 2px solid var(--border);
   text-transform: uppercase;
-  box-shadow: 5px 5px 0 var(--secondary);
+  box-shadow: 5px 5px 0 var(--primary-light);
 }
 
 #submit-btn:hover {
   scale: 1.05;
-  background-color: var(--secondary-bg);
-  box-shadow: 5px 5px 0 var(--secondary-bg);
+  background-color: var(--primary-light);
+  box-shadow: 5px 5px 0 var(--primary-light);
   transition: all 0.2s ease-in-out;
 }
 
 #submit-btn:active {
-  box-shadow: 1px 1px 0 var(--secondary);
+  box-shadow: 1px 1px 0 var(--primary);
   transform: translateY(2px);
   transition: all 0.1s ease-in-out;
 }
@@ -75,7 +76,7 @@ textarea {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: var(--card);
+  background-color: var(--bg-light);
   font-weight: bold;
   border-radius: 1rem;
   padding: 0.5rem 1rem;
@@ -94,7 +95,7 @@ textarea {
 }
 
 #close-message-btn:hover {
-  color: var(--fg);
+  color: var(--text);
   transition: all 0.2s ease-in-out;
 }
 

@@ -1,7 +1,7 @@
 
 #projects-container {
   margin-top: 2rem;
-  background-color: var(--secondary-bg);
+  background-color: var(--primary-light);
   position: relative;
 }
 
@@ -34,18 +34,16 @@
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  box-shadow: 0px 0px 10px var(--fg);
+  box-shadow: 0px 0px 10px var(--light);
   z-index: 0;
 }
 
-#project-selection:hover #line {
-  transition: all 0.2s ease-in-out;
-}
+
 
 #project-shape {
   width: 80%;
   height: 90%;
-  background: linear-gradient(135deg, var(--secondary), var(--light));
+  background: linear-gradient(135deg, var(--primary), var(--light));
   border-radius: 50% 70% 60% 40% / 40% 60% 70% 50%;
   position: absolute;
   z-index: 0;
@@ -56,7 +54,7 @@
 }
 
 .project-button {
-  background-color: var(--secondary-bg);
+  background-color: var(--primary-light);
   padding: 0.5rem 0.8rem;
   border-radius: 1rem;
   font-size: 1.5rem;
@@ -85,7 +83,8 @@
 .project-card {
   border-radius: 1rem;
   padding: 0.5rem 1rem;
-  background-color: var(--card);
+  background-color: var(--light);
+  color: var(--dark);
   display: flex;
   flex-direction: column;
   align-items: start;

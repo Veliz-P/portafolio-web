@@ -7,8 +7,8 @@
   align-items: center;
   flex-wrap: wrap;
   padding: 0px 10px;
-  background-color: #1b1a1a;
-  border-bottom: 7px solid var(--secondary);
+  background-color: var(--dark);
+  border-bottom: 7px solid var(--primary);
   opacity: 0.9;
   z-index: 2;
 }
@@ -64,8 +64,8 @@
 }
 
 .language-switcher:focus {
-  border: 2px solid var(--secondary);
-  accent-color: var(--secondary);
+  border: 2px solid var(--primary);
+  accent-color: var(--primary);
 }
 
 #btn-open-menu {
@@ -93,7 +93,7 @@
     height: 100%;
     background-color: var(--dark-gray);
     color: white;
-    border-right: 7px solid var(--secondary);
+    border-right: 7px solid var(--primary);
     transition: transform 0.3s ease-in-out;
     z-index: 10;
     opacity: 1;
