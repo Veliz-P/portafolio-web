@@ -51,7 +51,7 @@ if (btnsToggleMode) {
 async function loadLanguage(lang = "es") {
   try {
     const savedLang = localStorage.getItem("lang") || DEFAULT_LANG;
-    if(!translations || lang !== savedLang) {
+    if (!translations || lang !== savedLang) {
       const response = await fetch(`/lang/${lang.toLowerCase()}.json`);
       translations = await response.json();
     }
@@ -140,7 +140,7 @@ function getProjectTranslations(id) {
 }
 function renderProjectCard(id, x_percent = 0, y_percent = 0) {
   if (!projectCardsContainer) return;
-  const translations =  getProjectTranslations(id);
+  const translations = getProjectTranslations(id);
   if (!translations) return;
   const projectCard = document.createElement("div");
   projectCard.style.translate = `${x_percent}% ${y_percent}%`;
@@ -208,6 +208,27 @@ function renderProjectCardButtons() {
   projectselection.appendChild(div2);
 }
 
+function setupScrollAnimation(options = {}) {
+  const {
+    selector = ".animate-on-scroll",
+    threshold = 0.2,
+    visibleClass = "visible",
+  } = options;
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add(visibleClass);
+        } else {
+          entry.target.classList.remove(visibleClass);
+        }
+      });
+    },
+    { threshold }
+  );
+  document.querySelectorAll(selector).forEach((el) => observer.observe(el));
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   initMode();
   initLang();
@@ -259,5 +280,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       }, 3500);
     });
+
+    setupScrollAnimation();
   }
 });
