@@ -52,7 +52,7 @@ async function loadLanguage(lang = "es") {
   try {
     const savedLang = localStorage.getItem("lang") || DEFAULT_LANG;
     if (!translations || lang !== savedLang) {
-      const response = await fetch(`/lang/${lang.toLowerCase()}.json`);
+      const response = await fetch(`./lang/${lang.toLowerCase()}.json`);
       translations = await response.json();
     }
     // Update project card buttons and projects after loading new language
