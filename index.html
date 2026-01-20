@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
     <meta charset="UTF-8" />
@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="./css/projects.css" />
     <link rel="stylesheet" href="./css/contact.css" />
     <link rel="stylesheet" href="./css/about.css" />
-    <link rel="stylesheet" href="./css/utilities.css">
+    <link rel="stylesheet" href="./css/utilities.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="stylesheet"
@@ -26,24 +26,31 @@
           <a class="navbar-item" href="#about" data-i18n="about">Sobre mí</a>
         </li>
         <li>
-          <a class="navbar-item" href="#skills" data-i18n="skills">Habilidades</a>
-        </li>
-        <li>
-          <a class="navbar-item" href="#contact-section" data-i18n="contact">Formación</a>
-        </li>
-        <li>
-          <a class="navbar-item" href="#projects" data-i18n="projects">Proyectos</a>
-        </li>
-        <li>
-          <button
-            class="pointer btn-toggle-mode"
+          <a class="navbar-item" href="#skills" data-i18n="skills"
+            >Habilidades</a
           >
+        </li>
+        <li>
+          <a class="navbar-item" href="#contact-section" data-i18n="contact"
+            >Formación</a
+          >
+        </li>
+        <li>
+          <a class="navbar-item" href="#projects" data-i18n="projects"
+            >Proyectos</a
+          >
+        </li>
+        <li>
+          <button class="pointer btn-toggle-mode">
             <img class="moon-icon toggle-icon" src="./icons/moon.png" />
             <img class="sun-icon toggle-icon" src="./icons/sun.png" />
           </button>
         </li>
         <li>
-          <select name="language" class="navbar-item language-switcher bold font-exo2 uppercase pointer">
+          <select
+            name="language"
+            class="navbar-item language-switcher bold font-exo2 uppercase pointer"
+          >
             <option value="es">Español</option>
             <option value="en">English</option>
           </select>
@@ -56,7 +63,8 @@
           height="40"
           viewBox="0 0 48 48"
           aria-hidden="true"
-          focusable="false">
+          focusable="false"
+        >
           <circle cx="24" cy="24" r="22" fill="#f3f4f6" />
           <rect x="12" y="16" width="24" height="2.6" rx="1.3" fill="#111" />
           <rect x="12" y="23" width="24" height="2.6" rx="1.3" fill="#111" />
@@ -66,18 +74,20 @@
     </nav>
     <div id="overlay"></div>
     <aside id="menu-mobile" class="bold">
-        <button class="pointer btn-toggle-mode">
-          <img class="moon-icon toggle-icon" src="./icons/moon.png" />
-          <img class="sun-icon toggle-icon" src="./icons/sun.png" />
-        </button>
-        <select name="language" class="navbar-item language-switcher bold">
-          <option value="es">Español</option>
-          <option value="en">English</option>
-        </select>
-        <a class="navbar-item" href="#contact-section" data-i18n="contact">Contacto</a>
-        <a class="navbar-item" href="#skills" data-i18n="skills">Habilidades</a>
-        <a class="navbar-item" href="#about" data-i18n="about">Sobre mí</a>
-        <a class="navbar-item" href="#projects" data-i18n="projects">Proyectos</a>
+      <button class="pointer btn-toggle-mode">
+        <img class="moon-icon toggle-icon" src="./icons/moon.png" />
+        <img class="sun-icon toggle-icon" src="./icons/sun.png" />
+      </button>
+      <select name="language" class="navbar-item language-switcher bold">
+        <option value="es">Español</option>
+        <option value="en">English</option>
+      </select>
+      <a class="navbar-item" href="#contact-section" data-i18n="contact"
+        >Contacto</a
+      >
+      <a class="navbar-item" href="#skills" data-i18n="skills">Habilidades</a>
+      <a class="navbar-item" href="#about" data-i18n="about">Sobre mí</a>
+      <a class="navbar-item" href="#projects" data-i18n="projects">Proyectos</a>
     </aside>
     <main id="main-container">
       <div id="hero-section" class="rounded">
@@ -88,13 +98,11 @@
         <div id="hero-text">
           <h1 id="hero-title" class="uppercase text-left w-max">
             <span data-i18n="hi">Hola,</span>
-            <span
-              class="neon-secondary text-primary"
-              data-i18n="name"
+            <span class="neon-secondary text-primary" data-i18n="name"
               >soy Carlos Paucar</span
             >!
           </h1>
-          <div id="presentation-text" class=" text-left">
+          <div id="presentation-text" class="text-left">
             <span data-i18n="presentation-1">
               Soy un programador apasionado por la programación, análisis de
               sistemas y diseño de bases de datos.
@@ -102,11 +110,23 @@
             <i class="fa-solid fa-code" style="font-size: 1rem"></i>
           </div>
           <div id="social-icons">
-            <a href="https://github.com/tuusuario" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://linkedin.com/in/tuusuario" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="https://twitter.com/tuusuario" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://github.com/tuusuario" target="_blank"
+              ><i class="fab fa-github"></i
+            ></a>
+            <a href="https://linkedin.com/in/tuusuario" target="_blank"
+              ><i class="fab fa-linkedin"></i
+            ></a>
+            <a href="https://twitter.com/tuusuario" target="_blank"
+              ><i class="fa-brands fa-facebook"></i
+            ></a>
           </div>
-          <a href="#projects" id="hero-button" class="rounded uppercase text-light bold font-exo2 pointer" data-i18n="projects">Proyectos</a>
+          <a
+            href="#projects"
+            id="hero-button"
+            class="rounded uppercase text-light bold font-exo2 pointer"
+            data-i18n="projects"
+            >Proyectos</a
+          >
         </div>
       </div>
 
@@ -115,10 +135,12 @@
           <span data-i18n="skills">Habilidades</span>
           <i style="margin-left: 5px" class="fa-solid fa-toolbox"></i>
         </h2>
-        <div class="skill-card" >
-          <h3 data-i18n="web-development" class="title-h3"> Desarrollo Web </h3>
-          <p class="text-center text-muted"
-            data-i18n="web-development-description">
+        <div class="skill-card">
+          <h3 data-i18n="web-development" class="title-h3">Desarrollo Web</h3>
+          <p
+            class="text-center text-muted"
+            data-i18n="web-development-description"
+          >
             Especializado en desarrollo backend y frontend
           </p>
           <div class="skill-list">
@@ -153,7 +175,8 @@
             <div class="skill-list-row">
               <span class="skill-icon-name">
                 <img src="./icons/tailwindcss.png" alt="Tailwind CSS Icon" />
-                <span class="bold text-center" style="font-weight: bold;" >Tailwind <br/>
+                <span class="bold text-center" style="font-weight: bold"
+                  >Tailwind <br />
                   CSS
                 </span>
               </span>
@@ -164,7 +187,7 @@
               </div>
             </div>
 
-            <div class="skill-list-row" style="flex-direction: column;">
+            <div class="skill-list-row" style="flex-direction: column">
               <span class="skill-icon-name">
                 <div
                   style="
@@ -172,16 +195,15 @@
                     flex-wrap: wrap;
                     align-items: center;
                     font-size: 1.2rem;
-                  ">
+                  "
+                >
                   <img src="./icons/html.png" alt="HTML Icon" />
                   +
                   <img src="./icons/css.png" alt="CSS Icon" />
                   +
                   <img src="./icons/js.png" alt="JavaScript Icon" />
                 </div>
-                <span class="bold"
-                  >HTML, CSS, JavaScript</span
-                >
+                <span class="bold">HTML, CSS, JavaScript</span>
               </span>
               <div class="progress" style="margin-bottom: 2rem">
                 <div class="segment level-active"></div>
@@ -192,9 +214,13 @@
           </div>
         </div>
         <div class="skill-card">
-          <h3 data-i18n="database-management" class="title-h3"> Manejo de bases de datos</h3>
-          <p class="text-center text-muted"
-            data-i18n="database-management-description">
+          <h3 data-i18n="database-management" class="title-h3">
+            Manejo de bases de datos
+          </h3>
+          <p
+            class="text-center text-muted"
+            data-i18n="database-management-description"
+          >
             Relacionales y no relacionales
           </p>
           <div class="skill-list">
@@ -228,8 +254,8 @@
             <div class="skill-list-row">
               <span class="skill-icon-name">
                 <img src="./icons/mongodb.png" alt="Mongo DB Icon" />
-                <span class="bold text-center" >
-                  Mongo <br/>
+                <span class="bold text-center">
+                  Mongo <br />
                   DB
                 </span>
               </span>
@@ -242,10 +268,9 @@
           </div>
         </div>
         <div class="skill-card">
-          <h3 data-i18n="agile" class="title-h3"> Metodologías ágiles </h3>
-          <p class="text-center text-muted"
-            data-i18n="agile-description">
-            Implementación de enfoques colaborativos que impulsan la calidad, 
+          <h3 data-i18n="agile" class="title-h3">Metodologías ágiles</h3>
+          <p class="text-center text-muted" data-i18n="agile-description">
+            Implementación de enfoques colaborativos que impulsan la calidad,
             eficiencia y valor del producto.
           </p>
           <div class="skill-list">
@@ -264,9 +289,7 @@
             <div class="skill-list-row">
               <span class="skill-icon-name">
                 <img src="./icons/scrum.png" alt="SQL Server Icon" />
-                <span class="bold text-center">
-                  Scrum
-                </span>
+                <span class="bold text-center"> Scrum </span>
               </span>
               <div class="progress">
                 <div class="segment beginner-text level-active"></div>
@@ -288,18 +311,20 @@
             <div id="line" class="active"></div>
             <div id="project-shape"></div>
           </div>
-          <div id="project-cards-container"></div>
+          <div class="project-card"></div>
         </div>
       </div>
 
-      <div id="contact-section" class="animate-on-scroll ">
+      <div id="contact-section" class="animate-on-scroll">
         <h2 class="underline title-h2 text-primary-light">
           <span data-i18n="contact">Contacto</span>
           <i style="margin-left: 5px" class="fa-solid fa-address-card"></i>
         </h2>
         <form id="form">
           <div class="field-div">
-            <label for="name" class="bold" data-i18n="name-field">Nombre:</label>
+            <label for="name" class="bold" data-i18n="name-field"
+              >Nombre:</label
+            >
             <input
               type="text"
               id="name"
@@ -313,7 +338,9 @@
             <input type="email" id="email" required maxlength="255" />
           </div>
           <div class="field-div">
-            <label for="subject" class="bold" data-i18n="subject-field">Asunto: </label>
+            <label for="subject" class="bold" data-i18n="subject-field"
+              >Asunto:
+            </label>
             <input
               type="text"
               id="subject"
@@ -323,7 +350,9 @@
             />
           </div>
           <div class="field-div">
-            <label for="message" class="bold" data-i18n="message-field">Mensaje:</label>
+            <label for="message" class="bold" data-i18n="message-field"
+              >Mensaje:</label
+            >
             <textarea
               id="message"
               rows="4"
@@ -344,7 +373,9 @@
           ></span>
           <span id="error-icon"><i class="fa-solid fa-circle-xmark"></i></span>
         </p>
-        <button id="close-message-btn" class="bold text-primary pointer">&times;</button>
+        <button id="close-message-btn" class="bold text-primary pointer">
+          &times;
+        </button>
       </div>
 
       <div id="about" class="animate-on-scroll">
@@ -376,31 +407,38 @@
             </p>
             <p>
               <span data-i18n="about-description-2-1"
-                >Actualmente mi meta es convertirme en</span>
+                >Actualmente mi meta es convertirme en</span
+              >
               <span class="bold" data-i18n="about-description-2-2"
-                >Desarrollador Full Stack</span>
+                >Desarrollador Full Stack</span
+              >
               <span data-i18n="about-description-2-3"
                 >porque me interesa entender la lógica que hay detrás de cada
                 aplicación. Al mismo tiempo, me esfuerzo en aprender más
-                sobre</span>
+                sobre</span
+              >
               <span class="bold" data-i18n="about-description-2-4"
-                >diseño UI/UX</span>
+                >diseño UI/UX</span
+              >
               <span data-i18n="about-description-2-5"
                 >con el objetivo de desarrollar un estilo propio y plasmar con
-                precisión las necesidades de los usuarios.</span>
+                precisión las necesidades de los usuarios.</span
+              >
             </p>
             <p>
               <span data-i18n="about-description-3-1"
-                >En mi tiempo libre, disfruto</span>
+                >En mi tiempo libre, disfruto</span
+              >
               <span class="bold" data-i18n="about-description-3-2"
-                >del dibujo y el aprendizaje de idiomas</span>.
+                >del dibujo y el aprendizaje de idiomas</span
+              >.
             </p>
           </div>
         </div>
       </div>
 
-      <footer id="footer" class="w-max bg-light" style="margin-top: 3rem;">
-        <p class="text-center text-muted" style="font-size: 0.875rem;">
+      <footer id="footer" class="w-max bg-light" style="margin-top: 3rem">
+        <p class="text-center text-muted" style="font-size: 0.875rem">
           &copy; 2025 Carlos Paucar.
           <span data-i18n="all-rights-reserved"
             >Todos los derechos reservados.</span

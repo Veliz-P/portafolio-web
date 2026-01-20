@@ -57,7 +57,7 @@ async function loadLanguage(lang = "es") {
     }
     // Update project card buttons and projects after loading new language
     renderProjectCardButtons();
-    renderprojects();
+    renderProjectCard(1);
     document.querySelectorAll("[data-i18n]").forEach((element) => {
       const KEY = element.getAttribute("data-i18n");
       if (translations[KEY]) {
@@ -122,14 +122,9 @@ function initLang() {
   }
 }
 
-let projects = [
-  { id: 4, level: 1 },
-  { id: 3, level: 2 },
-  { id: 2, level: 3 },
-  { id: 1, level: 4 },
-];
+let projects = [{ id: 4 }, { id: 3 }, { id: 2 }, { id: 1 }];
 const projectCardsContainer = document.getElementById(
-  "project-cards-container"
+  "project-cards-container",
 );
 const projectselection = document.getElementById("project-selection");
 function getProjectTranslations(id) {
@@ -138,49 +133,21 @@ function getProjectTranslations(id) {
   project_translations = translations[KEY];
   return project_translations;
 }
-function renderProjectCard(id, x_percent = 0, y_percent = 0) {
-  if (!projectCardsContainer) return;
+function renderProjectCard(id) {
   const translations = getProjectTranslations(id);
   if (!translations) return;
-  const projectCard = document.createElement("div");
-  projectCard.style.translate = `${x_percent}% ${y_percent}%`;
-  projectCard.classList.add("project-card");
+  const projectCard = document.querySelector(`.project-card`);
   projectCard.innerHTML = `
-        <h3>${translations.title}</h3>
-        <p>${translations.description}</p>
-    `;
-  projectCardsContainer.appendChild(projectCard);
-}
-
-function pickProject(id) {
-  const chosen_project = projects.find((p) => p.id === id);
-  if (!chosen_project) return;
-  projects = projects.filter((p) => p.id !== id);
-  let level = 1;
-  projects = projects.map((p) => {
-    p.level = level;
-    level++;
-    return p;
-  });
-  chosen_project.level = level++;
-  projects.push(chosen_project);
-  renderprojects();
-  projectCardsContainer.classList.add("fade-in");
+    <h3>${translations.title}</h3>
+    <p class="text-border">${translations.description}</p>
+    <div>
+      ${translations.content ? translations.content : ""}
+    </div>
+  `;
+  projectCard.classList.add("fade-in");
   setTimeout(() => {
-    projectCardsContainer.classList.remove("fade-in");
+    projectCard.classList.remove("fade-in");
   }, 300);
-}
-
-function renderprojects() {
-  let x_percent = 0;
-  let y_percent = 0;
-  projects = projects.sort((a, b) => a.level - b.level);
-  if (projectCardsContainer) projectCardsContainer.innerHTML = "";
-  projects.forEach((project) => {
-    renderProjectCard(project.id, x_percent, y_percent);
-    x_percent += 2;
-    y_percent += 10;
-  });
 }
 
 function renderProjectCardButtons() {
@@ -192,7 +159,7 @@ function renderProjectCardButtons() {
     button.textContent = project.id;
     button.classList.add("project-button");
     button.addEventListener("click", () => {
-      pickProject(project.id);
+      renderProjectCard(project.id);
       document
         .querySelectorAll(".project-button")
         .forEach((btn) => btn.classList.remove("project-button-active"));
@@ -224,7 +191,7 @@ function setupScrollAnimation(options = {}) {
         }
       });
     },
-    { threshold }
+    { threshold },
   );
   document.querySelectorAll(selector).forEach((el) => observer.observe(el));
 }
@@ -253,7 +220,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const result = await emailjs.send(
           "service_r8z1b8l",
           "template_2ur7fou",
-          params
+          params,
         );
         console.log("Email sent successfully", result);
         successIcon.style.display = "inline";

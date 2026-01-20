@@ -1,4 +1,4 @@
-{ 
+{
   "contact": "Contacto",
   "skills": "Habilidades",
   "education": "Educación",
@@ -18,8 +18,9 @@
   "backend": "Backend",
   "frontend": "Frontend",
   "project-1": {
-    "title": "Proyecto 1",
-    "description": "Un vistazo al proyecto 1"
+    "title": "Heli Deli APP",
+    "description": "App de escritorio para un negocio de venta de helados.",
+    "content": "<iframe class='project-video' src='https://www.youtube.com/embed/Qw98HVgDXuY?si=KrqoVkw4B_6mWJ8o' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>"
   },
   "project-2": {
     "title": "Proyecto 2",

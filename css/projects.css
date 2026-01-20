@@ -1,18 +1,15 @@
-
 #projects-container {
-  margin-top: 2rem;
+  margin-top: 5rem;
   background-color: var(--primary-light);
-  position: relative;
+  padding: 1rem 0;
 }
 
 #projects {
   display: flex;
   justify-content: space-evenly;
-  align-items: start;
   margin: 1rem 2.5rem;
   gap: 1rem;
   padding: 1rem 0;
-  height: 100%;
 }
 
 #project-selection {
@@ -23,12 +20,11 @@
   gap: 1.5rem;
   position: relative;
   flex-grow: 1;
-  z-index: 1;
+  z-index: 2;
 }
 #line {
   position: absolute;
-  content: "";
-  width: 3px;
+  width: 4px;
   height: 100%;
   background-color: var(--light);
   top: 0;
@@ -36,9 +32,8 @@
   transform: translateX(-50%);
   box-shadow: 0px 0px 10px var(--light);
   z-index: 0;
+  border-radius: 1rem;
 }
-
-
 
 #project-shape {
   width: 80%;
@@ -46,7 +41,7 @@
   background: linear-gradient(135deg, var(--primary), var(--light));
   border-radius: 50% 70% 60% 40% / 40% 60% 70% 50%;
   position: absolute;
-  z-index: 0;
+  z-index: -1;
   opacity: 0.75;
   top: 0;
   left: 50%;
@@ -72,39 +67,36 @@
   transition: all 0.2s ease-in-out;
 }
 
-#project-cards-container {
-  flex-grow: 2;
-  padding: 1.5rem;
-  position: relative;
-  display: flex;
-  justify-content: start;
-}
-
 .project-card {
   border-radius: 1rem;
-  padding: 0.5rem 1rem;
+  padding: 1.5rem 2rem;
   background-color: var(--light);
   color: var(--dark);
   display: flex;
   flex-direction: column;
-  align-items: start;
-  gap: 0.5rem;
-  position: absolute;
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
   width: 80%;
+  max-width: 70%;
 }
 
+.project-card h3 {
+  margin: 0;
+}
 .project-button-active {
   border: 3px solid var(--light);
   box-shadow: 0px 0px 10px var(--light);
 }
 
-@media (max-width: 768px){
-    
+.project-video {
+  width: 100%;
+  min-height: 350px;
+  border-radius: 0.5rem;
+}
+
+@media (max-width: 768px) {
   #projects {
     flex-direction: column;
     align-items: center;
-    height: 50vh;
     gap: 2rem;
     margin: auto 1.5rem;
   }
@@ -117,18 +109,20 @@
     display: none;
   }
 
-  #project-cards-container {
-    width: 100%;
-    padding: 0.2rem;
-    flex-grow: 1;
-    justify-content: center;
-  }
-
   .project-button {
     font-size: 1rem;
   }
 
   #project-shape {
     display: none;
+  }
+
+  .project-card {
+    min-width: 85%;
+  }
+
+  .project-video {
+    border-radius: 0.5rem;
+    min-height: 250px;
   }
 }

@@ -1,4 +1,4 @@
-{ 
+{
   "contact": "Contact",
   "skills": "Skills",
   "education": "Education",
@@ -18,8 +18,9 @@
   "backend": "Backend Development",
   "frontend": "Frontend Development",
   "project-1": {
-    "title": "Project 1",
-    "description": "An overview of project 1"
+    "title": "Heli Deli APP",
+    "description": "A desktop app for an ice cream shop.",
+    "content": "<iframe class='project-video' src='https://www.youtube.com/embed/Qw98HVgDXuY?si=KrqoVkw4B_6mWJ8o' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>"
   },
   "project-2": {
     "title": "Project 2",
