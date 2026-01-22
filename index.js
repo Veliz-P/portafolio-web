@@ -13,6 +13,7 @@ const messageResult = document.getElementById("message-result");
 const messageText = document.getElementById("message-text");
 const successIcon = document.getElementById("success-icon");
 const errorIcon = document.getElementById("error-icon");
+const messageCurrentCount = document.getElementById("message-current-count");
 
 function isDarkMode() {
   const mode = localStorage.getItem("mode");
@@ -139,7 +140,7 @@ function renderProjectCard(id) {
   const projectCard = document.querySelector(`.project-card`);
   projectCard.innerHTML = `
     <h3>${translations.title}</h3>
-    <p class="text-border">${translations.description}</p>
+    <p class="project-description">${translations.description}</p>
     <div>
       ${translations.content ? translations.content : ""}
     </div>
@@ -178,7 +179,7 @@ function renderProjectCardButtons() {
 function setupScrollAnimation(options = {}) {
   const {
     selector = ".animate-on-scroll",
-    threshold = 0.2,
+    threshold = 0.25,
     visibleClass = "visible",
   } = options;
   const observer = new IntersectionObserver(
@@ -201,12 +202,13 @@ document.addEventListener("DOMContentLoaded", () => {
   initLang();
 
   if (form) {
+    const messageInput = document.getElementById("message");
     form.addEventListener("submit", async (e) => {
       try {
         e.preventDefault();
         const name = document.getElementById("name").value.trim();
         const subject = document.getElementById("subject").value.trim();
-        const message = document.getElementById("message").value.trim();
+        const message = messageInput.value.trim();
         const email = document.getElementById("email").value.trim();
         const time = new Date().toLocaleString();
         let params = {
@@ -248,6 +250,9 @@ document.addEventListener("DOMContentLoaded", () => {
       }, 3500);
     });
 
-    setupScrollAnimation();
+    messageInput.addEventListener("input", (e) => {
+      messageCurrentCount.textContent = String(e.target.value).length;
+    });
   }
+  setupScrollAnimation();
 });

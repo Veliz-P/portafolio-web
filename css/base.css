@@ -2,25 +2,45 @@
   --primary: hsl(248, 50%, 65%);
   --primary-dark: hsl(248, 50%, 60%);
   --primary-light: hsl(248, 50%, 70%);
-  --text: hsl(0,0%,25%);
+  --text: hsl(0, 0%, 25%);
   --text-muted: hsl(0, 0%, 45%);
   --bg-dark: hsl(0, 0%, 94%);
   --bg: hsl(0, 0%, 97%);
   --bg-light: hsl(0, 0%, 98%);
-  --border: hsl(0,0%,95%);
-  
+  --border: hsl(0, 0%, 80%);
   --dark: #1e1e1e;
   --light: #f9f5f5;
   --dark-gray: #3c3a43;
 }
 
+/*
+font-size system: 
+
+small: 14px
+normal: 16px
+h6: 20px
+h5: 22px
+h4: 26px
+h3:section-title: 34px
+h1: 36px
+
+/responsive
+small: 14px
+normal: 16px
+h6: 18px
+h5: 20px
+h4: 22px
+h3:section-title: 28px
+h1: 32px
+*/
+
 [data-theme="dark"] {
   --text: hsl(0, 0%, 90%);
-  --text-muted: hsl(0,0%,70%);
-  --bg-dark: hsl(0,0%,15%);
-  --bg: hsl(0,0%,20%);
-  --bg-light: hsl(0,0%,25%);
-  --border: hsl(0,0%,95%);
+  --text-muted: hsl(0, 0%, 70%);
+  --bg-dark: hsl(0, 0%, 15%);
+  --bg: hsl(0, 0%, 20%);
+  --bg-light: hsl(0, 0%, 25%);
+  --border: hsl(0, 0%, 50%);
 }
 
 @font-face {
@@ -37,6 +57,12 @@
   font-style: normal;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 html,
 body {
   background-color: var(--bg-dark);
@@ -46,7 +72,7 @@ body {
   margin: 0;
   padding: 0;
   position: relative;
-  font-size: 16px;
+  font-size: 17px;
 }
 
 #main-container {
@@ -56,14 +82,18 @@ body {
   gap: 10px;
 }
 
-button, input, textarea{
+button,
+input,
+textarea {
   border: none;
   background-color: transparent;
   outline: none;
 }
 
 .neon-secondary {
-  text-shadow: 0 0 0px var(--primary), 0 0 10px var(--primary);
+  text-shadow:
+    0 0 0px var(--primary),
+    0 0 10px var(--primary);
 }
 
 .card {
@@ -90,13 +120,15 @@ button, input, textarea{
   inset: 0;
 }
 
-.animate-on-scroll{
+.animate-on-scroll {
   opacity: 0;
-  transform: translateY(30px);;
-  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+  transform: translateY(30px);
+  transition:
+    opacity 0.7s ease-out,
+    transform 0.7s ease-out;
 }
 
-.animate-on-scroll.visible{
+.animate-on-scroll.visible {
   opacity: 1;
   transform: translateY(0);
 }
@@ -125,19 +157,19 @@ button, input, textarea{
   z-index: 3;
 }
 
-.title-h2{
+.section-title {
   text-transform: uppercase;
   width: 100%;
   text-align: center;
   text-decoration: underline;
+  font-size: 30px;
 }
 
-@media (max-width:768px) {
-  .title-h2{
-    font-size: 1.25rem;
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 24px;
   }
-  .title-h3{
-    font-size: 1rem;
+  .title-h3 {
+    font-size: 20px;
   }
-  
 }
