@@ -146,6 +146,6 @@
     margin-bottom: 1.5rem;
   }
   #utilities-skills {
-    grid-column: 0;
+    grid-column: auto;
   }
 }
