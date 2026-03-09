@@ -94,7 +94,7 @@
       <div id="hero-section" class="rounded">
         <div style="position: relative">
           <div id="shape-hero" class="shape"></div>
-          <img id="profile-pic" src="./icons/photo.webp" alt="Profile Pic" />
+          <img id="profile-pic" src="./icons/hero-img.svg" alt="Profile Pic" />
         </div>
         <div id="hero-text">
           <h1 id="hero-title" class="uppercase text-left w-max">
@@ -354,53 +354,79 @@
           <span data-i18n="contact">Contacto</span>
           <i style="margin-left: 5px" class="fa-solid fa-address-card"></i>
         </h2>
-        <form id="form">
-          <div class="field-div">
-            <label for="name" class="bold" data-i18n="name-field"
-              >Nombre:</label
-            >
-            <input
-              type="text"
-              id="name"
-              required
-              minlength="5"
-              maxlength="50"
-            />
-          </div>
-          <div class="field-div">
-            <label for="email" class="bold">Email: </label>
-            <input type="email" id="email" required maxlength="255" />
-          </div>
-          <div class="field-div">
-            <label for="subject" class="bold" data-i18n="subject-field"
-              >Asunto:
-            </label>
-            <input
-              type="text"
-              id="subject"
-              required
-              minlength="10"
-              maxlength="60"
-            />
-          </div>
-          <div class="field-div">
-            <label for="message" class="bold" data-i18n="message-field"
-              >Mensaje:</label
-            >
-            <textarea
-              id="message"
-              rows="4"
-              cols="60"
-              minlength="15"
-              maxlength="500"
-              required
-            ></textarea>
-            <p id="message-word-counter" class="text-muted">
-              <span id="message-current-count">1</span>/500
+        <div id="contact-row">
+          <form id="form">
+            <div class="field-div">
+              <label for="subject" class="bold">
+                <i class="fa-solid fa-bullhorn"></i>
+                <span data-i18n="subject-field">Asunto:</span>
+              </label>
+              <input
+                type="text"
+                id="subject"
+                required
+                minlength="10"
+                maxlength="60"
+              />
+            </div>
+            <div id="name-and-email-fields">
+              <div class="field-div">
+                <label for="name" class="bold">
+                  <i class="fa-regular fa-user"></i>
+                  <span data-i18n="name-field">Nombre:</span>
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  required
+                  minlength="5"
+                  maxlength="50"
+                />
+              </div>
+              <div class="field-div">
+                <label for="email" class="bold">
+                  <i class="fa-regular fa-envelope"></i>
+                  <span data-i18n="email-field">Email: </span>
+                </label>
+                <input type="email" id="email" required maxlength="255" />
+              </div>
+            </div>
+
+            <div class="field-div">
+              <label for="message" class="bold">
+                <i class="fa-regular fa-comment-dots"></i>
+                <span data-i18n="message-field">Mensaje:</span>
+              </label>
+              <textarea
+                id="message"
+                rows="4"
+                cols="60"
+                minlength="15"
+                maxlength="500"
+                required
+              ></textarea>
+              <p id="message-word-counter" class="text-muted">
+                <span id="message-current-count">1</span>/500
+              </p>
+            </div>
+            <button id="submit-btn" type="submit" data-i18n="send">
+              Enviar
+            </button>
+          </form>
+          <div id="ready-to-collaborate">
+            <h3 data-i18n="ready-to-work">¿Listo para colaborar juntos?</h3>
+            <p data-i18n="contact-description" class="text-muted">
+              Contáctame para discutir sobre tus ideas o proyectos.
             </p>
+            <img
+              id="work-together-img"
+              src="./icons/work-together-img.svg"
+              alt="let's work together"
+              width="100"
+              height="250"
+            />
           </div>
-          <button id="submit-btn" type="submit" data-i18n="send">Enviar</button>
-        </form>
+        </div>
       </div>
       <div id="message-result">
         <p>

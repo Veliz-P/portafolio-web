@@ -40,6 +40,8 @@
   "subject-field": "Subject: ",
   "message-field": "Message: ",
   "send": "Send",
+  "ready-to-work": "Ready to work together?",
+  "contact-description": "Contact me to discuss your ideas or projects.",
   "about-description-1-1": "I’m motivated by being able to turn my ideas into tools that can make people's lives easier.",
   "about-description-2-1": "My goal is to become a",
   "about-description-2-2": "full-stack developer",

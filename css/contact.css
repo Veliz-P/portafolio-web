@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: column;
   font-family: "Exo2";
-  margin: 0 2.5rem;
 }
 
 #contact-section .section-title {
@@ -23,6 +22,48 @@
   flex-direction: column;
   gap: 0.5rem;
   margin-bottom: 2rem;
+}
+
+#name-and-email-fields {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+#name-and-email-fields .field-div {
+  flex: 1;
+}
+
+#contact-row {
+  display: flex;
+  gap: 5rem;
+  margin: 0 2.5rem;
+  margin-top: 3.5rem;
+}
+
+#contact-row h3 {
+  text-transform: capitalize;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+#work-together-img {
+  width: 100%;
+  height: 450px;
+  object-fit: contain;
+  padding: 2.5rem 0;
+}
+
+#contact-row form {
+  flex-grow: 1;
+}
+
+#ready-to-collaborate {
+  flex-grow: 3 !important;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
 }
 
 #form input,
@@ -46,6 +87,12 @@
   border: 2px solid var(--primary);
 }
 
+#form label {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
 textarea {
   resize: vertical;
 }
@@ -59,7 +106,6 @@ textarea {
   font-size: 16px;
   cursor: pointer;
   margin: auto;
-  margin-top: 1rem;
   border: 2px solid var(--light);
   text-transform: uppercase;
   box-shadow: 5px 5px 0 var(--primary-light);
@@ -120,7 +166,7 @@ textarea {
   color: red;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 769px) {
   #submit-btn {
     padding: 0.5rem 2rem;
   }
@@ -130,5 +176,18 @@ textarea {
   }
   .field-div {
     margin-bottom: 1.5rem;
+  }
+
+  #name-and-email-fields {
+    display: flex;
+    justify-content: none;
+    flex-direction: column;
+    gap: 0rem;
+  }
+}
+
+@media (max-width: 801px) {
+  #ready-to-collaborate {
+    display: none;
   }
 }
