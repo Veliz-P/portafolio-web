@@ -25,8 +25,9 @@
     "content": "<iframe class='project-video' src='https://www.youtube.com/embed/Qw98HVgDXuY?si=KrqoVkw4B_6mWJ8o' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>"
   },
   "project-2": {
-    "title": "Project 2",
-    "description": "An overview of project 2"
+    "title": "Quick Quick Note",
+    "description": "A beta version of a light web app to take personal notes. Click the image for more info.",
+    "content": "<a href='https://github.com/Veliz-P/quick-quick-note' target='_blank'><img class='project-img-preview' alt='Quick Quick Note' src='./icons/quick-note-project-preview.png'> </img></a>"
   },
   "project-3": {
     "title": "Project 3",

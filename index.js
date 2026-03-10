@@ -123,7 +123,8 @@ function initLang() {
   }
 }
 
-let projects = [{ id: 4 }, { id: 3 }, { id: 2 }, { id: 1 }];
+// let projects = [{ id: 4 }, { id: 3 }, { id: 2 }, { id: 1 }];
+let projects = [{ id: 2 }, { id: 1 }];
 const projectCardsContainer = document.getElementById(
   "project-cards-container",
 );
