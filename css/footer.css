@@ -1,4 +1,13 @@
 #footer {
-  padding: 0.5rem;
-  margin-top: 3rem;
+  padding: var(--space-3);
+  margin-top: var(--space-16);
+  font-size: var(--fs-sm);
+  background-color: var(--primary);
+  width: 100%;
+  color: var(--light);
+  text-align: center;
+}
+
+[data-theme="dark"] #footer {
+  background-color: var(--primary);
 }

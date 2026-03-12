@@ -180,7 +180,7 @@ function renderProjectCardButtons() {
 function setupScrollAnimation(options = {}) {
   const {
     selector = ".animate-on-scroll",
-    threshold = 0.25,
+    threshold = 0.2,
     visibleClass = "visible",
   } = options;
   const observer = new IntersectionObserver(
