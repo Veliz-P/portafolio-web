@@ -2,12 +2,12 @@
   padding: var(--space-3);
   margin-top: var(--space-16);
   font-size: var(--fs-sm);
-  background-color: var(--primary);
+  background-color: var(--dark);
   width: 100%;
   color: var(--light);
   text-align: center;
 }
 
 [data-theme="dark"] #footer {
-  background-color: var(--primary);
+  background-color: var(--primary-dark);
 }

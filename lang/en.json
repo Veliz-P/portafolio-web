@@ -37,6 +37,7 @@
     "title": "Project 4",
     "description": "An overview of project 4"
   },
+  "contact-form": "Contact Form",
   "name-field": "Name: ",
   "subject-field": "Subject: ",
   "message-field": "Message: ",

@@ -97,47 +97,53 @@
       >
     </aside>
     <main id="main-container">
-      <div id="hero-section">
-        <div style="position: relative">
-          <div id="shape-hero" class="shape"></div>
-          <img id="profile-pic" src="./icons/hero-img.svg" alt="Profile Pic" />
-        </div>
-        <div id="hero-text">
-          <h1 id="hero-title">
-            <span data-i18n="hi">Hola,</span>
-            <span class="neon-secondary" data-i18n="name"
-              >soy Carlos Paucar</span
-            >!
-          </h1>
-          <div id="presentation-text" class="text-left">
-            <p>
-              <span data-i18n="presentation-1">
-                Soy un desarrollador web que disfruta transformar ideas en
-                proyectos reales, combinando mi interés por la programación, el
-                análisis de sistemas y el diseño de bases de datos.
-              </span>
-              <i class="fa-solid fa-code"></i>
-            </p>
+      <div id="hero-section-wrapper">
+        <div id="hero-section">
+          <div style="position: relative">
+            <div id="shape-hero" class="shape"></div>
+            <img
+              id="profile-pic"
+              src="./icons/hero-img.svg"
+              alt="Profile Pic"
+            />
           </div>
+          <div id="hero-text">
+            <h1 id="hero-title">
+              <span data-i18n="hi">Hola,</span>
+              <span class="neon-secondary" data-i18n="name"
+                >soy Carlos Paucar</span
+              >!
+            </h1>
+            <div id="presentation-text" class="text-left">
+              <p>
+                <span data-i18n="presentation-1">
+                  Soy un desarrollador web que disfruta transformar ideas en
+                  proyectos reales, combinando mi interés por la programación,
+                  el análisis de sistemas y el diseño de bases de datos.
+                </span>
+                <i class="fa-solid fa-code"></i>
+              </p>
+            </div>
 
-          <div class="links">
-            <a
-              href="#projects-container"
-              id="hero-button"
-              class="rounded uppercase text-light bold font-exo2 pointer"
-            >
-              <span data-i18n="projects"> Proyectos</span>
-              <i class="fa-solid fa-wrench"></i>
-            </a>
-            <div id="social-icons">
-              <a href="https://github.com/Veliz-P" target="_blank"
-                ><i class="fab fa-github"></i
-              ></a>
+            <div class="links">
               <a
-                href="https://www.linkedin.com/in/carlos-paucar-a576a239a/"
-                target="_blank"
-                ><i class="fab fa-linkedin"></i
-              ></a>
+                href="#projects-container"
+                id="hero-button"
+                class="rounded uppercase text-light bold font-exo2 pointer"
+              >
+                <span data-i18n="projects"> Proyectos</span>
+                <i class="fa-solid fa-wrench"></i>
+              </a>
+              <div id="social-icons">
+                <a href="https://github.com/Veliz-P" target="_blank"
+                  ><i class="fab fa-github"></i
+                ></a>
+                <a
+                  href="https://www.linkedin.com/in/carlos-paucar-a576a239a/"
+                  target="_blank"
+                  ><i class="fab fa-linkedin"></i
+                ></a>
+              </div>
             </div>
           </div>
         </div>
@@ -367,6 +373,9 @@
         </h2>
         <div id="contact-row">
           <form id="form">
+            <h3 id="form-title" data-i18n="contact-form">
+              Formulario de contacto
+            </h3>
             <div class="field-div">
               <label for="subject" class="bold">
                 <i class="fa-solid fa-bullhorn"></i>
@@ -460,30 +469,47 @@
         </h2>
         <div id="bento-grid">
           <div id="about-text" class="font-exo2">
-            <p data-i18n="about-description-1-1">
-              Me motiva saber que mis ideas pueden convertirse en sistemas que
-              faciliten la vida de las personas.
-            </p>
-            <p>
-              <span data-i18n="about-description-2-1"
-                >Actualmente mi meta es convertirme en</span
-              >
-              <span class="bold" data-i18n="about-description-2-2"
-                >Desarrollador Full Stack</span
-              >
-              <span data-i18n="about-description-2-5"
-                >con el objetivo de desarrollar un estilo propio y plasmar con
-                precisión las necesidades de los usuarios.</span
-              >
-            </p>
-            <p>
-              <span data-i18n="about-description-3-1"
-                >En mi tiempo libre, disfruto</span
-              >
-              <span class="bold" data-i18n="about-description-3-2"
-                >del dibujo y el aprendizaje de idiomas</span
-              >.
-            </p>
+            <div id="profile-header">
+              <a href="https://github.com/Veliz-P" target="_blank">
+                <img
+                  id="github-profile-pic"
+                  src="./img/gitpic.jpg"
+                  alt="github profile pic"
+                />
+              </a>
+              <div id="profile-details">
+                <p>Veliz-P</p>
+                <p id="location">
+                  Quito, Ecuador <i class="fa-solid fa-earth-americas"></i>
+                </p>
+              </div>
+            </div>
+            <div id="profile-comment">
+              <p data-i18n="about-description-1-1">
+                Me motiva saber que mis ideas pueden convertirse en sistemas que
+                faciliten la vida de las personas.
+              </p>
+              <p>
+                <span data-i18n="about-description-2-1"
+                  >Actualmente mi meta es convertirme en</span
+                >
+                <span class="bold" data-i18n="about-description-2-2"
+                  >Desarrollador Full Stack</span
+                >
+                <span data-i18n="about-description-2-5"
+                  >con el objetivo de desarrollar un estilo propio y plasmar con
+                  precisión las necesidades de los usuarios.</span
+                >
+              </p>
+              <p>
+                <span data-i18n="about-description-3-1"
+                  >En mi tiempo libre, disfruto</span
+                >
+                <span class="bold" data-i18n="about-description-3-2"
+                  >del dibujo y el aprendizaje de idiomas</span
+                >.
+              </p>
+            </div>
           </div>
 
           <img

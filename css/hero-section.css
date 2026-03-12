@@ -1,3 +1,17 @@
+#hero-section-wrapper {
+  opacity: 1;
+  background-image: radial-gradient(
+    var(--border) 1.7000000000000002px,
+    transparent 1.7000000000000002px
+  );
+  background-size: 34px 34px;
+  width: 100%;
+  padding: var(--space-4);
+  margin-bottom: var(--space-10);
+  display: flex;
+  justify-content: center;
+}
+
 #hero-section {
   display: flex;
   flex-wrap: wrap;
@@ -96,6 +110,10 @@
 }
 
 @media (min-width: 768px) {
+  #hero-section-wrapper {
+    padding: var(--space-10);
+    margin-bottom: var(--space-16);
+  }
   #hero-section {
     margin: var(--space-12);
     padding: var(--space-6) var(--space-12);
