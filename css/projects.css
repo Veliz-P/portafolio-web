@@ -2,15 +2,17 @@
   margin-bottom: var(--space-12);
   background-color: var(--primary-light);
   padding: var(--space-10) 0;
+  width: 100%;
 }
 
 #projects-container .section-title {
+  color: var(--light);
   margin-bottom: var(--space-8);
 }
 
 #projects {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   margin: var(--space-4) var(--space-10);
   gap: var(--space-4);
   flex-direction: column;

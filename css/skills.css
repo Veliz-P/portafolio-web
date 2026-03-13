@@ -5,6 +5,7 @@
 
 #skills .section-title {
   margin-bottom: var(--space-8);
+  color: var(--primary);
 }
 
 #skills-grid {
@@ -46,6 +47,8 @@
 
 .skill-card h3 ~ p {
   margin-bottom: var(--space-8);
+  text-align: center;
+  color: var(--text-muted);
 }
 
 .skill-list {

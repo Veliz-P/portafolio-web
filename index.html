@@ -21,7 +21,7 @@
 
   <body>
     <nav id="navbar-desktop" class="font-exo2">
-      <p id="logo" class="bold text-primary-light">Portafolio</p>
+      <p id="logo">Portafolio</p>
       <ul id="navbar-items">
         <li>
           <a class="navbar-item" href="#about" data-i18n="about">Sobre mí</a>
@@ -45,16 +45,13 @@
 
       <ul id="navbar-options">
         <li>
-          <button class="pointer btn-toggle-mode">
+          <button class="btn-toggle-mode">
             <i class="fa-solid fa-moon moon-icon toggle-icon"></i>
             <i class="fa-solid fa-sun sun-icon toggle-icon"></i>
           </button>
         </li>
         <li>
-          <select
-            name="language"
-            class="navbar-item language-switcher bold font-exo2 uppercase pointer"
-          >
+          <select name="language" class="navbar-item language-switcher">
             <option value="es">ES</option>
             <option value="en">EN</option>
           </select>
@@ -83,7 +80,7 @@
         <i class="fa-solid fa-moon moon-icon toggle-icon"></i>
         <i class="fa-solid fa-sun sun-icon toggle-icon"></i>
       </button>
-      <select name="language" class="navbar-item language-switcher bold">
+      <select name="language" class="navbar-item language-switcher">
         <option value="es">Español</option>
         <option value="en">English</option>
       </select>
@@ -114,7 +111,7 @@
                 >soy Carlos Paucar</span
               >!
             </h1>
-            <div id="presentation-text" class="text-left">
+            <div id="presentation-text">
               <p>
                 <span data-i18n="presentation-1">
                   Soy un desarrollador web que disfruta transformar ideas en
@@ -126,11 +123,7 @@
             </div>
 
             <div class="links">
-              <a
-                href="#projects-container"
-                id="hero-button"
-                class="rounded uppercase text-light bold font-exo2 pointer"
-              >
+              <a href="#projects-container" id="hero-button">
                 <span data-i18n="projects"> Proyectos</span>
                 <i class="fa-solid fa-wrench"></i>
               </a>
@@ -157,10 +150,7 @@
         <div id="skills-grid">
           <div class="skill-card">
             <h3 data-i18n="web-development" class="title-h3">Desarrollo Web</h3>
-            <p
-              class="text-center text-muted"
-              data-i18n="web-development-description"
-            >
+            <p data-i18n="web-development-description">
               Especializado en desarrollo backend y frontend
             </p>
             <div class="skill-list">
@@ -367,7 +357,7 @@
       </div>
 
       <div id="contact-section" class="animate-on-scroll">
-        <h2 class="section-title text-primary-light">
+        <h2 class="section-title">
           <span data-i18n="contact">Contacto</span>
           <i style="margin-left: 5px" class="fa-solid fa-address-card"></i>
         </h2>
@@ -377,7 +367,7 @@
               Formulario de contacto
             </h3>
             <div class="field-div">
-              <label for="subject" class="bold">
+              <label for="subject">
                 <i class="fa-solid fa-bullhorn"></i>
                 <span data-i18n="subject-field">Asunto:</span>
               </label>
@@ -391,7 +381,7 @@
             </div>
             <div id="name-and-email-fields">
               <div class="field-div">
-                <label for="name" class="bold">
+                <label for="name">
                   <i class="fa-regular fa-user"></i>
                   <span data-i18n="name-field">Nombre:</span>
                 </label>
@@ -404,7 +394,7 @@
                 />
               </div>
               <div class="field-div">
-                <label for="email" class="bold">
+                <label for="email">
                   <i class="fa-regular fa-envelope"></i>
                   <span data-i18n="email-field">Email: </span>
                 </label>
@@ -413,7 +403,7 @@
             </div>
 
             <div class="field-div">
-              <label for="message" class="bold">
+              <label for="message">
                 <i class="fa-regular fa-comment-dots"></i>
                 <span data-i18n="message-field">Mensaje:</span>
               </label>
@@ -425,7 +415,7 @@
                 maxlength="500"
                 required
               ></textarea>
-              <p id="message-word-counter" class="text-muted">
+              <p id="message-word-counter">
                 <span id="message-current-count">1</span>/500
               </p>
             </div>
@@ -436,7 +426,7 @@
           </form>
           <div id="ready-to-collaborate">
             <h3 data-i18n="ready-to-work">¿Listo para colaborar juntos?</h3>
-            <p data-i18n="contact-description" class="text-muted">
+            <p data-i18n="contact-description">
               Contáctame para discutir sobre tus ideas o proyectos.
             </p>
             <img
@@ -457,18 +447,16 @@
           ></span>
           <span id="error-icon"><i class="fa-solid fa-circle-xmark"></i></span>
         </p>
-        <button id="close-message-btn" class="bold text-primary pointer">
-          &times;
-        </button>
+        <button id="close-message-btn">&times;</button>
       </div>
 
       <div id="about" class="animate-on-scroll">
-        <h2 class="underline section-title">
+        <h2 class="section-title">
           <span data-i18n="about">Sobre mí</span>
           <i class="fa-solid fa-user" style="margin-left: 5px"></i>
         </h2>
         <div id="bento-grid">
-          <div id="about-text" class="font-exo2">
+          <div id="about-text">
             <div id="profile-header">
               <a href="https://github.com/Veliz-P" target="_blank">
                 <img
@@ -493,7 +481,9 @@
                 <span data-i18n="about-description-2-1"
                   >Actualmente mi meta es convertirme en</span
                 >
-                <span class="bold" data-i18n="about-description-2-2"
+                <span
+                  style="font-weight: bold"
+                  data-i18n="about-description-2-2"
                   >Desarrollador Full Stack</span
                 >
                 <span data-i18n="about-description-2-5"
@@ -505,7 +495,9 @@
                 <span data-i18n="about-description-3-1"
                   >En mi tiempo libre, disfruto</span
                 >
-                <span class="bold" data-i18n="about-description-3-2"
+                <span
+                  style="font-weight: bold"
+                  data-i18n="about-description-3-2"
                   >del dibujo y el aprendizaje de idiomas</span
                 >.
               </p>
@@ -550,7 +542,7 @@
       </div>
 
       <footer id="footer">
-        <p class="">
+        <p>
           &copy; <span id="year">2026</span>, Carlos Paucar.
           <span data-i18n="all-rights-reserved"
             >Todos los derechos reservados.</span

@@ -13,6 +13,8 @@
 
 #logo {
   font-size: var(--fs-lg);
+  font-weight: bold;
+  color: var(--primary-light);
 }
 
 .navbar-item {
@@ -35,6 +37,9 @@
   background-color: var(--dark-gray);
   border: 2px solid var(--dark-gray);
   font-size: var(--fs-base);
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: "Exo2";
 }
 
 .language-switcher:focus {
