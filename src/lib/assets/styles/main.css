@@ -31,6 +31,8 @@
   --bg-800: hsl(0, 0%, 60%);
   --bg-900: hsl(0, 0%, 45%);
 
+  --border: hsl(0, 0%, 85%);
+
   --space-1: 0.25rem; /* 4px */
   --space-2: 0.5rem; /* 8px */
   --space-3: 0.75rem; /* 12px */
@@ -86,6 +88,8 @@
   --bg-700: hsl(0, 0%, 10%);
   --bg-800: hsl(0, 0%, 8%);
   --bg-900: hsl(0, 0%, 5%);
+
+  --border: hsl(0, 0%, 10%);
 
   background-color: var(--bg-800);
 }

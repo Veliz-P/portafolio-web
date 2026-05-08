@@ -2,9 +2,25 @@
   import { User, Phone, Moon, Sun, Lightbulb, Settings } from '@lucide/svelte';
   import { themeStore } from '$lib/stores/themeStore';
   import { localStore, translationStore } from '$lib/stores/langStore';
+  let isMenuOpen = $state(false);
 </script>
 
 <nav id="navbar-desktop" class="dark">
+  <button aria-label="Open menu" id="btn-open-menu" onclick={() => (isMenuOpen = !isMenuOpen)}>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="35"
+      height="40"
+      viewBox="0 0 48 48"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <circle cx="24" cy="24" r="22" fill="#f3f4f6" />
+      <rect x="12" y="16" width="24" height="2.6" rx="1.3" fill="#111" />
+      <rect x="12" y="23" width="24" height="2.6" rx="1.3" fill="#111" />
+      <rect x="12" y="30" width="24" height="2.6" rx="1.3" fill="#111" />
+    </svg>
+  </button>
   <ul id="navbar-items">
     <li>
       <a class="navbar-item" href="#about"><User /> {$translationStore.navbar.about}</a>
@@ -45,39 +61,64 @@
       </select>
     </li>
   </ul>
-
-  <button aria-label="Open menu" id="btn-open-menu">
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="35"
-      height="40"
-      viewBox="0 0 48 48"
-      aria-hidden="true"
-      focusable="false"
-    >
-      <circle cx="24" cy="24" r="22" fill="#f3f4f6" />
-      <rect x="12" y="16" width="24" height="2.6" rx="1.3" fill="#111" />
-      <rect x="12" y="23" width="24" height="2.6" rx="1.3" fill="#111" />
-      <rect x="12" y="30" width="24" height="2.6" rx="1.3" fill="#111" />
-    </svg>
-  </button>
 </nav>
 
-<aside id="menu-mobile">
-  <button aria-label="Language switcher" class="pointer btn-toggle-mode">
-    <Moon class="fa-solid fa-moon moon-icon toggle-icon" stroke-width={2} />
-    <Sun class="fa-solid fa-sun sun-icon toggle-icon" stroke-width={2} />
-  </button>
-  <select name="language" class="navbar-item language-switcher">
-    <option value="es">Español</option>
-    <option value="en">English</option>
-  </select>
-  <a class="navbar-item" href="#contact-section">{$translationStore.navbar.contact}</a>
-  <a class="navbar-item" href="#skills">{$translationStore.navbar.skills}</a>
-  <a class="navbar-item" href="#about">{$translationStore.navbar.about} </a>
-  <a class="navbar-item" href="#projects-container">{$translationStore.navbar.projects}</a>
-</aside>
+{#if isMenuOpen}
+  <div
+    id="menu-mobile-wrapper"
+    role="button"
+    tabindex="0"
+    onclick={() => (isMenuOpen = false)}
+    onkeydown={(e) => {
+      if (e.key === 'Escape' || e.key === 'Enter' || e.key === ' ') {
+        isMenuOpen = false;
+      }
+    }}
+  >
+    <nav id="menu-mobile">
+      <div
+        role="button"
+        tabindex="0"
+        onclick={(e) => e.stopPropagation()}
+        onkeydown={(e) => e.stopPropagation()}
+      >
+        <!-- <button
+          onclick={() => ($themeStore = !$themeStore)}
+          aria-label="Language switcher"
+          class="btn-toggle-mode"
+        >
+          {#if $themeStore}
+            <Moon class="fa-solid fa-moon moon-icon toggle-icon" size={27} stroke-width={2} />
+          {:else}
+            <Sun class="fa-solid fa-sun sun-icon toggle-icon" size={27} stroke-width={2} />
+          {/if}
+        </button>
+        <select name="language" bind:value={$localStore} class="dark navbar-item language-switcher">
+          <option value="es">Español</option>
+          <option value="en">English</option>
+        </select> -->
+        <a class="navbar-item" href="#about">
+          <div class="mobile-icon"><User /></div>
+          {$translationStore.navbar.about}</a
+        >
+        <a class="navbar-item" href="#skills">
+          <div class="mobile-icon"><Settings /></div>
+          {$translationStore.navbar.skills}</a
+        >
+        <a class="navbar-item" href="#contact-section">
+          <div class="mobile-icon"><Phone /></div>
+          {$translationStore.navbar.contact}</a
+        >
+        <a class="navbar-item" href="#projects-container">
+          <div class="mobile-icon"><Lightbulb /></div>
+          {$translationStore.navbar.projects}</a
+        >
+      </div>
+    </nav>
+  </div>
+{/if}
 
+<!-- svelte-ignore css_unused_selector -->
 <style>
   #navbar-desktop {
     position: sticky;
@@ -92,12 +133,14 @@
   }
   .navbar-item {
     text-decoration: none;
+    font-weight: bold;
     color: var(--text);
     padding: var(--space-2) var(--space-4);
     border-radius: var(--rounded-lg);
     display: flex;
     gap: var(--space-2);
     align-items: center;
+    font-size: var(--fs-sm) !important;
   }
   .navbar-item:hover {
     background-color: var(--bg-400);
@@ -120,37 +163,45 @@
   #btn-open-menu {
     display: block;
   }
-  #btn-open-menu {
-    display: block;
-  }
-  #navbar-items {
-    display: none;
+  #menu-mobile-wrapper {
+    position: fixed;
+    inset: 0;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.5);
   }
   #menu-mobile {
-    display: none;
-    flex-direction: column;
-    position: fixed;
     word-break: break-all;
+    background-color: var(--bg-500);
+    height: 100%;
+    font-size: var(--fs-base);
+    width: 75%;
+    max-width: 250px;
+  }
+  #menu-mobile > div {
+    display: flex;
+    flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    font-size: var(--fs-base);
-    top: 0;
-    left: 0;
-    width: 45vw;
     height: 100%;
-    color: white;
-    border-right: 7px solid var(--primary);
-    transition: transform 0.3s ease-in-out;
-    z-index: 10;
-    opacity: 1;
+  }
+  .mobile-icon {
+    color: var(--primary-500);
   }
   #navbar-options {
-    display: none;
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: var(--space-4);
+  }
+  .language-switcher {
+    font-size: var(--fs-sm);
   }
   @media (min-width: 768px) {
+    #menu-mobile-wrapper {
+      display: none;
+    }
     #menu-mobile {
       display: none;
-      opacity: 0;
     }
     #navbar-desktop {
       padding: var(--space-3) var(--space-4);
@@ -167,9 +218,6 @@
       font-weight: bold;
       align-items: center;
       color: var(--light);
-    }
-    .language-switcher {
-      font-size: var(--fs-sm);
     }
     #navbar-options {
       display: flex;

@@ -15,6 +15,7 @@ function createLocalStore() {
   if (browser) {
     store.subscribe((newLocale) => {
       localStorage.setItem('locale', newLocale);
+      document.documentElement.lang = newLocale;
     });
   }
   return store;
