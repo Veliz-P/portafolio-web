@@ -2,10 +2,6 @@
   import { User, Phone, Moon, Sun, Lightbulb, Settings } from '@lucide/svelte';
   import { themeStore } from '$lib/stores/themeStore';
   import { localStore, translationStore } from '$lib/stores/langStore';
-  function setTheme(value: boolean) {
-    $themeStore = value;
-    document.documentElement.classList.toggle('dark');
-  }
 </script>
 
 <nav id="navbar-desktop" class="dark">
@@ -31,7 +27,7 @@
   <ul id="navbar-options">
     <li>
       <button
-        onclick={() => setTheme(!$themeStore)}
+        onclick={() => ($themeStore = !$themeStore)}
         aria-label="Language switcher"
         class="btn-toggle-mode"
       >
