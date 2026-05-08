@@ -1,12 +1,13 @@
 @font-face {
   font-family: 'Inter';
   src: url('/fonts/Inter/Inter-VariableFont_opsz,wght.ttf') format('truetype');
-  font-weight: 400;
+  font-weight: 100 900;
   font-style: normal;
 }
 
 :root {
-  font-family: 'Inter', sans-serif, system-ui, Avenir, Helvetica, Arial;
+  --dark: hsl(0, 0%, 5%);
+  --light: hsl(0, 0%, 98%);
   --primary-100: hsl(248, 50%, 90%);
   --primary-200: hsl(248, 50%, 84%);
   --primary-300: hsl(248, 50%, 78%);
@@ -67,6 +68,9 @@
 
   color: var(--text);
   background-color: var(--bg-200);
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
 }
 
 .dark {
@@ -91,4 +95,20 @@
   padding: 0;
   box-sizing: border-box;
   font-size: var(--fs-base);
+  font-family: 'Inter', sans-serif, system-ui, Avenir, Helvetica, Arial !important;
+}
+
+html,
+body {
+  line-height: 1.5;
+}
+
+button,
+input,
+textarea {
+  border: none;
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+  color: var(--text);
 }
