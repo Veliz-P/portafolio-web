@@ -1,7 +1,7 @@
 <script lang="ts">
   import { User, Phone, Moon, Sun, Lightbulb, Settings } from '@lucide/svelte';
   import { themeStore } from '$lib/stores/themeStore';
-  let language: 'es' | 'en' = $state('es');
+  import { localStore, translationStore } from '$lib/stores/langStore';
   function setTheme(value: boolean) {
     $themeStore = value;
     document.documentElement.classList.toggle('dark');
@@ -11,17 +11,19 @@
 <nav id="navbar-desktop" class="dark">
   <ul id="navbar-items">
     <li>
-      <a class="navbar-item" href="#about" data-i18n="about"><User /> Sobre mí</a>
+      <a class="navbar-item" href="#about"><User /> {$translationStore.navbar.about}</a>
     </li>
     <li>
-      <a class="navbar-item" href="#skills" data-i18n="skills"><Settings /> Habilidades</a>
+      <a class="navbar-item" href="#skills"><Settings /> {$translationStore.navbar.skills}</a>
     </li>
     <li>
-      <a class="navbar-item" href="#contact-section" data-i18n="contact"> <Phone />Contacto</a>
+      <a class="navbar-item" href="#contact-section">
+        <Phone /> {$translationStore.navbar.contact}</a
+      >
     </li>
     <li>
-      <a class="navbar-item" href="#projects-container" data-i18n="projects">
-        <Lightbulb /> Proyectos</a
+      <a class="navbar-item" href="#projects-container">
+        <Lightbulb /> {$translationStore.navbar.projects}</a
       >
     </li>
   </ul>
@@ -41,7 +43,7 @@
       </button>
     </li>
     <li>
-      <select name="language" bind:value={language} class="navbar-item language-switcher">
+      <select name="language" bind:value={$localStore} class="navbar-item language-switcher">
         <option value="es">ES</option>
         <option value="en">EN</option>
       </select>
@@ -65,7 +67,7 @@
   </button>
 </nav>
 
-<aside id="menu-mobile" class="bold">
+<aside id="menu-mobile">
   <button aria-label="Language switcher" class="pointer btn-toggle-mode">
     <Moon class="fa-solid fa-moon moon-icon toggle-icon" stroke-width={2} />
     <Sun class="fa-solid fa-sun sun-icon toggle-icon" stroke-width={2} />
@@ -74,10 +76,10 @@
     <option value="es">Español</option>
     <option value="en">English</option>
   </select>
-  <a class="navbar-item" href="#contact-section" data-i18n="contact">Contacto</a>
-  <a class="navbar-item" href="#skills" data-i18n="skills">Habilidades</a>
-  <a class="navbar-item" href="#about" data-i18n="about">Sobre mí</a>
-  <a class="navbar-item" href="#projects-container" data-i18n="projects">Proyectos</a>
+  <a class="navbar-item" href="#contact-section">{$translationStore.navbar.contact}</a>
+  <a class="navbar-item" href="#skills">{$translationStore.navbar.skills}</a>
+  <a class="navbar-item" href="#about">{$translationStore.navbar.about} </a>
+  <a class="navbar-item" href="#projects-container">{$translationStore.navbar.projects}</a>
 </aside>
 
 <style>
