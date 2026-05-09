@@ -82,21 +82,6 @@
         onclick={(e) => e.stopPropagation()}
         onkeydown={(e) => e.stopPropagation()}
       >
-        <!-- <button
-          onclick={() => ($themeStore = !$themeStore)}
-          aria-label="Language switcher"
-          class="btn-toggle-mode"
-        >
-          {#if $themeStore}
-            <Moon class="fa-solid fa-moon moon-icon toggle-icon" size={27} stroke-width={2} />
-          {:else}
-            <Sun class="fa-solid fa-sun sun-icon toggle-icon" size={27} stroke-width={2} />
-          {/if}
-        </button>
-        <select name="language" bind:value={$localStore} class="dark navbar-item language-switcher">
-          <option value="es">Español</option>
-          <option value="en">English</option>
-        </select> -->
         <a class="navbar-item" href="#about">
           <div class="mobile-icon"><User /></div>
           {$translationStore.navbar.about}</a

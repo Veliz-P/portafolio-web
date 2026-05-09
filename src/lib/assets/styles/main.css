@@ -89,7 +89,7 @@
   --bg-800: hsl(0, 0%, 8%);
   --bg-900: hsl(0, 0%, 5%);
 
-  --border: hsl(0, 0%, 10%);
+  --border: hsl(0, 0%, 45%);
 
   background-color: var(--bg-800);
 }
@@ -98,7 +98,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-size: var(--fs-base);
   font-family: 'Inter', sans-serif, system-ui, Avenir, Helvetica, Arial !important;
 }
 
@@ -115,4 +114,18 @@ textarea {
   outline: none;
   cursor: pointer;
   color: var(--text);
+}
+
+.neon {
+  text-shadow:
+    0 0 0px var(--primary-400),
+    0 0 10px var(--primary-400);
+  color: var(--primary-500);
+}
+
+.dark .neon {
+  text-shadow:
+    0 0 0px var(--primary-500),
+    0 0 10px var(--primary-500);
+  color: var(--primary-500);
 }
