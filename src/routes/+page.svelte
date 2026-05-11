@@ -1,6 +1,7 @@
 <script lang="ts">
   import Nav from '$lib/components/Nav.svelte';
   import Hero from '$lib/components/Hero.svelte';
+  import Skills from '$lib/components/Skills.svelte';
   import { onMount } from 'svelte';
   import { themeStore } from '$lib/stores/themeStore';
   onMount(() => {
@@ -9,5 +10,5 @@
 </script>
 
 <Nav />
-
 <Hero />
+<Skills />

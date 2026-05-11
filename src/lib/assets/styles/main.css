@@ -104,6 +104,7 @@
 html,
 body {
   line-height: 1.5;
+  scroll-behavior: smooth;
 }
 
 button,
@@ -128,4 +129,12 @@ textarea {
     0 0 0px var(--primary-500),
     0 0 10px var(--primary-500);
   color: var(--primary-500);
+}
+
+.section-title {
+  text-align: center;
+  display: flex;
+  gap: var(--space-2);
+  align-items: center;
+  justify-content: center;
 }
