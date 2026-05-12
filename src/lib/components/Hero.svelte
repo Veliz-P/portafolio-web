@@ -21,11 +21,11 @@
         </p>
       </div>
       <div class="links">
-        <a href="#contact-section" id="hero-button" class="dark">
-          <span> {$translationStore.hero.contactMe}</span>
-        </a>
-        <a href="#projects-container" id="hero-button-secondary">
+        <a href="#projects-container" id="hero-button" class="dark">
           <span> {$translationStore.hero.myProjects}</span>
+        </a>
+        <a href="#contact-section" id="hero-button-secondary">
+          <span> {$translationStore.hero.contactMe}</span>
         </a>
       </div>
     </div>
@@ -74,7 +74,7 @@
     text-align: center;
   }
   #hero-title {
-    margin-bottom: var(--space-6);
+    margin-bottom: var(--space-8);
   }
   #hero-button {
     background-color: var(--dark);
@@ -124,8 +124,9 @@
     display: flex;
     align-items: center;
     line-height: 2;
-    margin-bottom: var(--space-6);
+    margin-bottom: var(--space-8);
     text-align: center;
+    font-size: var(--fs-md);
   }
   .links {
     display: flex;
@@ -176,7 +177,6 @@
       flex-direction: column;
     }
     #presentation-text {
-      margin-bottom: var(--space-8);
       text-align: left;
       width: 100%;
       max-width: 650px;
