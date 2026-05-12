@@ -15,4 +15,39 @@ export interface LangSchema {
     contactMe: string;
     myProjects: string;
   };
+  skills: {
+    title: string;
+    sliderButtons: {
+      techStack: string;
+      whatICanDo: string;
+    };
+    techStackSection: {
+      programmingLangs: string;
+      markupStyles: string;
+      databases: string;
+      tools: string;
+    };
+    whatICanDoSection: {
+      webApps: {
+        title: string;
+        description: string;
+      };
+      dbManagement: {
+        title: string;
+        description: string;
+      };
+      apis: {
+        title: string;
+        description: string;
+      };
+      desktopApps: {
+        title: string;
+        description: string;
+      };
+      systemDesign: {
+        title: string;
+        description: string;
+      };
+    };
+  };
 }

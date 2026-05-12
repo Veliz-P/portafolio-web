@@ -138,3 +138,9 @@ textarea {
   align-items: center;
   justify-content: center;
 }
+
+@media (min-width: 768px) {
+  .section-title {
+    font-size: var(--fs-2xl);
+  }
+}

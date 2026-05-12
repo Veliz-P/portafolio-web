@@ -32,24 +32,28 @@
   import Postgres from '$lib/assets/icons/postgresql.svg';
   import Vuejs from '$lib/assets/icons/vuejs.svg';
   import { themeStore } from '$lib/stores/themeStore';
-  let activeSkillSection = $state<'tech-stack' | 'soft-skills'>('tech-stack');
+  import { translationStore } from '$lib/stores/langStore';
+  let activeSkillSection = $state<'tech-stack' | 'what-i-can-do'>('tech-stack');
 </script>
 
 <div id="skills" class="animate-on-scroll">
-  <h2 class="section-title text-primary-light">
+  <h2 class="section-title">
     <Settings />
-    <span data-i18n="skills"> Habilidades </span>
+    <span> {$translationStore.skills.title}</span>
   </h2>
   <div class="slider-buttons">
     <button
       class={activeSkillSection === 'tech-stack' ? 'active-button' : ''}
       onclick={() => (activeSkillSection = 'tech-stack')}
-      >Tech Stack
+    >
+      {$translationStore.skills.sliderButtons.techStack}
     </button>
     <button
-      class={activeSkillSection === 'soft-skills' ? 'active-button' : ''}
-      onclick={() => (activeSkillSection = 'soft-skills')}>What I Build</button
+      class={activeSkillSection === 'what-i-can-do' ? 'active-button' : ''}
+      onclick={() => (activeSkillSection = 'what-i-can-do')}
     >
+      {$translationStore.skills.sliderButtons.whatICanDo}
+    </button>
   </div>
   <div id="slider-wrapper">
     <div
@@ -62,7 +66,7 @@
             <div class="skill-header-icon">
               <Code />
             </div>
-            <span data-i18n="programming-langs">Lenguajes de programación</span>
+            <span>{$translationStore.skills.techStackSection.programmingLangs}</span>
           </h3>
           <div class="skill-list">
             <div class="skill-item">
@@ -85,7 +89,7 @@
             <div class="skill-header-icon">
               <Paintbrush />
             </div>
-            <span data-i18n="markup-styles">Marcado y estilos</span>
+            <span>{$translationStore.skills.techStackSection.markupStyles}</span>
           </h3>
           <div class="skill-list">
             <div class="skill-item">
@@ -149,7 +153,7 @@
             <div class="skill-header-icon">
               <Database />
             </div>
-            <span data-i18n="databases">Bases de datos</span>
+            <span>{$translationStore.skills.techStackSection.databases}</span>
           </h3>
           <div class="skill-list">
             <div class="skill-item">
@@ -175,7 +179,7 @@
             <div class="skill-header-icon">
               <Wrench />
             </div>
-            <span data-i18n="tools">Herramientas</span>
+            <span>{$translationStore.skills.techStackSection.tools}</span>
           </h3>
           <div class="skill-list">
             <div class="skill-item">
@@ -198,47 +202,51 @@
         </div>
       </div>
 
-      <div id="what-i-can-build" class="skill-section">
+      <div id="what-i-can-do" class="skill-section">
         <div class="skill-card">
           <h3 class="title-h3">
             <div class="skill-header-icon">
               <Globe />
             </div>
-            <span data-i18n="programming-langs">Aplicaciones web</span>
+            <span>{$translationStore.skills.whatICanDoSection.webApps.title}</span>
           </h3>
+          <p>{$translationStore.skills.whatICanDoSection.webApps.description}</p>
         </div>
-
         <div class="skill-card">
           <h3 class="title-h3">
             <div class="skill-header-icon">
               <Database />
             </div>
-            <span data-i18n="markup-styles">Gestión de bases de datos</span>
+            <span>{$translationStore.skills.whatICanDoSection.dbManagement.title}</span>
           </h3>
+          <p>{$translationStore.skills.whatICanDoSection.dbManagement.description}</p>
         </div>
         <div class="skill-card">
           <h3 class="title-h3">
             <div class="skill-header-icon">
               <Cable />
             </div>
-            REST APIs
+            <span>{$translationStore.skills.whatICanDoSection.apis.title}</span>
           </h3>
+          <p>{$translationStore.skills.whatICanDoSection.apis.description}</p>
         </div>
         <div class="skill-card">
           <h3 class="title-h3">
             <div class="skill-header-icon">
               <Monitor />
             </div>
-            Aplicaciones de escritorio
+            <span>{$translationStore.skills.whatICanDoSection.desktopApps.title}</span>
           </h3>
+          <p>{$translationStore.skills.whatICanDoSection.desktopApps.description}</p>
         </div>
         <div class="skill-card">
           <h3 class="title-h3">
             <div class="skill-header-icon">
               <Network />
             </div>
-            <span data-i18n="databases">Diseño de sistemas</span>
+            <span>{$translationStore.skills.whatICanDoSection.systemDesign.title}</span>
           </h3>
+          <p>{$translationStore.skills.whatICanDoSection.systemDesign.description}</p>
         </div>
       </div>
     </div>
@@ -391,6 +399,9 @@
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
     text-align: center;
+  }
+  #what-i-can-do p {
+    color: var(--text-muted);
   }
   @media (min-width: 640px) {
     .skill-section {
