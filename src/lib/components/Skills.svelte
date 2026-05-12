@@ -1,5 +1,17 @@
 <script lang="ts">
-  import { Settings, Code, Paintbrush, Brain, User, Database, Wrench } from '@lucide/svelte';
+  import {
+    Settings,
+    Code,
+    Paintbrush,
+    Brain,
+    User,
+    Database,
+    Wrench,
+    Globe,
+    Cable,
+    Monitor,
+    Network
+  } from '@lucide/svelte';
   import Django from '$lib/assets/icons/django.svg';
   import ExpressLight from '$lib/assets/icons/express-light.svg';
   import ExpressDark from '$lib/assets/icons/express-dark.svg';
@@ -20,6 +32,7 @@
   import Postgres from '$lib/assets/icons/postgresql.svg';
   import Vuejs from '$lib/assets/icons/vuejs.svg';
   import { themeStore } from '$lib/stores/themeStore';
+  let activeSkillSection = $state<'tech-stack' | 'soft-skills'>('tech-stack');
 </script>
 
 <div id="skills" class="animate-on-scroll">
@@ -27,143 +40,205 @@
     <Settings />
     <span data-i18n="skills"> Habilidades </span>
   </h2>
-  <div id="tech-stack">
-    <div class="skill-card">
-      <h3 class="title-h3">
-        <div class="skill-header-icon">
-          <Code />
+  <div class="slider-buttons">
+    <button
+      class={activeSkillSection === 'tech-stack' ? 'active-button' : ''}
+      onclick={() => (activeSkillSection = 'tech-stack')}
+      >Tech Stack
+    </button>
+    <button
+      class={activeSkillSection === 'soft-skills' ? 'active-button' : ''}
+      onclick={() => (activeSkillSection = 'soft-skills')}>What I Build</button
+    >
+  </div>
+  <div id="slider-wrapper">
+    <div
+      id="slider-tracker"
+      style="transform: translateX({activeSkillSection === 'tech-stack' ? '0%' : '-100%'})"
+    >
+      <div class="skill-section">
+        <div class="skill-card">
+          <h3 class="title-h3">
+            <div class="skill-header-icon">
+              <Code />
+            </div>
+            <span data-i18n="programming-langs">Lenguajes de programación</span>
+          </h3>
+          <div class="skill-list">
+            <div class="skill-item">
+              <img class="skill-icon" src={Python} alt="python icon" />
+              <span class="skill-name">Python</span>
+            </div>
+            <div class="skill-item">
+              <img class="skill-icon" src={JS} alt="javascript icon" />
+              <span class="skill-name">Javascript</span>
+            </div>
+            <div class="skill-item">
+              <img class="skill-icon" src={TS} alt="typescript icon" />
+              <span class="skill-name">TypeScript</span>
+            </div>
+          </div>
         </div>
-        <span data-i18n="programming-langs">Lenguajes de programación</span>
-      </h3>
-      <div class="skill-list">
-        <div class="skill-item">
-          <img class="skill-icon" src={Python} alt="python icon" />
-          <span class="skill-name">Python</span>
-        </div>
-        <div class="skill-item">
-          <img class="skill-icon" src={JS} alt="javascript icon" />
-          <span class="skill-name">Javascript</span>
-        </div>
-        <div class="skill-item">
-          <img class="skill-icon" src={TS} alt="typescript icon" />
-          <span class="skill-name">TypeScript</span>
-        </div>
-      </div>
-    </div>
 
-    <div class="skill-card">
-      <h3 class="title-h3">
-        <div class="skill-header-icon">
-          <Paintbrush />
+        <div class="skill-card">
+          <h3 class="title-h3">
+            <div class="skill-header-icon">
+              <Paintbrush />
+            </div>
+            <span data-i18n="markup-styles">Marcado y estilos</span>
+          </h3>
+          <div class="skill-list">
+            <div class="skill-item">
+              <img class="skill-icon" src={HTML} alt="html icon" />
+              <span class="skill-name">HTML</span>
+            </div>
+            <div class="skill-item">
+              <img class="skill-icon" src={CSS} alt="css icon" />
+              <span class="skill-name">CSS</span>
+            </div>
+            <div class="skill-item">
+              <img class="skill-icon" src={Tailwind} alt="tailwind css icon" />
+              <span class="skill-name">Tailwind CSS</span>
+            </div>
+          </div>
         </div>
-        <span data-i18n="markup-styles">Marcado y estilos</span>
-      </h3>
-      <div class="skill-list">
-        <div class="skill-item">
-          <img class="skill-icon" src={HTML} alt="html icon" />
-          <span class="skill-name">HTML</span>
+        <div class="skill-card">
+          <h3 class="title-h3">
+            <div class="skill-header-icon">
+              <Brain />
+            </div>
+            Backend
+          </h3>
+          <div class="skill-list">
+            <div class="skill-item">
+              <img class="skill-icon" src={Django} alt="django icon" />
+              <span class="skill-name">Django REST Framework</span>
+            </div>
+            <div class="skill-item">
+              <!-- TODO: Rename themeStore to darkModeStore-->
+              <!-- if themeStore is true then darkMode is enabled -->
+              {#if $themeStore}
+                <img class="skill-icon" src={ExpressLight} alt="express icon" />
+              {:else}
+                <img class="skill-icon" src={ExpressDark} alt="express icon" />
+              {/if}
+              <span class="skill-name">Express</span>
+            </div>
+            <div class="skill-item">
+              <img class="skill-icon" src={Node} alt="node-js icon" />
+              <span class="skill-name">Node.js</span>
+            </div>
+          </div>
         </div>
-        <div class="skill-item">
-          <img class="skill-icon" src={CSS} alt="css icon" />
-          <span class="skill-name">CSS</span>
+        <div class="skill-card">
+          <h3 class="title-h3">
+            <div class="skill-header-icon">
+              <User />
+            </div>
+            Frontend
+          </h3>
+          <div class="skill-list">
+            <div class="skill-item">
+              <img class="skill-icon" src={Vuejs} alt="vue js icon" />
+              <span class="skill-name">Vue.js</span>
+            </div>
+          </div>
         </div>
-        <div class="skill-item">
-          <img class="skill-icon" src={Tailwind} alt="tailwind css icon" />
-          <span class="skill-name">Tailwind CSS</span>
+        <div class="skill-card">
+          <h3 class="title-h3">
+            <div class="skill-header-icon">
+              <Database />
+            </div>
+            <span data-i18n="databases">Bases de datos</span>
+          </h3>
+          <div class="skill-list">
+            <div class="skill-item">
+              {#if $themeStore}
+                <img class="skill-icon" src={MysqlLight} alt="mysql icon" />
+              {:else}
+                <img class="skill-icon" src={MysqlDark} alt="mysql icon" />
+              {/if}
+              <span class="skill-name">MySQL</span>
+            </div>
+            <div class="skill-item">
+              <img class="skill-icon" src={Postgres} alt="postgresql icon" />
+              <span class="skill-name">PostgreSQL</span>
+            </div>
+            <div class="skill-item">
+              <img class="skill-icon" src={Mongo} alt="mongodb icon" />
+              <span class="skill-name">MongoDB</span>
+            </div>
+          </div>
+        </div>
+        <div class="skill-card">
+          <h3 class="title-h3">
+            <div class="skill-header-icon">
+              <Wrench />
+            </div>
+            <span data-i18n="tools">Herramientas</span>
+          </h3>
+          <div class="skill-list">
+            <div class="skill-item">
+              <img class="skill-icon" src={Git} alt="git icon" />
+              <span class="skill-name">Git</span>
+            </div>
+            <div class="skill-item">
+              <img class="skill-icon" src={Linux} alt="linux icon" />
+              <span class="skill-name">Linux</span>
+            </div>
+            <div class="skill-item">
+              <img class="skill-icon" src={Docker} alt="docker icon" />
+              <span class="skill-name">Docker</span>
+            </div>
+            <div class="skill-item">
+              <img class="skill-icon" src={Npm} alt="npm icon" />
+              <span class="skill-name">NPM</span>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="skill-card">
-      <h3 class="title-h3">
-        <div class="skill-header-icon">
-          <Brain />
+
+      <div id="what-i-can-build" class="skill-section">
+        <div class="skill-card">
+          <h3 class="title-h3">
+            <div class="skill-header-icon">
+              <Globe />
+            </div>
+            <span data-i18n="programming-langs">Aplicaciones web</span>
+          </h3>
         </div>
-        Backend
-      </h3>
-      <div class="skill-list">
-        <div class="skill-item">
-          <img class="skill-icon" src={Django} alt="django icon" />
-          <span class="skill-name">Django REST Framework</span>
+
+        <div class="skill-card">
+          <h3 class="title-h3">
+            <div class="skill-header-icon">
+              <Database />
+            </div>
+            <span data-i18n="markup-styles">Gestión de bases de datos</span>
+          </h3>
         </div>
-        <div class="skill-item">
-          <!-- TODO: Rename themeStore to darkModeStore-->
-          <!-- if themeStore is true then darkMode is enabled -->
-          {#if $themeStore}
-            <img class="skill-icon" src={ExpressLight} alt="express icon" />
-          {:else}
-            <img class="skill-icon" src={ExpressDark} alt="express icon" />
-          {/if}
-          <span class="skill-name">Express</span>
+        <div class="skill-card">
+          <h3 class="title-h3">
+            <div class="skill-header-icon">
+              <Cable />
+            </div>
+            REST APIs
+          </h3>
         </div>
-        <div class="skill-item">
-          <img class="skill-icon" src={Node} alt="node-js icon" />
-          <span class="skill-name">Node.js</span>
+        <div class="skill-card">
+          <h3 class="title-h3">
+            <div class="skill-header-icon">
+              <Monitor />
+            </div>
+            Aplicaciones de escritorio
+          </h3>
         </div>
-      </div>
-    </div>
-    <div class="skill-card">
-      <h3 class="title-h3">
-        <div class="skill-header-icon">
-          <User />
-        </div>
-        Frontend
-      </h3>
-      <div class="skill-list">
-        <div class="skill-item">
-          <img class="skill-icon" src={Vuejs} alt="vue js icon" />
-          <span class="skill-name">Vue.js</span>
-        </div>
-      </div>
-    </div>
-    <div class="skill-card">
-      <h3 class="title-h3">
-        <div class="skill-header-icon">
-          <Database />
-        </div>
-        <span data-i18n="databases">Bases de datos</span>
-      </h3>
-      <div class="skill-list">
-        <div class="skill-item">
-          {#if $themeStore}
-            <img class="skill-icon" src={MysqlLight} alt="mysql icon" />
-          {:else}
-            <img class="skill-icon" src={MysqlDark} alt="mysql icon" />
-          {/if}
-          <span class="skill-name">MySQL</span>
-        </div>
-        <div class="skill-item">
-          <img class="skill-icon" src={Postgres} alt="postgresql icon" />
-          <span class="skill-name">PostgreSQL</span>
-        </div>
-        <div class="skill-item">
-          <img class="skill-icon" src={Mongo} alt="mongodb icon" />
-          <span class="skill-name">MongoDB</span>
-        </div>
-      </div>
-    </div>
-    <div class="skill-card">
-      <h3 class="title-h3">
-        <div class="skill-header-icon">
-          <Wrench />
-        </div>
-        <span data-i18n="tools">Herramientas</span>
-      </h3>
-      <div class="skill-list">
-        <div class="skill-item">
-          <img class="skill-icon" src={Git} alt="git icon" />
-          <span class="skill-name">Git</span>
-        </div>
-        <div class="skill-item">
-          <img class="skill-icon" src={Linux} alt="linux icon" />
-          <span class="skill-name">Linux</span>
-        </div>
-        <div class="skill-item">
-          <img class="skill-icon" src={Docker} alt="docker icon" />
-          <span class="skill-name">Docker</span>
-        </div>
-        <div class="skill-item">
-          <img class="skill-icon" src={Npm} alt="npm icon" />
-          <span class="skill-name">NPM</span>
+        <div class="skill-card">
+          <h3 class="title-h3">
+            <div class="skill-header-icon">
+              <Network />
+            </div>
+            <span data-i18n="databases">Diseño de sistemas</span>
+          </h3>
         </div>
       </div>
     </div>
@@ -177,15 +252,59 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
   }
   #skills .section-title {
     margin-bottom: var(--space-8);
     color: var(--primary-500);
   }
-  #tech-stack {
+  .slider-buttons {
+    position: sticky;
+    top: 5rem;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-4);
+    background-color: var(--bg-400);
+    padding: var(--space-3) var(--space-4);
+    border-radius: var(--rounded-xl);
+    margin-bottom: var(--space-4);
+    box-shadow: var(--shadow-sm);
+  }
+  .slider-buttons button {
+    color: var(--primary-500);
+    font-weight: 600;
+    font-size: var(--fs-sm);
+    padding: var(--space-1) var(--space-3);
+    border-radius: var(--rounded-lg);
+    cursor: pointer;
+    transition:
+      background-color 0.3s ease-in-out,
+      color 0.3s ease-in-out;
+  }
+  .active-button {
+    background-color: var(--primary-500) !important;
+    color: var(--light) !important;
+  }
+  #slider-wrapper {
+    overflow: hidden;
+    width: 100%;
+    max-width: 1300px;
+  }
+  #slider-tracker {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    transition: transform 0.3s ease-in-out;
+  }
+  .skill-section {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: var(--space-6);
+    min-width: 100%;
+    transition: opacity 0.3s ease-in-out;
+    padding: var(--space-4);
   }
   .skill-card {
     border-radius: var(--rounded);
@@ -194,7 +313,6 @@
     display: flex;
     flex-direction: column;
     border: 1px solid var(--border);
-    background-color: var(--bg);
     box-shadow: var(--shadow-sm);
   }
   .skill-icon {
@@ -275,7 +393,7 @@
     text-align: center;
   }
   @media (min-width: 640px) {
-    #tech-stack {
+    .skill-section {
       grid-template-columns: repeat(2, 1fr);
       gap: var(--space-8);
     }
@@ -291,12 +409,11 @@
     #skills .section-title {
       margin-bottom: var(--space-10);
     }
-    #tech-stack {
+    .skill-section {
       grid-template-columns: repeat(3, 1fr);
       gap: var(--space-10);
       justify-content: center;
       align-items: center;
-      margin: auto var(--space-8);
     }
     .skill-card {
       padding: var(--space-6) var(--space-8);
