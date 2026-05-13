@@ -51,5 +51,15 @@ export const en: LangSchema = {
         description: 'Software architectures tailored to business needs.'
       }
     }
+  },
+  projects: {
+    title: 'Projects',
+    code: 'Code',
+    quickQuickNote: {
+      title: 'Quick Quick Note',
+      description:
+        'Web app for taking notes quickly and easily. It is an useful tool for organizing ideas, tasks, or any information you want to keep directly in your browser.',
+      shortDescription: 'Web app for taking personal notes.'
+    }
   }
 };

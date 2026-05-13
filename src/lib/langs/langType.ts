@@ -50,4 +50,13 @@ export interface LangSchema {
       };
     };
   };
+  projects: {
+    title: string;
+    code: string;
+    quickQuickNote: {
+      title: string;
+      description: string;
+      shortDescription: string;
+    };
+  };
 }

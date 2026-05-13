@@ -38,7 +38,7 @@
 
 <div id="skills" class="animate-on-scroll">
   <h2 class="section-title">
-    <Settings />
+    <Settings size={30} />
     <span> {$translationStore.skills.title}</span>
   </h2>
   <div class="slider-buttons">
@@ -269,7 +269,7 @@
   .slider-buttons {
     position: sticky;
     top: 5rem;
-    z-index: 100;
+    z-index: 1;
     display: flex;
     justify-content: center;
     align-items: center;
