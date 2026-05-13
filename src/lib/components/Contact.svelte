@@ -4,6 +4,35 @@
   import Linkedin from '$lib/assets/icons/linkedin.svg';
   import Fiverr from '$lib/assets/icons/fiverr.svg';
   import { translationStore } from '$lib/stores/langStore';
+  import emailjs from '@emailjs/browser';
+  let resultState: 'idle' | 'success' | 'error' = $state('idle');
+  async function sendEmail(e: Event) {
+    e.preventDefault();
+    const serviceId = 'service_r8z1b8l';
+    const templateId = 'template_2ur7fou';
+    const publicKey = '0M9Na40wF8jJMXTCc';
+    try {
+      emailjs.sendForm(serviceId, templateId, e.target as HTMLFormElement, {
+        publicKey: publicKey
+      });
+      console.log('Email sent successfully');
+      resultState = 'success';
+    } catch (error) {
+      console.log('Error sending email:', error);
+      resultState = 'error';
+    }
+    backToIdle();
+  }
+  let timeout: ReturnType<typeof setTimeout> | null = null;
+  function backToIdle() {
+    if (timeout) {
+      clearTimeout(timeout);
+    }
+    timeout = setTimeout(() => {
+      resultState = 'idle';
+    }, 3500);
+  }
+  let message = $state('');
 </script>
 
 <div id="contact-section" class="animate-on-scroll">
@@ -41,14 +70,14 @@
     </a>
   </div>
   <div id="contact-row">
-    <form id="form">
+    <form onsubmit={sendEmail} id="form">
       <h3 id="form-title">{$translationStore.contact.formTitle}</h3>
       <div class="field-div">
         <label for="subject">
           <Megaphone size={20} />
           <span>{$translationStore.contact.subject}</span>
         </label>
-        <input type="text" id="subject" required minlength="10" maxlength="60" />
+        <input type="text" id="subject" name="subject" required minlength="10" maxlength="60" />
       </div>
       <div id="name-and-email-fields">
         <div class="field-div">
@@ -56,14 +85,14 @@
             <User size={20} />
             <span>{$translationStore.contact.name}</span>
           </label>
-          <input type="text" id="name" required minlength="5" maxlength="50" />
+          <input type="text" id="name" name="name" required minlength="3" maxlength="50" />
         </div>
         <div class="field-div">
           <label for="email">
             <Mail size={20} />
             <span>Email</span>
           </label>
-          <input type="email" id="email" required maxlength="255" />
+          <input type="email" id="email" name="email" required maxlength="255" />
         </div>
       </div>
 
@@ -72,16 +101,31 @@
           <TextAlignJustify size={20} />
           <span>{$translationStore.contact.message}</span>
         </label>
-        <textarea id="message" rows="4" cols="60" minlength="15" maxlength="500" required
+        <textarea
+          id="message"
+          name="message"
+          rows="4"
+          cols="60"
+          minlength="15"
+          maxlength="500"
+          required
+          bind:value={message}
         ></textarea>
         <p id="message-word-counter">
-          <span id="message-current-count">1</span>/500
+          <span id="message-current-count">{message.length}</span>/500
         </p>
       </div>
       <button id="submit-btn" type="submit">
         <span>{$translationStore.contact.send}</span>
         <Send size={20} />
       </button>
+      <div class="result-message">
+        {#if resultState === 'success'}
+          <p class="success-message message">{$translationStore.contact.successMsg}</p>
+        {:else if resultState === 'error'}
+          <p class="error-message message">{$translationStore.contact.errorMsg}</p>
+        {/if}
+      </div>
     </form>
     <div id="ready-to-collaborate">
       <h3>{$translationStore.contact.readyToWork}</h3>
@@ -225,6 +269,7 @@
     align-items: center;
     gap: var(--space-3);
     transition: box-shadow 0.2s ease-in-out;
+    margin-bottom: var(--space-6);
   }
   #submit-btn:hover {
     box-shadow: 6px 6px 0 var(--primary-600);
@@ -263,6 +308,42 @@
     width: 100%;
     justify-content: center;
     margin-bottom: var(--space-6);
+  }
+  .result-message {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+  .message {
+    width: 100%;
+    text-align: center;
+    padding: var(--space-2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    border-radius: var(--rounded-xl);
+    font-size: var(--fs-sm);
+  }
+  .success-message {
+    background-color: var(--success-100);
+    color: var(--success-600);
+    border: 1px solid var(--success-400);
+  }
+  :global(.dark) .success-message {
+    background-color: var(--success-900);
+    color: var(--success-200);
+    border: 1px solid var(--success-600);
+  }
+  .error-message {
+    background-color: var(--error-100);
+    color: var(--error-500);
+    border: 1px solid var(--error-300);
+  }
+  :global(.dark) .error-message {
+    background-color: var(--error-900);
+    color: var(--error-200);
+    border: 1px solid var(--error-600);
   }
   @media (min-width: 768px) {
     #contact-section .section-title {

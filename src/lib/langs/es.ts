@@ -76,6 +76,8 @@ export const es: LangSchema = {
     message: 'Mensaje',
     readyToWork: '¿Listo para colaborar juntos?',
     contactMeMsg: 'Contáctame para discutir sobre tus ideas o proyectos.',
-    send: 'Enviar'
+    send: 'Enviar',
+    successMsg: '¡Mensaje enviado con éxito!',
+    errorMsg: 'Error al enviar el mensaje. Por favor, inténtelo más tarde.'
   }
 };

@@ -76,6 +76,8 @@ export const en: LangSchema = {
     message: 'Message',
     readyToWork: 'Ready to work together?',
     contactMeMsg: 'Contact me to discuss your ideas or projects.',
-    send: 'Send'
+    send: 'Send',
+    successMsg: 'Message sent successfully!',
+    errorMsg: 'Error sending message. Please try again later.'
   }
 };

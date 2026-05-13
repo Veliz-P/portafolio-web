@@ -73,5 +73,7 @@ export interface LangSchema {
     readyToWork: string;
     contactMeMsg: string;
     send: string;
+    successMsg: string;
+    errorMsg: string;
   };
 }

@@ -114,7 +114,7 @@
     flex-wrap: wrap;
     padding: var(--space-2) var(--space-4);
     border-bottom: var(--space-2) solid var(--primary-500);
-    z-index: 2;
+    z-index: 3;
   }
   .navbar-item {
     text-decoration: none;
@@ -151,7 +151,7 @@
   #menu-mobile-wrapper {
     position: fixed;
     inset: 0;
-    z-index: 2;
+    z-index: 4;
     background-color: rgba(0, 0, 0, 0.5);
   }
   #menu-mobile {
