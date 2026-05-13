@@ -67,5 +67,15 @@ export const es: LangSchema = {
         'Mi portafolio web personal diseñado para presentar mis habilidades y experiencia como desarrollador, construido con un enfoque moderno, responsivo y optimizado',
       shortDescription: 'Mi sitio web personal que muestra mi trabajo'
     }
+  },
+  contact: {
+    title: 'Contacto',
+    formTitle: 'Formulario de contacto',
+    subject: 'Asunto',
+    name: 'Nombre',
+    message: 'Mensaje',
+    readyToWork: '¿Listo para colaborar juntos?',
+    contactMeMsg: 'Contáctame para discutir sobre tus ideas o proyectos.',
+    send: 'Enviar'
   }
 };

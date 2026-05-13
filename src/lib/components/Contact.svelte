@@ -3,12 +3,13 @@
   import Github from '$lib/assets/icons/github.svg';
   import Linkedin from '$lib/assets/icons/linkedin.svg';
   import Fiverr from '$lib/assets/icons/fiverr.svg';
+  import { translationStore } from '$lib/stores/langStore';
 </script>
 
 <div id="contact-section" class="animate-on-scroll">
   <h2 class="section-title">
     <User size={30} />
-    <span data-i18n="contact">Contacto</span>
+    <span> {$translationStore.contact.title}</span>
   </h2>
   <div id="social-media-links-mobile" class="social-media-links">
     <a
@@ -41,11 +42,11 @@
   </div>
   <div id="contact-row">
     <form id="form">
-      <h3 id="form-title">Formulario de contacto</h3>
+      <h3 id="form-title">{$translationStore.contact.formTitle}</h3>
       <div class="field-div">
         <label for="subject">
           <Megaphone size={20} />
-          <span>Asunto:</span>
+          <span>{$translationStore.contact.subject}</span>
         </label>
         <input type="text" id="subject" required minlength="10" maxlength="60" />
       </div>
@@ -53,14 +54,14 @@
         <div class="field-div">
           <label for="name">
             <User size={20} />
-            <span>Nombre:</span>
+            <span>{$translationStore.contact.name}</span>
           </label>
           <input type="text" id="name" required minlength="5" maxlength="50" />
         </div>
         <div class="field-div">
           <label for="email">
             <Mail size={20} />
-            <span>Email: </span>
+            <span>Email</span>
           </label>
           <input type="email" id="email" required maxlength="255" />
         </div>
@@ -69,7 +70,7 @@
       <div class="field-div">
         <label for="message">
           <TextAlignJustify size={20} />
-          <span>Mensaje:</span>
+          <span>{$translationStore.contact.message}</span>
         </label>
         <textarea id="message" rows="4" cols="60" minlength="15" maxlength="500" required
         ></textarea>
@@ -78,13 +79,13 @@
         </p>
       </div>
       <button id="submit-btn" type="submit">
-        <span>Enviar</span>
+        <span>{$translationStore.contact.send}</span>
         <Send size={20} />
       </button>
     </form>
     <div id="ready-to-collaborate">
-      <h3>¿Listo para colaborar juntos?</h3>
-      <p>Contáctame para discutir sobre tus ideas o proyectos.</p>
+      <h3>{$translationStore.contact.readyToWork}</h3>
+      <p>{$translationStore.contact.contactMeMsg}</p>
       <img
         id="work-together-img"
         src="/images/work-together-img.svg"

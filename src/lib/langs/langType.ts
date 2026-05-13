@@ -64,4 +64,14 @@ export interface LangSchema {
       shortDescription: string;
     };
   };
+  contact: {
+    title: string;
+    formTitle: string;
+    subject: string;
+    name: string;
+    message: string;
+    readyToWork: string;
+    contactMeMsg: string;
+    send: string;
+  };
 }

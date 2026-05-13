@@ -67,5 +67,15 @@ export const en: LangSchema = {
         'My personal web portfolio designed to showcase my skills and experience as a developer, built with a modern, responsive, and optimized approach.',
       shortDescription: 'My personal website with my skills and projects.'
     }
+  },
+  contact: {
+    title: 'Contact',
+    formTitle: 'Contact form',
+    subject: 'Subject',
+    name: 'Name',
+    message: 'Message',
+    readyToWork: 'Ready to work together?',
+    contactMeMsg: 'Contact me to discuss your ideas or projects.',
+    send: 'Send'
   }
 };
