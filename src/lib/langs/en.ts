@@ -60,6 +60,12 @@ export const en: LangSchema = {
       description:
         'Web app for taking notes quickly and easily. It is an useful tool for organizing ideas, tasks, or any information you want to keep directly in your browser.',
       shortDescription: 'Web app for taking personal notes.'
+    },
+    portfolioWeb: {
+      title: 'Web Portfolio',
+      description:
+        'My personal web portfolio designed to showcase my skills and experience as a developer, built with a modern, responsive, and optimized approach.',
+      shortDescription: 'My personal website with my skills and projects.'
     }
   }
 };

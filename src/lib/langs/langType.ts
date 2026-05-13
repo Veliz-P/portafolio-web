@@ -58,5 +58,10 @@ export interface LangSchema {
       description: string;
       shortDescription: string;
     };
+    portfolioWeb: {
+      title: string;
+      description: string;
+      shortDescription: string;
+    };
   };
 }

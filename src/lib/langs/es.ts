@@ -60,6 +60,12 @@ export const es: LangSchema = {
       description:
         'Aplicación web para tomas notas de forma rápida y sencilla. Una herramienta útil para organizar ideas, tareas o cualquier información directamente en el navegador.',
       shortDescription: 'App web para tomar notas personales.'
+    },
+    portfolioWeb: {
+      title: 'Portafolio Web',
+      description:
+        'Mi portafolio web personal diseñado para presentar mis habilidades y experiencia como desarrollador, construido con un enfoque moderno, responsivo y optimizado',
+      shortDescription: 'Mi sitio web personal que muestra mi trabajo'
     }
   }
 };
