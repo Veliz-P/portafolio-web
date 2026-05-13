@@ -3,6 +3,7 @@
   import Hero from '$lib/components/Hero.svelte';
   import Skills from '$lib/components/Skills.svelte';
   import Projects from '$lib/components/Projects.svelte';
+  import Contact from '$lib/components/Contact.svelte';
   import { onMount } from 'svelte';
   import { themeStore } from '$lib/stores/themeStore';
   onMount(() => {
@@ -14,3 +15,4 @@
 <Hero />
 <Skills />
 <Projects />
+<Contact />

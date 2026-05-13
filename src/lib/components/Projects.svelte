@@ -123,6 +123,7 @@
     padding: var(--space-10) 0;
     width: 100%;
     color: var(--light);
+    margin-bottom: var(--space-12);
   }
   #projects-container .section-title {
     margin-bottom: var(--space-8);
@@ -224,6 +225,9 @@
       inset 0 1px 1px rgba(255, 255, 255, 0.1);
   }
   @media (min-width: 768px) {
+    #projects-container {
+      margin-bottom: var(--space-16);
+    }
     #mobile-projects-view {
       display: none;
     }
