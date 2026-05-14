@@ -85,7 +85,7 @@
     </div>
     <div id="mobile-projects-view">
       {#each projects as project}
-        <div class="mobile-project-card" style="background-image: url({asset(project.imgPath)})">
+        <div class="mobile-project-card" style="background-image: url({project.imgPath})">
           <div class="blur-overlay"></div>
           <div class="tech-icon-list">
             {#each project.techStackIcons as icon}
