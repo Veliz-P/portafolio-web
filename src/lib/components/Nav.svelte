@@ -130,6 +130,10 @@
   .navbar-item:hover {
     background-color: var(--bg-400);
   }
+  #menu-mobile .navbar-item {
+    font-size: var(--fs-base) !important;
+    border: 2px solid var(--primary-300);
+  }
   #navbar-items {
     display: none;
   }
