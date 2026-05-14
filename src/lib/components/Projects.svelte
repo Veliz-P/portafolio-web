@@ -1,6 +1,7 @@
 <script lang="ts">
   import { Lightbulb, CodeXml, ExternalLink } from '@lucide/svelte';
   import { translationStore } from '$lib/stores/langStore';
+  import { asset } from '$app/paths';
   import TS from '$lib/assets/icons/typescript.svg';
   import Css from '$lib/assets/icons/css.svg';
   import Vuejs from '$lib/assets/icons/vuejs.svg';
@@ -25,7 +26,7 @@
         shortDescription: $translationStore.projects.quickQuickNote.shortDescription,
         techStackIcons: [Vuejs, TS, Css],
         techStack: ['Vue.js', 'TypeScript', 'CSS'],
-        imgPath: '/images/quick-note-project-img.webp',
+        imgPath: asset('/images/quick-note-project-img.webp'),
         linkRepo: 'https://github.com/Veliz-P/quick-quick-note',
         linkDemo: 'https://veliz-p.github.io/quick-quick-note/#/home'
       },
@@ -35,7 +36,7 @@
         shortDescription: $translationStore.projects.portfolioWeb.shortDescription,
         techStackIcons: [Svelte, TS, Css],
         techStack: ['Svelte', 'TypeScript', 'CSS'],
-        imgPath: '/images/portfolio-project-img.webp',
+        imgPath: asset('/images/portfolio-project-img.webp'),
         linkRepo: 'https://github.com/Veliz-P/portafolio-web'
       }
     ];
@@ -84,7 +85,7 @@
     </div>
     <div id="mobile-projects-view">
       {#each projects as project}
-        <div class="mobile-project-card" style="background-image: url({project.imgPath})">
+        <div class="mobile-project-card" style="background-image: url({asset(project.imgPath)})">
           <div class="blur-overlay"></div>
           <div class="tech-icon-list">
             {#each project.techStackIcons as icon}

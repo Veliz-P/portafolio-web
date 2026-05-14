@@ -1,5 +1,6 @@
 <script lang="ts">
   import { Mail, Megaphone, Send, TextAlignJustify, User, Phone } from '@lucide/svelte';
+  import { asset } from '$app/paths';
   import Github from '$lib/assets/icons/github.svg';
   import Linkedin from '$lib/assets/icons/linkedin.svg';
   import Fiverr from '$lib/assets/icons/fiverr.svg';
@@ -132,7 +133,7 @@
       <p>{$translationStore.contact.contactMeMsg}</p>
       <img
         id="work-together-img"
-        src="/images/work-together-img.svg"
+        src={asset('/images/work-together-img.svg')}
         alt="let's work together"
         width="100"
         height="250"

@@ -1,10 +1,11 @@
 <script lang="ts">
   import { translationStore } from '$lib/stores/langStore';
+  import { asset } from '$app/paths';
 </script>
 
 <div id="hero-section-wrapper">
   <div id="hero-section">
-    <img id="profile-pic" src="/images/hero-img.svg" alt="Profile Pic" />
+    <img id="profile-pic" src={asset('/images/hero-img.svg')} alt="Profile Pic" />
     <div id="hero-text">
       <h1 id="hero-title">
         <div>{$translationStore.hero.gretting}</div>

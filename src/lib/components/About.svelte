@@ -1,6 +1,7 @@
 <script lang="ts">
   import { User } from '@lucide/svelte';
   import { translationStore } from '$lib/stores/langStore';
+  import { asset } from '$app/paths';
 </script>
 
 <div id="about" class="animate-on-scroll">
@@ -13,7 +14,11 @@
       <div id="about-text">
         <div id="profile-header">
           <a href="https://github.com/Veliz-P" target="_blank">
-            <img id="github-profile-pic" src="/images/gitpic.jpg" alt="github profile pic" />
+            <img
+              id="github-profile-pic"
+              src={asset('/images/gitpic.jpg')}
+              alt="github profile pic"
+            />
           </a>
           <div id="profile-details">
             <p>Veliz-P</p>
@@ -39,17 +44,35 @@
       class="bento-img"
       id="light-bulb"
       loading="lazy"
-      src="/images/light-bulb.webp"
+      src={asset('/images/light-bulb.webp')}
       alt="light-bulb"
     />
-    <img class="bento-img" id="design" loading="lazy" src="/images/design.webp" alt="design" />
-    <img class="bento-img" id="texture" loading="lazy" src="/images/texture.webp" alt="texture" />
-    <img class="bento-img" id="planes" loading="lazy" src="/images/planes.webp" alt="planes" />
+    <img
+      class="bento-img"
+      id="design"
+      loading="lazy"
+      src={asset('/images/design.webp')}
+      alt="design"
+    />
+    <img
+      class="bento-img"
+      id="texture"
+      loading="lazy"
+      src={asset('/images/texture.webp')}
+      alt="texture"
+    />
+    <img
+      class="bento-img"
+      id="planes"
+      loading="lazy"
+      src={asset('/images/planes.webp')}
+      alt="planes"
+    />
     <img
       class="bento-img"
       id="computer"
       loading="lazy"
-      src="/images/computer.webp"
+      src={asset('/images/computer.webp')}
       alt="computer"
     />
   </div>
