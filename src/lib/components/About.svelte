@@ -35,11 +35,23 @@
         </div>
       </div>
     </div>
-    <img class="bento-img" id="light-bulb" src="/images/light-bulb.jpg" alt="light-bulb" />
-    <img class="bento-img" id="design" src="/images/design.jpg" alt="design" />
-    <img class="bento-img" id="texture" src="/images/texture.jpg" alt="texture" />
-    <img class="bento-img" id="planes" src="/images/planes.jpg" alt="planes" />
-    <img class="bento-img" id="computer" src="/images/computer.jpg" alt="computer" />
+    <img
+      class="bento-img"
+      id="light-bulb"
+      loading="lazy"
+      src="/images/light-bulb.webp"
+      alt="light-bulb"
+    />
+    <img class="bento-img" id="design" loading="lazy" src="/images/design.webp" alt="design" />
+    <img class="bento-img" id="texture" loading="lazy" src="/images/texture.webp" alt="texture" />
+    <img class="bento-img" id="planes" loading="lazy" src="/images/planes.webp" alt="planes" />
+    <img
+      class="bento-img"
+      id="computer"
+      loading="lazy"
+      src="/images/computer.webp"
+      alt="computer"
+    />
   </div>
 </div>
 
