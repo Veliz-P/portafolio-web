@@ -79,5 +79,13 @@ export const en: LangSchema = {
     send: 'Send',
     successMsg: 'Message sent successfully!',
     errorMsg: 'Error sending message. Please try again later.'
+  },
+  about: {
+    title: 'About Me',
+    line1:
+      'I’m a full-stack web developer with over 2 years of experience. Beyond coding, I enjoy exploring other areas such as networking and cybersecurity.',
+    line2:
+      'I enjoy building applications that provide real value by turning complex problems into simple and functional solutions. For me, every project is an opportunity to challenge my creativity and logical thinking.',
+    line3: 'My three favorite hobbies are gastronomy, language learning, and drawing.'
   }
 };

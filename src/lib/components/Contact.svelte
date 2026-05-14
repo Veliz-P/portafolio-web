@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Mail, Megaphone, Send, TextAlignJustify, User } from '@lucide/svelte';
+  import { Mail, Megaphone, Send, TextAlignJustify, User, Phone } from '@lucide/svelte';
   import Github from '$lib/assets/icons/github.svg';
   import Linkedin from '$lib/assets/icons/linkedin.svg';
   import Fiverr from '$lib/assets/icons/fiverr.svg';
@@ -37,7 +37,7 @@
 
 <div id="contact-section" class="animate-on-scroll">
   <h2 class="section-title">
-    <User size={30} />
+    <Phone size={30} />
     <span> {$translationStore.contact.title}</span>
   </h2>
   <div id="social-media-links-mobile" class="social-media-links">
