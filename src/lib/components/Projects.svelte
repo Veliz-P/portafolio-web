@@ -163,7 +163,7 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 45%;
+    height: 50%;
     border-radius: var(--rounded-xl);
     backdrop-filter: blur(3px);
     -webkit-backdrop-filter: blur(3px);
