@@ -3,6 +3,7 @@
   import { themeStore } from '$lib/stores/themeStore';
   import { localStore, translationStore } from '$lib/stores/langStore';
   let isMenuOpen = $state(false);
+  const closeMenu = () => (isMenuOpen = false);
 </script>
 
 <nav id="navbar-desktop" class="dark">
@@ -82,19 +83,19 @@
         onclick={(e) => e.stopPropagation()}
         onkeydown={(e) => e.stopPropagation()}
       >
-        <a class="navbar-item" href="#about">
+        <a class="navbar-item" onclick={closeMenu} href="#about">
           <div class="mobile-icon"><User /></div>
           {$translationStore.navbar.about}</a
         >
-        <a class="navbar-item" href="#skills">
+        <a class="navbar-item" onclick={closeMenu} href="#skills">
           <div class="mobile-icon"><Settings /></div>
           {$translationStore.navbar.skills}</a
         >
-        <a class="navbar-item" href="#contact-section">
+        <a class="navbar-item" onclick={closeMenu} href="#contact-section">
           <div class="mobile-icon"><Phone /></div>
           {$translationStore.navbar.contact}</a
         >
-        <a class="navbar-item" href="#projects-container">
+        <a class="navbar-item" onclick={closeMenu} href="#projects-container">
           <div class="mobile-icon"><Lightbulb /></div>
           {$translationStore.navbar.projects}</a
         >
