@@ -9,7 +9,6 @@ export interface LangSchema {
     gretting: string;
     name: string;
     tagDeveloper: string;
-    tagDesigner: string;
     tagTechnician: string;
     description: string;
     contactMe: string;

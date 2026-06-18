@@ -4,7 +4,7 @@
 </script>
 
 <div id="hero-section-wrapper">
-  <div id="hero-section">
+  <section id="hero-section">
     <img id="profile-pic" src={asset('/images/hero-img.svg')} alt="Profile Pic" />
     <div id="hero-text">
       <h1 id="hero-title">
@@ -12,8 +12,8 @@
         <div class="neon">{$translationStore.hero.name}</div>
       </h1>
       <div class="tags">
-        <span>{$translationStore.hero.tagDesigner}</span>
         <span>{$translationStore.hero.tagDeveloper}</span>
+        <span>Freelancer</span>
         <span>{$translationStore.hero.tagTechnician}</span>
       </div>
       <div id="presentation-text">
@@ -30,7 +30,7 @@
         </a>
       </div>
     </div>
-  </div>
+  </section>
 </div>
 
 <style>

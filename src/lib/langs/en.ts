@@ -10,7 +10,6 @@ export const en: LangSchema = {
   hero: {
     gretting: 'Hello, my name is',
     name: 'Carlos Veliz',
-    tagDesigner: 'UI/UX Designer',
     tagDeveloper: 'Full Stack Web Developer',
     tagTechnician: 'Technician',
     description: 'I like turning ideas into innovative digital experiences.',

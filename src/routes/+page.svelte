@@ -13,8 +13,10 @@
 </script>
 
 <Nav />
-<Hero />
-<Skills />
-<Projects />
-<Contact />
+<main>
+  <Hero />
+  <Skills />
+  <Projects />
+  <Contact />
+</main>
 <About />
