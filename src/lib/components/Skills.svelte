@@ -31,6 +31,10 @@
   import MysqlDark from '$lib/assets/icons/mysql-dark.svg';
   import Postgres from '$lib/assets/icons/postgresql.svg';
   import Vuejs from '$lib/assets/icons/vuejs.svg';
+  import Nuxt from "$lib/assets/icons/nuxt.svg"
+  import Svelte from '$lib/assets/icons/svelte.svg';
+  import Postman from '$lib/assets/icons/postman.svg';
+  import VsCode from '$lib/assets/icons/vscode.svg';
   import { themeStore } from '$lib/stores/themeStore';
   import { translationStore } from '$lib/stores/langStore';
   let activeSkillSection = $state<'tech-stack' | 'what-i-can-do'>('tech-stack');
@@ -146,6 +150,14 @@
               <img class="skill-icon" src={Vuejs} alt="vue js icon" />
               <span class="skill-name">Vue.js</span>
             </div>
+            <div class="skill-item">
+              <img class="skill-icon" src={Nuxt} alt="nuxt js icon" />
+              <span class="skill-name">Nuxt.js</span>
+            </div>
+            <div class="skill-item">
+              <img class="skill-icon" src={Svelte} alt="svelte icon" />
+              <span class="skill-name">Svelte</span>
+            </div>
           </div>
         </div>
         <div class="skill-card">
@@ -197,6 +209,14 @@
             <div class="skill-item">
               <img class="skill-icon" src={Npm} alt="npm icon" />
               <span class="skill-name">NPM</span>
+            </div>
+            <div class="skill-item">
+              <img class="skill-icon" src={Postman} alt="postman icon" />
+              <span class="skill-name">Postman</span>
+            </div>
+            <div class="skill-item">
+              <img class="skill-icon" src={VsCode} alt="vscode icon" />
+              <span class="skill-name">VS Code</span>
             </div>
           </div>
         </div>
@@ -390,6 +410,7 @@
     margin-top: var(--space-2);
     left: 50%;
     transform: translateX(-50%);
+    width: 100px;
     font-size: var(--fs-sm);
     background-color: var(--primary-500);
     padding: var(--space-2);
@@ -399,6 +420,7 @@
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
     text-align: center;
+    z-index: 1;
   }
   #what-i-can-do p {
     color: var(--text-muted);
