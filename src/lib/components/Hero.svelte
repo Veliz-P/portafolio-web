@@ -62,7 +62,7 @@
     background-color: var(--bg);
     margin: var(--space-6);
     margin-top: var(--space-4);
-    padding: var(--space-6) var(--space-8);
+    padding: var(--space-6) var(--space-2);
     border-right: solid 6px var(--primary);
     border-radius: var(--rounded-xl);
     gap: var(--space-8);
@@ -110,7 +110,7 @@
   #profile-pic {
     width: auto;
     height: 100%;
-    max-height: clamp(250px, 15vw, 350px);
+    max-height: clamp(180px, 15vw, 350px);
     border-radius: var(--rounded-full);
     z-index: 1;
     position: relative;
@@ -132,6 +132,7 @@
   .links {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     align-items: center;
     gap: var(--space-3);
     width: 100%;
@@ -141,6 +142,7 @@
     flex-wrap: wrap;
     gap: var(--space-3);
     font-size: var(--fs-sm);
+    text-align: center;
     justify-content: center;
     margin-bottom: var(--space-2);
   }

@@ -169,7 +169,7 @@
       id="slider-tracker"
       style="transform: translateX({activeSkillSection === 'tech-stack' ? '0%' : '-100%'})"
     >
-      <div class="skill-section">
+      <div class="skill-section" style="opacity: {activeSkillSection === 'tech-stack' ? 1 : 0}">
         {#each techStackCards as card}
           <div class="skill-card">
             <h3 class="title-h3">
@@ -226,10 +226,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     gap: var(--space-4);
     background-color: var(--bg-400);
     padding: var(--space-3) var(--space-4);
     border-radius: var(--rounded-xl);
+    margin-left: var(--space-3);
+    margin-right: var(--space-3);
     margin-bottom: var(--space-4);
     box-shadow: var(--shadow-sm);
   }
@@ -261,7 +264,7 @@
   }
   .skill-section {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: var(--space-6);
     min-width: 100%;
     transition: opacity 0.3s ease-in-out;
@@ -293,6 +296,7 @@
     display: flex;
     gap: var(--space-3);
     align-items: center;
+    flex-wrap: wrap;
     font-size: var(--fs-base);
     font-weight: 500;
   }
@@ -357,6 +361,11 @@
   }
   #what-i-can-do p {
     color: var(--text-muted);
+  }
+  @media (min-width: 480px) {
+    .skill-section {
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
   }
   @media (min-width: 640px) {
     .skill-section {

@@ -24,20 +24,20 @@
   </button>
   <ul id="navbar-items">
     <li>
-      <a class="navbar-item" href="#about"><User /> {$translationStore.navbar.about}</a>
-    </li>
-    <li>
       <a class="navbar-item" href="#skills"><Settings /> {$translationStore.navbar.skills}</a>
-    </li>
-    <li>
-      <a class="navbar-item" href="#contact-section">
-        <Phone /> {$translationStore.navbar.contact}</a
-      >
     </li>
     <li>
       <a class="navbar-item" href="#projects-container">
         <Lightbulb /> {$translationStore.navbar.projects}</a
-      >
+        >
+    </li>
+    <li>
+      <a class="navbar-item" href="#contact-section">
+        <Phone /> {$translationStore.navbar.contact}</a
+          >
+    </li>
+    <li>
+      <a class="navbar-item" href="#about"><User /> {$translationStore.navbar.about}</a>
     </li>
   </ul>
 
@@ -83,21 +83,21 @@
         onclick={(e) => e.stopPropagation()}
         onkeydown={(e) => e.stopPropagation()}
       >
-        <a class="navbar-item" onclick={closeMenu} href="#about">
-          <div class="mobile-icon"><User /></div>
-          {$translationStore.navbar.about}</a
-        >
         <a class="navbar-item" onclick={closeMenu} href="#skills">
           <div class="mobile-icon"><Settings /></div>
           {$translationStore.navbar.skills}</a
+        >
+        <a class="navbar-item" onclick={closeMenu} href="#projects-container">
+          <div class="mobile-icon"><Lightbulb /></div>
+          {$translationStore.navbar.projects}</a
         >
         <a class="navbar-item" onclick={closeMenu} href="#contact-section">
           <div class="mobile-icon"><Phone /></div>
           {$translationStore.navbar.contact}</a
         >
-        <a class="navbar-item" onclick={closeMenu} href="#projects-container">
-          <div class="mobile-icon"><Lightbulb /></div>
-          {$translationStore.navbar.projects}</a
+        <a class="navbar-item" onclick={closeMenu} href="#about">
+          <div class="mobile-icon"><User /></div>
+          {$translationStore.navbar.about}</a
         >
       </div>
     </nav>

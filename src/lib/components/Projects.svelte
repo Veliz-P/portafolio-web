@@ -200,7 +200,7 @@
     gap: var(--space-2);
     align-items: center;
     transition: box-shadow 0.3s ease;
-    font-size: var(--fs-sm);
+    font-size: var(--fs-xs);
   }
   .project-links a:hover {
     box-shadow: var(--shadow-md);
@@ -295,6 +295,7 @@
     }
     .project-links a {
       padding: var(--space-2) var(--space-4);
+      font-size: var(--fs-sm);
     }
   }
 </style>

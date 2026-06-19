@@ -205,7 +205,7 @@
     display: flex;
     flex-direction: column;
     border: 1.5px solid var(--border);
-    padding: var(--space-8);
+    padding: var(--space-6);
     border-radius: var(--rounded-xl);
   }
   #message-word-counter {
@@ -306,6 +306,7 @@
   .social-media-links {
     display: flex;
     gap: var(--space-4);
+    flex-wrap: wrap;
   }
   .social-media-links img {
     width: 50px;
@@ -364,6 +365,11 @@
     background-color: var(--error-900);
     color: var(--error-200);
     border: 1px solid var(--error-600);
+  }
+  @media (min-width: 640px) {
+    #form {
+      padding: var(--space-8);
+    }
   }
   @media (min-width: 768px) {
     #contact-section .section-title {
