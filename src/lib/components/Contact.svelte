@@ -4,6 +4,7 @@
   import Github from '$lib/assets/icons/github.svg';
   import Linkedin from '$lib/assets/icons/linkedin.svg';
   import Fiverr from '$lib/assets/icons/fiverr.svg';
+  import Gmail from "$lib/assets/icons/gmail.svg";
   import { translationStore } from '$lib/stores/langStore';
   import emailjs from '@emailjs/browser';
   let resultState: 'idle' | 'success' | 'error' = $state('idle');
@@ -68,6 +69,15 @@
       rel="noopener noreferrer"
     >
       <img src={Fiverr} alt="Fiverr" width="45" height="45" />
+    </a>
+    <a
+      id="gmail-link"
+      aria-label="Send an email"
+      href="mailto:paucarcarlos2108@gmail.com"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <img src={Gmail} alt="Gmail" width="45" height="45" />
     </a>
   </div>
   <div id="contact-row">
@@ -165,6 +175,15 @@
           rel="noopener noreferrer"
         >
           <img src={Fiverr} alt="Fiverr" width="45" height="45" />
+        </a>
+        <a
+          id="gmail-link"
+          aria-label="Send an email"
+          href="mailto:paucarcarlos2108@gmail.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img src={Gmail} alt="Gmail" width="45" height="45" />
         </a>
       </div>
     </div>
