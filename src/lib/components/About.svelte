@@ -34,9 +34,6 @@
           <p>
             {$translationStore.about.line2}
           </p>
-          <p>
-            {$translationStore.about.line3}
-          </p>
         </div>
       </div>
     </div>
