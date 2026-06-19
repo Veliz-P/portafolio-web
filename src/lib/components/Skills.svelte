@@ -12,6 +12,7 @@
     Monitor,
     Network
   } from '@lucide/svelte';
+  import LucideIcon from '$lib/components/LucideIcon.svelte'; // Reusable Icon component for dynamic rendering
   import Django from '$lib/assets/icons/django.svg';
   import ExpressLight from '$lib/assets/icons/express-light.svg';
   import ExpressDark from '$lib/assets/icons/express-dark.svg';
@@ -37,7 +38,111 @@
   import VsCode from '$lib/assets/icons/vscode.svg';
   import { themeStore } from '$lib/stores/themeStore';
   import { translationStore } from '$lib/stores/langStore';
+  import type { LucideProps} from '@lucide/svelte';
+  import type { Component } from 'svelte';
   let activeSkillSection = $state<'tech-stack' | 'what-i-can-do'>('tech-stack');
+  interface TechStackItem {
+    name: string;
+    icon: string;
+  }
+  interface TechStackCard {
+    title: string;
+    icon: Component<LucideProps>;
+    iconList: TechStackItem[];
+  }
+  interface WhatICanDoCard {
+    title: string;
+    icon: Component<LucideProps>;
+    description: string;
+  }
+
+  let techStackCards : TechStackCard[] = $derived.by(() => 
+  [
+    {
+      title: $translationStore.skills.techStackSection.programmingLangs,
+      icon: Code,
+      iconList: [
+        { name: 'Python', icon: Python },
+        { name: 'Javascript', icon: JS },
+        { name: 'TypeScript', icon: TS }
+      ]
+    },
+    {
+      title: $translationStore.skills.techStackSection.markupStyles,
+      icon: Paintbrush,
+      iconList: [
+        { name: 'HTML', icon: HTML },
+        { name: 'CSS', icon: CSS },
+        { name: 'Tailwind CSS', icon: Tailwind }
+      ]
+    },
+    {
+      title: 'Backend',
+      icon: Brain,
+      iconList: [
+        { name: 'Django REST Framework', icon: Django },
+        { name: 'Express', icon: $themeStore ? ExpressLight : ExpressDark },
+        { name: 'Node.js', icon: Node }
+      ]
+    },
+    {
+      title: 'Frontend',
+      icon: User,
+      iconList: [
+        { name: 'Vue.js', icon: Vuejs },
+        { name: 'Nuxt.js', icon: Nuxt },
+        { name: 'Svelte', icon: Svelte }
+      ]
+    },
+    {
+      title: $translationStore.skills.techStackSection.databases,
+      icon: Database,
+      iconList: [
+        { name: 'MySQL', icon: $themeStore ? MysqlLight : MysqlDark },
+        { name: 'PostgreSQL', icon: Postgres },
+        { name: 'MongoDB', icon: Mongo }
+      ]
+    },
+    {
+      title: $translationStore.skills.techStackSection.tools,
+      icon: Wrench,
+      iconList: [
+        { name: 'Git', icon: Git },
+        { name: 'Linux', icon: Linux },
+        { name: 'Docker', icon: Docker },
+        { name: 'NPM', icon: Npm },
+        { name: 'Postman', icon: Postman },
+        { name: 'VS Code', icon: VsCode }
+      ]
+    }
+  ])
+  let whatICanDoCards: WhatICanDoCard[] = $state([
+    {
+      title: $translationStore.skills.whatICanDoSection.webApps.title,
+      icon: Globe,
+      description: $translationStore.skills.whatICanDoSection.webApps.description
+    },
+    {
+      title: $translationStore.skills.whatICanDoSection.dbManagement.title,
+      icon: Database,
+      description: $translationStore.skills.whatICanDoSection.dbManagement.description
+    },
+    {
+      title: $translationStore.skills.whatICanDoSection.apis.title,
+      icon: Cable,
+      description: $translationStore.skills.whatICanDoSection.apis.description
+    },
+    {
+      title: $translationStore.skills.whatICanDoSection.desktopApps.title,
+      icon: Monitor,
+      description: $translationStore.skills.whatICanDoSection.desktopApps.description
+    },
+    {
+      title: $translationStore.skills.whatICanDoSection.systemDesign.title,
+      icon: Network,
+      description: $translationStore.skills.whatICanDoSection.systemDesign.description
+    }
+  ])
 </script>
 
 <div id="skills" class="animate-on-scroll">
@@ -65,209 +170,37 @@
       style="transform: translateX({activeSkillSection === 'tech-stack' ? '0%' : '-100%'})"
     >
       <div class="skill-section">
-        <div class="skill-card">
-          <h3 class="title-h3">
-            <div class="skill-header-icon">
-              <Code />
-            </div>
-            <span>{$translationStore.skills.techStackSection.programmingLangs}</span>
-          </h3>
-          <div class="skill-list">
-            <div class="skill-item">
-              <img class="skill-icon" src={Python} alt="python icon" />
-              <span class="skill-name">Python</span>
-            </div>
-            <div class="skill-item">
-              <img class="skill-icon" src={JS} alt="javascript icon" />
-              <span class="skill-name">Javascript</span>
-            </div>
-            <div class="skill-item">
-              <img class="skill-icon" src={TS} alt="typescript icon" />
-              <span class="skill-name">TypeScript</span>
+        {#each techStackCards as card}
+          <div class="skill-card">
+            <h3 class="title-h3">
+              <div class="skill-header-icon">
+                  <LucideIcon Icon={card.icon} />
+              </div>
+              <span>{card.title}</span>
+            </h3>
+            <div class="skill-list">
+              {#each card.iconList as item}
+                <div class="skill-item">
+                  <img class="skill-icon" src={item.icon} alt="{item.name} icon" />
+                  <span class="skill-name">{item.name}</span>
+                </div>
+              {/each}
             </div>
           </div>
-        </div>
-
-        <div class="skill-card">
-          <h3 class="title-h3">
-            <div class="skill-header-icon">
-              <Paintbrush />
-            </div>
-            <span>{$translationStore.skills.techStackSection.markupStyles}</span>
-          </h3>
-          <div class="skill-list">
-            <div class="skill-item">
-              <img class="skill-icon" src={HTML} alt="html icon" />
-              <span class="skill-name">HTML</span>
-            </div>
-            <div class="skill-item">
-              <img class="skill-icon" src={CSS} alt="css icon" />
-              <span class="skill-name">CSS</span>
-            </div>
-            <div class="skill-item">
-              <img class="skill-icon" src={Tailwind} alt="tailwind css icon" />
-              <span class="skill-name">Tailwind CSS</span>
-            </div>
-          </div>
-        </div>
-        <div class="skill-card">
-          <h3 class="title-h3">
-            <div class="skill-header-icon">
-              <Brain />
-            </div>
-            Backend
-          </h3>
-          <div class="skill-list">
-            <div class="skill-item">
-              <img class="skill-icon" src={Django} alt="django icon" />
-              <span class="skill-name">Django REST Framework</span>
-            </div>
-            <div class="skill-item">
-              <!-- TODO: Rename themeStore to darkModeStore-->
-              <!-- if themeStore is true then darkMode is enabled -->
-              {#if $themeStore}
-                <img class="skill-icon" src={ExpressLight} alt="express icon" />
-              {:else}
-                <img class="skill-icon" src={ExpressDark} alt="express icon" />
-              {/if}
-              <span class="skill-name">Express</span>
-            </div>
-            <div class="skill-item">
-              <img class="skill-icon" src={Node} alt="node-js icon" />
-              <span class="skill-name">Node.js</span>
-            </div>
-          </div>
-        </div>
-        <div class="skill-card">
-          <h3 class="title-h3">
-            <div class="skill-header-icon">
-              <User />
-            </div>
-            Frontend
-          </h3>
-          <div class="skill-list">
-            <div class="skill-item">
-              <img class="skill-icon" src={Vuejs} alt="vue js icon" />
-              <span class="skill-name">Vue.js</span>
-            </div>
-            <div class="skill-item">
-              <img class="skill-icon" src={Nuxt} alt="nuxt js icon" />
-              <span class="skill-name">Nuxt.js</span>
-            </div>
-            <div class="skill-item">
-              <img class="skill-icon" src={Svelte} alt="svelte icon" />
-              <span class="skill-name">Svelte</span>
-            </div>
-          </div>
-        </div>
-        <div class="skill-card">
-          <h3 class="title-h3">
-            <div class="skill-header-icon">
-              <Database />
-            </div>
-            <span>{$translationStore.skills.techStackSection.databases}</span>
-          </h3>
-          <div class="skill-list">
-            <div class="skill-item">
-              {#if $themeStore}
-                <img class="skill-icon" src={MysqlLight} alt="mysql icon" />
-              {:else}
-                <img class="skill-icon" src={MysqlDark} alt="mysql icon" />
-              {/if}
-              <span class="skill-name">MySQL</span>
-            </div>
-            <div class="skill-item">
-              <img class="skill-icon" src={Postgres} alt="postgresql icon" />
-              <span class="skill-name">PostgreSQL</span>
-            </div>
-            <div class="skill-item">
-              <img class="skill-icon" src={Mongo} alt="mongodb icon" />
-              <span class="skill-name">MongoDB</span>
-            </div>
-          </div>
-        </div>
-        <div class="skill-card">
-          <h3 class="title-h3">
-            <div class="skill-header-icon">
-              <Wrench />
-            </div>
-            <span>{$translationStore.skills.techStackSection.tools}</span>
-          </h3>
-          <div class="skill-list">
-            <div class="skill-item">
-              <img class="skill-icon" src={Git} alt="git icon" />
-              <span class="skill-name">Git</span>
-            </div>
-            <div class="skill-item">
-              <img class="skill-icon" src={Linux} alt="linux icon" />
-              <span class="skill-name">Linux</span>
-            </div>
-            <div class="skill-item">
-              <img class="skill-icon" src={Docker} alt="docker icon" />
-              <span class="skill-name">Docker</span>
-            </div>
-            <div class="skill-item">
-              <img class="skill-icon" src={Npm} alt="npm icon" />
-              <span class="skill-name">NPM</span>
-            </div>
-            <div class="skill-item">
-              <img class="skill-icon" src={Postman} alt="postman icon" />
-              <span class="skill-name">Postman</span>
-            </div>
-            <div class="skill-item">
-              <img class="skill-icon" src={VsCode} alt="vscode icon" />
-              <span class="skill-name">VS Code</span>
-            </div>
-          </div>
-        </div>
+        {/each}
       </div>
-
       <div id="what-i-can-do" class="skill-section">
-        <div class="skill-card">
-          <h3 class="title-h3">
-            <div class="skill-header-icon">
-              <Globe />
-            </div>
-            <span>{$translationStore.skills.whatICanDoSection.webApps.title}</span>
-          </h3>
-          <p>{$translationStore.skills.whatICanDoSection.webApps.description}</p>
-        </div>
-        <div class="skill-card">
-          <h3 class="title-h3">
-            <div class="skill-header-icon">
-              <Database />
-            </div>
-            <span>{$translationStore.skills.whatICanDoSection.dbManagement.title}</span>
-          </h3>
-          <p>{$translationStore.skills.whatICanDoSection.dbManagement.description}</p>
-        </div>
-        <div class="skill-card">
-          <h3 class="title-h3">
-            <div class="skill-header-icon">
-              <Cable />
-            </div>
-            <span>{$translationStore.skills.whatICanDoSection.apis.title}</span>
-          </h3>
-          <p>{$translationStore.skills.whatICanDoSection.apis.description}</p>
-        </div>
-        <div class="skill-card">
-          <h3 class="title-h3">
-            <div class="skill-header-icon">
-              <Monitor />
-            </div>
-            <span>{$translationStore.skills.whatICanDoSection.desktopApps.title}</span>
-          </h3>
-          <p>{$translationStore.skills.whatICanDoSection.desktopApps.description}</p>
-        </div>
-        <div class="skill-card">
-          <h3 class="title-h3">
-            <div class="skill-header-icon">
-              <Network />
-            </div>
-            <span>{$translationStore.skills.whatICanDoSection.systemDesign.title}</span>
-          </h3>
-          <p>{$translationStore.skills.whatICanDoSection.systemDesign.description}</p>
-        </div>
+        {#each whatICanDoCards as card}
+          <div class="skill-card">
+            <h3 class="title-h3">
+              <div class="skill-header-icon">
+                  <LucideIcon Icon={card.icon} />
+              </div>
+              <span>{card.title}</span>
+            </h3>
+            <p>{card.description}</p>
+          </div>
+        {/each}
       </div>
     </div>
   </div>
