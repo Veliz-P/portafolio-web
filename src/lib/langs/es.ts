@@ -83,6 +83,7 @@ export const es: LangSchema = {
     title: 'Sobre mí',
     line1:
       'Disfruto crear aplicaciones que aporten valor real, transformando problemas complejos en soluciones simples y funcionales. Para mí, cada proyecto es una oportunidad para poner a prueba mi creatividad y lógica.',
-    line2: 'Mis tres aficiones favoritas son la gastronomía, el aprendizaje de idiomas y el dibujo.'
+    line2: 'Mis tres aficiones favoritas son la gastronomía, el aprendizaje de idiomas y el dibujo.',
+    downloadCV: 'Descargar CV'
   }
 };

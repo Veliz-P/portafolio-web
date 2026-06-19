@@ -83,6 +83,7 @@ export const en: LangSchema = {
     title: 'About Me',
     line1:
       'I enjoy building applications that provide real value by turning complex problems into simple and functional solutions. For me, every project is an opportunity to challenge my creativity and logical thinking.',
-    line2: 'My three favorite hobbies are gastronomy, language learning, and drawing.'
+    line2: 'My three favorite hobbies are gastronomy, language learning, and drawing.',
+    downloadCV: 'Download CV'
   }
 };

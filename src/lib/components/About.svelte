@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { User } from '@lucide/svelte';
+  import { User, Download } from '@lucide/svelte';
   import { translationStore } from '$lib/stores/langStore';
   import { asset } from '$app/paths';
 </script>
@@ -34,6 +34,13 @@
           <p>
             {$translationStore.about.line2}
           </p>
+        </div>
+        <div id="cv-download-div">
+          <a download
+            href={asset('/files/CV.pdf')}>
+            {$translationStore.about.downloadCV}
+            <Download size={22} strokeWidth={2.5} />
+          </a>
         </div>
       </div>
     </div>
@@ -86,11 +93,36 @@
   #about .section-title {
     margin-bottom: var(--space-8);
   }
+  #cv-download-div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  #cv-download-div a {
+    text-decoration: none;
+    margin-top: var(--space-6);
+    display: flex;
+    margin-bottom: var(--space-4);
+    align-items: center;
+    gap: var(--space-4);
+    padding: var(--space-2) var(--space-6);
+    background-color: var(--primary-600);
+    border-radius: var(--rounded-xl);
+    color: var(--light);
+    font-weight: bold;
+    font-size: var(--fs-sm);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border: 1px solid var(--light);
+  }
+  #cv-download-div a:hover {
+    background-color: var(--primary-700);
+  }
   #bento-grid {
     display: grid;
     gap: var(--space-6);
-    grid-template-areas: 'img-1 txt-1';
-    margin: auto var(--space-10) !important;
+    grid-template-areas: 'txt-1';
+    margin: auto var(--space-8) !important;
     align-items: start;
     justify-items: center;
   }
@@ -192,6 +224,9 @@
     text-align: left;
   }
   @media (min-width: 640px) {
+    #cv-download-div {
+      justify-content: end;
+    }
     #bento-grid {
       gap: var(--space-8);
       grid-template-areas:
