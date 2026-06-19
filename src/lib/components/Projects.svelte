@@ -43,7 +43,7 @@
   });
 </script>
 
-<div id="projects-container" class="animate-on-scroll">
+<section id="projects-container" class="animate-on-scroll">
   <h2 class="section-title">
     <span>{$translationStore.projects.title}</span>
     <Lightbulb size={30} />
@@ -116,7 +116,7 @@
       {/each}
     </div>
   </div>
-</div>
+</section>
 
 <style>
   #projects-container {

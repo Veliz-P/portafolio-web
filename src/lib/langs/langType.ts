@@ -81,4 +81,7 @@ export interface LangSchema {
     line2: string;
     downloadCV: string;
   };
+  footer : {
+    rightsReserved: string;
+  }
 }

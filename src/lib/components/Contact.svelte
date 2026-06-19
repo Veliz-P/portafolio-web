@@ -37,7 +37,7 @@
   let message = $state('');
 </script>
 
-<div id="contact-section" class="animate-on-scroll">
+<section id="contact-section" class="animate-on-scroll">
   <h2 class="section-title">
     <Phone size={30} />
     <span> {$translationStore.contact.title}</span>
@@ -188,7 +188,7 @@
       </div>
     </div>
   </div>
-</div>
+</section>
 
 <style>
   #contact-section {

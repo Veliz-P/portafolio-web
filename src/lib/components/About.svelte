@@ -4,7 +4,7 @@
   import { asset } from '$app/paths';
 </script>
 
-<div id="about" class="animate-on-scroll">
+<section id="about" class="animate-on-scroll">
   <h2 class="section-title">
     <span data-i18n="about">{$translationStore.about.title}</span>
     <User size={30} />
@@ -80,7 +80,7 @@
       alt="computer"
     />
   </div>
-</div>
+</section>
 
 <style>
   #about {

@@ -5,6 +5,7 @@
   import Projects from '$lib/components/Projects.svelte';
   import Contact from '$lib/components/Contact.svelte';
   import About from '$lib/components/About.svelte';
+  import Footer from '$lib/components/Footer.svelte';
   import { onMount } from 'svelte';
   import { themeStore } from '$lib/stores/themeStore';
   onMount(() => {
@@ -18,5 +19,6 @@
   <Skills />
   <Projects />
   <Contact />
+  <About />
 </main>
-<About />
+<Footer />

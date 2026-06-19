@@ -86,4 +86,8 @@ export const en: LangSchema = {
     line2: 'My three favorite hobbies are gastronomy, language learning, and drawing.',
     downloadCV: 'Download resume'
   }
+  ,
+  footer: {
+    rightsReserved: 'All rights reserved.'
+  }
 };

@@ -68,7 +68,6 @@
   --shadow-lg: 0 8px 16px hsl(0 0% 0% / 0.12);
   --shadow-xl: 0 12px 24px hsl(0 0% 0% / 0.18);
 
-  /* Success */
   --success-100: #dcfce7;
   --success-200: #bbf7d0;
   --success-300: #86efac;
@@ -79,7 +78,6 @@
   --success-800: #166534;
   --success-900: #14532d;
 
-  /* Error */
   --error-100: #fee2e2;
   --error-200: #fecaca;
   --error-300: #fca5a5;
@@ -121,6 +119,8 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Inter', sans-serif, system-ui, Avenir, Helvetica, Arial !important;
+  accent-color: var(--primary-400);
+  outline-color: var(--primary-400);
 }
 
 html,

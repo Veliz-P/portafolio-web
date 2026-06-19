@@ -145,7 +145,7 @@
   ])
 </script>
 
-<div id="skills" class="animate-on-scroll">
+<section id="skills" class="animate-on-scroll">
   <h2 class="section-title">
     <Settings size={30} />
     <span> {$translationStore.skills.title}</span>
@@ -204,7 +204,7 @@
       </div>
     </div>
   </div>
-</div>
+</section>
 
 <style>
   #skills {
