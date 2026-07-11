@@ -217,7 +217,6 @@
   }
   #skills .section-title {
     margin-bottom: var(--space-8);
-    color: var(--primary-500);
   }
   .slider-buttons {
     position: sticky;
@@ -236,8 +235,11 @@
     margin-bottom: var(--space-4);
     box-shadow: var(--shadow-sm);
   }
+  :global(.dark) .slider-buttons {
+    background-color: var(--bg-500);
+  }
   .slider-buttons button {
-    color: var(--primary-500);
+    color: var(--text-muted);
     font-weight: 600;
     font-size: var(--fs-sm);
     padding: var(--space-1) var(--space-3);
@@ -246,9 +248,9 @@
     transition:
       background-color 0.3s ease-in-out,
       color 0.3s ease-in-out;
-  }
+  } 
   .active-button {
-    background-color: var(--primary-500) !important;
+    background-color: var(--primary-700) !important;
     color: var(--light) !important;
   }
   #slider-wrapper {
@@ -349,7 +351,7 @@
     transform: translateX(-50%);
     width: 100px;
     font-size: var(--fs-sm);
-    background-color: var(--primary-500);
+    background-color: var(--primary-700);
     padding: var(--space-2);
     color: var(--light);
     font-weight: 600;

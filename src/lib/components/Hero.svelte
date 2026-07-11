@@ -91,11 +91,11 @@
     text-align: center;
   }
   #hero-button:hover {
-    background-color: var(--primary-500);
+    background-color: var(--primary-700);
   }
   #hero-button-secondary {
     padding: var(--space-2) var(--space-4);
-    color: var(--primary-600);
+    color: var(--primary-700);
     text-transform: uppercase;
     font-weight: bold;
     text-underline-offset: var(--space-1);
@@ -152,6 +152,7 @@
     padding: var(--space-1) var(--space-2);
     font-weight: 600;
     border: 1px solid transparent;
+    box-shadow: var(--shadow-sm)
   }
   :global(.dark) .tags span {
     background-color: var(--bg-500);

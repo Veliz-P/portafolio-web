@@ -106,14 +106,13 @@
     align-items: center;
     gap: var(--space-4);
     padding: var(--space-2) var(--space-6);
-    background-color: var(--primary-600);
+    background-color: var(--primary-700);
     border-radius: var(--rounded-xl);
     color: var(--light);
     font-weight: bold;
     font-size: var(--fs-sm);
     cursor: pointer;
     transition: background-color 0.3s ease;
-    border: 1px solid var(--light);
   }
   #cv-download-div a:hover {
     background-color: var(--primary-700);

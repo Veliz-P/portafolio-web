@@ -6,8 +6,8 @@
 }
 
 :root {
-  --dark: hsl(0, 0%, 5%);
-  --light: hsl(0, 0%, 98%);
+  --dark: hsl(0, 0%, 10%);
+  --light: hsl(0, 0%, 95%);
   --primary-100: hsl(248, 50%, 90%);
   --primary-200: hsl(248, 50%, 84%);
   --primary-300: hsl(248, 50%, 78%);
@@ -19,7 +19,7 @@
   --primary-900: hsl(248, 50%, 36%);
 
   --text-muted: hsl(0, 0%, 45%);
-  --text: hsl(0, 0%, 18%);
+  --text: hsl(0, 0%, 25%);
 
   --bg-100: hsl(0, 0%, 99%);
   --bg-200: hsl(0, 0%, 97%);
@@ -97,7 +97,7 @@
 
 .dark {
   --text-muted: hsl(0, 0%, 70%);
-  --text: hsl(0, 0%, 85%);
+  --text: hsl(0, 0%, 90%);
 
   --bg-100: hsl(0, 0%, 25%);
   --bg-200: hsl(0, 0%, 22%);
@@ -142,14 +142,14 @@ textarea {
 .neon {
   text-shadow:
     0 0 0px var(--primary-400),
-    0 0 10px var(--primary-400);
-  color: var(--primary-500);
+    0 0 10px var(--primary-500);
+  color: var(--primary-600);
 }
 
 .dark .neon {
   text-shadow:
-    0 0 0px var(--primary-500),
-    0 0 10px var(--primary-500);
+    0 0 0px var(--primary-400),
+    0 0 10px var(--primary-600);
   color: var(--primary-500);
 }
 

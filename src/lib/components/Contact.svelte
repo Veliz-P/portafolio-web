@@ -199,7 +199,6 @@
   }
   #contact-section .section-title {
     margin-bottom: var(--space-8);
-    color: var(--primary-500);
   }
   #form {
     display: flex;
@@ -276,7 +275,7 @@
 
   #submit-btn {
     padding: var(--space-2) var(--space-8);
-    background-color: var(--primary-600);
+    background-color: var(--primary-700);
     border-radius: var(--rounded-xl);
     color: var(--light);
     font-weight: bold;
@@ -292,10 +291,10 @@
     margin-bottom: var(--space-6);
   }
   #submit-btn:hover {
-    box-shadow: 6px 6px 0 var(--primary-600);
+    box-shadow: 6px 6px 0 var(--primary-700);
   }
   #submit-btn:active {
-    box-shadow: 1px 1px 0 var(--primary-600);
+    box-shadow: 1px 1px 0 var(--primary-700);
     transform: translateY(2px);
     transition: all 0.1s ease-in-out;
     border: none;

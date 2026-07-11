@@ -120,7 +120,7 @@
 
 <style>
   #projects-container {
-    background-color: var(--primary-600);
+    background-color: var(--primary-700);
     padding: var(--space-10) 0;
     width: 100%;
     color: var(--light);
@@ -267,7 +267,7 @@
       gap: var(--space-3);
     }
     .ds-tech-list span {
-      background-color: var(--primary-500);
+      background-color: var(--primary-600);
       padding: var(--space-1) var(--space-2);
       border-radius: var(--rounded-md);
       font-size: var(--fs-sm);

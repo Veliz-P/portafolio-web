@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { User, Phone, Moon, Sun, Lightbulb, Settings } from '@lucide/svelte';
+  import { User, Phone, Moon, Sun, Lightbulb, Settings, Menu } from '@lucide/svelte';
   import { themeStore } from '$lib/stores/themeStore';
   import { localStore, translationStore } from '$lib/stores/langStore';
   let isMenuOpen = $state(false);
@@ -8,19 +8,7 @@
 
 <nav id="navbar-desktop" class="dark">
   <button aria-label="Open menu" id="btn-open-menu" onclick={() => (isMenuOpen = !isMenuOpen)}>
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="35"
-      height="40"
-      viewBox="0 0 48 48"
-      aria-hidden="true"
-      focusable="false"
-    >
-      <circle cx="24" cy="24" r="22" fill="#f3f4f6" />
-      <rect x="12" y="16" width="24" height="2.6" rx="1.3" fill="#111" />
-      <rect x="12" y="23" width="24" height="2.6" rx="1.3" fill="#111" />
-      <rect x="12" y="30" width="24" height="2.6" rx="1.3" fill="#111" />
-    </svg>
+    <Menu/>
   </button>
   <ul id="navbar-items">
     <li>
@@ -113,7 +101,7 @@
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    padding: var(--space-2) var(--space-4);
+    padding: var(--space-3) var(--space-4);
     border-bottom: var(--space-2) solid var(--primary-500);
     z-index: 3;
   }
@@ -141,17 +129,21 @@
   .language-switcher {
     cursor: pointer;
     outline: none;
-    border: 2px solid var(--primary-600);
-    background-color: var(--primary-600);
+    border: 2px solid var(--primary-700);
+    background-color: var(--primary-700) !important;
     font-size: var(--fs-base);
     text-transform: uppercase;
     transition: background-color 0.2s ease-in-out;
   }
-  .language-switcher:focus {
-    accent-color: var(--primary-500);
+  .btn-toggle-mode {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   #btn-open-menu {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   #menu-mobile-wrapper {
     position: fixed;
