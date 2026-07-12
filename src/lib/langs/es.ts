@@ -5,7 +5,12 @@ export const es: LangSchema = {
     about: 'Sobre mí',
     skills: 'Habilidades',
     contact: 'Contacto',
-    projects: 'Proyectos'
+    projects: 'Proyectos',
+    explore: 'Explorar',
+    settings: 'Preferencias',
+    theme: 'Tema',
+    language: 'Idioma',
+    socialMedia: "Perfiles",
   },
   hero: {
     gretting: 'Hola, mi nombre es',

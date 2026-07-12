@@ -87,7 +87,7 @@
           </button>
         </div>
         <section class="mobile-menu-section">
-          <h4>Explorar</h4>
+          <h4>{$translationStore.navbar.explore}</h4>
           <ul class="navbar-items">
             <li>
               <a class="navbar-item" onclick={closeMenu} href="#skills">
@@ -117,10 +117,10 @@
           </ul> 
         </section> 
         <section class="mobile-menu-section">
-          <h4>Opciones</h4>
+          <h4>{$translationStore.navbar.settings}</h4>
           <ul class="mobile-settings">
               <li>
-                <p>Tema</p>
+                <p>{$translationStore.navbar.theme}</p>
                 <button
                   onclick={() => ($themeStore = !$themeStore)}
                   aria-label="Language switcher"
@@ -134,7 +134,7 @@
                 </button>
               </li>
               <li>
-                <p>Idioma</p>
+                <p>{$translationStore.navbar.language}</p>
                 <select name="language" bind:value={$localStore} class="navbar-item language-switcher">
                   <option value="es">ES</option>
                   <option value="en">EN</option>
@@ -143,7 +143,7 @@
           </ul>
         </section>
         <section class="mobile-menu-section">
-          <h4>Redes</h4>
+          <h4>{$translationStore.navbar.socialMedia}</h4>
           <ul class="social-media-links">
             <li>
               <a
@@ -303,6 +303,7 @@
     font-size: var(--fs-base);
     width: 85%;
     max-width: 300px;
+    overflow-y: auto;
   }
   #menu-mobile > div {
     display: flex;

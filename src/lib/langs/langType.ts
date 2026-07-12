@@ -4,6 +4,11 @@ export interface LangSchema {
     skills: string;
     contact: string;
     projects: string;
+    explore: string;
+    settings: string;
+    theme: string;
+    language: string;
+    socialMedia: string;
   };
   hero: {
     gretting: string;
