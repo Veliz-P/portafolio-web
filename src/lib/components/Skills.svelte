@@ -280,6 +280,7 @@
     flex-direction: column;
     border: 1px solid var(--border);
     box-shadow: var(--shadow-sm);
+    transition: border-color 0.3s ease-in-out, opacity 0.3s ease-in-out;
   }
   .skill-icon {
     width: 2rem;
@@ -373,6 +374,13 @@
     .skill-section {
       grid-template-columns: repeat(2, 1fr);
       gap: var(--space-8);
+    }
+    .skill-card:hover {
+      border-color: var(--primary-600);
+      cursor: pointer;
+    }
+    .skill-card:hover ~ .skill-card{
+      opacity: 0.4;
     }
     #skills {
       margin-bottom: calc(var(--space-16) * 2.5) !important;
