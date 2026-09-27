@@ -375,7 +375,7 @@
       gap: var(--space-8);
     }
     #skills {
-      margin-bottom: var(--space-16);
+      margin-bottom: calc(var(--space-16) * 2.5) !important;
     }
   }
   @media (min-width: 1024px) {

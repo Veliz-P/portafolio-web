@@ -375,7 +375,7 @@
       margin-bottom: var(--space-10);
     }
     #contact-section {
-      margin-bottom: var(--space-16);
+      margin-bottom: calc(var(--space-16) * 2.5);
     }
     #social-media-links-mobile {
       display: none;

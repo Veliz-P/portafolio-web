@@ -164,10 +164,10 @@
       margin-bottom: var(--space-16);
     }
     #hero-section {
-      margin: var(--space-8);
       padding: var(--space-6) var(--space-10);
       gap: var(--space-10);
       flex-direction: row;
+      height: 70vh;
     }
     #hero-title * {
       font-size: var(--fs-3xl);

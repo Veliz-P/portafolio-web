@@ -227,7 +227,9 @@
   }
   @media (min-width: 768px) {
     #projects-container {
-      margin-bottom: var(--space-16);
+      margin-bottom: calc(var(--space-16) * 1.5);
+      padding: var(--space-16) 0 !important;
+      padding-bottom: calc(var(--space-16) * 2) !important;
     }
     #mobile-projects-view {
       display: none;
