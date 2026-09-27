@@ -1,11 +1,12 @@
 <script lang="ts">
-  import { Lightbulb, CodeXml, ExternalLink } from '@lucide/svelte';
+  import { Lightbulb, CodeXml, ExternalLink, CalendarDays, Gauge, Plus, ChevronsUp } from '@lucide/svelte';
   import { translationStore } from '$lib/stores/langStore';
   import { asset } from '$app/paths';
   import TS from '$lib/assets/icons/typescript.svg';
-  import Css from '$lib/assets/icons/css.svg';
   import Vuejs from '$lib/assets/icons/vuejs.svg';
   import Svelte from '$lib/assets/icons/svelte.svg';
+  import Tailwind from '$lib/assets/icons/tailwind-css.svg';
+  import LucideIcon from '$lib/components/LucideIcon.svelte';
   interface Project {
     title: string;
     techStackIcons: unknown[];
@@ -16,7 +17,10 @@
     linkRepo?: string;
     linkVideo?: string;
     imgPath: string;
+    completionTime: string;
+    difficulty: string;
   }
+  let activeDetailsPopup = $state<number | null>(null);
   let projects = $state<Project[]>([]);
   $effect(() => {
     projects = [
@@ -24,23 +28,36 @@
         title: $translationStore.projects.quickQuickNote.title,
         description: $translationStore.projects.quickQuickNote.description,
         shortDescription: $translationStore.projects.quickQuickNote.shortDescription,
-        techStackIcons: [Vuejs, TS, Css],
-        techStack: ['Vue.js', 'TypeScript', 'CSS'],
+        techStackIcons: [Vuejs, TS, Tailwind],
+        techStack: ['Vue.js', 'TypeScript', 'Tailwind CSS'],
         imgPath: asset('/images/quick-note-project-img.webp'),
         linkRepo: 'https://github.com/Veliz-P/quick-quick-note',
-        linkDemo: 'https://veliz-p.github.io/quick-quick-note/#/home'
+        linkDemo: 'https://veliz-p.github.io/quick-quick-note/#/home',
+        completionTime: $translationStore.projects.quickQuickNote.completionTime,
+        difficulty: $translationStore.easy
       },
       {
         title: $translationStore.projects.portfolioWeb.title,
         description: $translationStore.projects.portfolioWeb.description,
         shortDescription: $translationStore.projects.portfolioWeb.shortDescription,
-        techStackIcons: [Svelte, TS, Css],
-        techStack: ['Svelte', 'TypeScript', 'CSS'],
+        techStackIcons: [Svelte, TS, Tailwind],
+        techStack: ['Svelte', 'TypeScript', 'Tailwind CSS'],
         imgPath: asset('/images/portfolio-project-img.webp'),
-        linkRepo: 'https://github.com/Veliz-P/portafolio-web'
+        linkRepo: 'https://github.com/Veliz-P/portafolio-web',
+        linkDemo: 'https://veliz-p.github.io/portafolio-web/',
+        completionTime: $translationStore.projects.portfolioWeb.completionTime,
+        difficulty: $translationStore.intermediate
       }
     ];
   });
+
+  function toggleDetailsPopup(index: number) {
+    if (activeDetailsPopup === index) {
+      activeDetailsPopup = null;
+    } else {
+      activeDetailsPopup = index;
+    }
+  } 
 </script>
 
 <section id="projects-container" class="animate-on-scroll">
@@ -55,13 +72,25 @@
           <div class="ds-project-img-container">
             <img class="ds-project-img" loading="lazy" src={project.imgPath} alt={project.title} />
             <div class="ds-tech-list">
-              {#each project.techStack as tech}
-                <span>{tech}</span>
+              {#each project.techStackIcons as icon}
+                <img src={icon as string} alt="Tech Icon" width="25" height="25" />
               {/each}
             </div>
           </div>
           <div class="ds-project-info">
-            <h3>{project.title}</h3>
+            <div>
+              <h3>{project.title}</h3>
+              <div class="stats">
+                <div>
+                  <CalendarDays size={18} />
+                  <span>{project.completionTime}</span>
+                </div>
+                <div>
+                  <Gauge size={18} />
+                  <span>{project.difficulty}</span>
+                </div>
+              </div>
+            </div>
             <p>{project.description}</p>
             <div class="project-links">
               {#if project.linkRepo}
@@ -84,9 +113,30 @@
       {/each}
     </div>
     <div id="mobile-projects-view">
-      {#each projects as project}
+      {#each projects as project, index}
         <div class="mobile-project-card" style="background-image: url({project.imgPath})">
           <div class="blur-overlay"></div>
+          <div class="more-details-div">
+            <div style="position: relative">
+              <button aria-label="Open/close details" 
+                onclick={() => toggleDetailsPopup(index)}>
+                <LucideIcon 
+                  Icon={ activeDetailsPopup === index ? ChevronsUp : Plus } 
+                  size={20}
+                />
+              </button>
+              {#if activeDetailsPopup === index}
+                <ul class="more-details-content">
+                  <li>
+                    <CalendarDays size={18}/> {$translationStore.projects.completionTimeTitle}: <span>{project.completionTime}</span>
+                  </li>
+                  <li>
+                    <Gauge size={18}/> {$translationStore.projects.difficultyTitle}: <span>{project.difficulty}</span>
+                  </li>
+                </ul>
+              {/if}
+            </div>
+          </div>
           <div class="tech-icon-list">
             {#each project.techStackIcons as icon}
               <img src={icon as string} alt="Tech Icon" width="25" height="25" />
@@ -225,6 +275,62 @@
       0 5px 30px rgba(0, 0, 0, 0.2),
       inset 0 1px 1px rgba(255, 255, 255, 0.1);
   }
+  .stats {
+    display: flex;
+    gap: var(--space-6);
+    font-size: var(--fs-sm);
+    margin-top: var(--space-2);
+    margin-bottom: var(--space-1);
+  }
+  .stats div {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+  }
+  .more-details-div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+  }
+  .more-details-div button {
+    margin: var(--space-4);
+    padding: var(--space-2);
+    border-radius: var(--rounded-full);
+    background-color: var(--dark);
+    color: var(--light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .more-details-content {
+    position: absolute;
+    width: max-content;
+    top: 100%;
+    left: 0;
+    list-style: none;
+    color: var(--text-muted);
+    font-size: var(--fs-sm);
+    margin-top: var(--space-2);
+    margin-left: var(--space-4);
+    padding: var(--space-2) var(--space-4);
+    background-color: var(--dark);
+    border-radius: var(--rounded-md);
+    box-shadow: var(--shadow-lg);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    font-weight: 500;
+  }
+  .more-details-content li {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+  }
+  .more-details-content li span {
+    font-weight: 400;
+    color: var(--light);
+  }
   @media (min-width: 768px) {
     #projects-container {
       margin-bottom: calc(var(--space-16) * 1.5);
@@ -266,17 +372,18 @@
       width: 100%;
       height: auto;
       border-radius: var(--rounded-xl);
+      min-height: 300px;
+      object-fit: cover;
     }
     .ds-tech-list {
       display: flex;
+      align-items: center;
+      justify-content: center;
       gap: var(--space-3);
-    }
-    .ds-tech-list span {
-      background-color: var(--primary-600);
-      padding: var(--space-1) var(--space-2);
+      background-color: var(--primary-900);
+      margin-right: auto;
+      padding: var(--space-3) var(--space-4);
       border-radius: var(--rounded-md);
-      font-size: var(--fs-sm);
-      font-weight: 600;
       box-shadow: var(--shadow-md);
     }
     .ds-project-info {

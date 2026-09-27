@@ -61,12 +61,16 @@ export interface LangSchema {
       title: string;
       description: string;
       shortDescription: string;
+      completionTime: string;
     };
     portfolioWeb: {
       title: string;
       description: string;
       shortDescription: string;
+      completionTime: string;
     };
+    completionTimeTitle: string;
+    difficultyTitle: string;
   };
   contact: {
     title: string;
@@ -88,5 +92,8 @@ export interface LangSchema {
   };
   footer : {
     rightsReserved: string;
-  }
+  },
+  easy: string;
+  intermediate: string;
+  advanced: string;
 }

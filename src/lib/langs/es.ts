@@ -63,14 +63,18 @@ export const es: LangSchema = {
       title: 'Quick Quick Note',
       description:
         'Aplicación web para tomas notas de forma rápida y sencilla. Una herramienta útil para organizar ideas, tareas o cualquier información directamente en el navegador.',
-      shortDescription: 'App web para tomar notas personales.'
+      shortDescription: 'App web para tomar notas personales.',
+      completionTime: '2 sem.'
     },
     portfolioWeb: {
       title: 'Portafolio Web',
       description:
         'Mi portafolio web personal diseñado para presentar mis habilidades y experiencia como desarrollador, construido con un enfoque moderno, responsivo y optimizado',
-      shortDescription: 'Mi sitio web personal que muestra mi trabajo'
-    }
+      shortDescription: 'Mi sitio web personal que muestra mi trabajo',
+      completionTime: '3 sem.'
+    },
+    completionTimeTitle: 'Tiempo de desarrollo',
+    difficultyTitle: 'Dificultad'
   },
   contact: {
     title: 'Contacto',
@@ -93,5 +97,8 @@ export const es: LangSchema = {
   },
   footer : {
     rightsReserved: 'Todos los derechos reservados.'
-  }
+  },
+  easy: 'Fácil',
+  intermediate: 'Intermedio',
+  advanced: 'Avanzado'
 };
