@@ -249,8 +249,11 @@
       gap: var(--space-8);
       padding: var(--space-10);
       margin: auto var(--space-8);
-      border: 2px dashed var(--primary-300);
+      border: 3px dashed var(--primary-300);
       border-radius: var(--rounded-xl);
+    }
+    .desktop-project-card:hover {
+      border-style: solid;
     }
     .ds-project-img-container {
       display: flex;
