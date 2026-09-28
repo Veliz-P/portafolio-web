@@ -101,5 +101,11 @@ export const en: LangSchema = {
   },
   easy: 'Easy',
   intermediate: 'Intermediate',
-  advanced: 'Advanced'
+  advanced: 'Advanced',
+  errorPage: {
+    msg404: "Looks like you're lost",
+    defaultErrorMsg: "Something went wrong. I apologize for the inconvenience.",
+    caption: "Please feel free to keep browing.",
+    goHome: "Go Home"
+  }
 };

@@ -100,5 +100,11 @@ export const es: LangSchema = {
   },
   easy: 'Fácil',
   intermediate: 'Intermedio',
-  advanced: 'Avanzado'
+  advanced: 'Avanzado',
+  errorPage: {
+    msg404: "Página no encontrada",
+    defaultErrorMsg: "Algo salió mal. Me disculpo por los inconvenientes.",
+    caption: "Por favor no dudes en seguir explorando.",
+    goHome: "Ir a página principal"
+  }
 };

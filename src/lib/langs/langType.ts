@@ -92,8 +92,14 @@ export interface LangSchema {
   };
   footer : {
     rightsReserved: string;
-  },
+  };
   easy: string;
   intermediate: string;
   advanced: string;
+  errorPage: {
+    msg404: string;
+    defaultErrorMsg: string
+    caption: string
+    goHome: string
+  }
 }
