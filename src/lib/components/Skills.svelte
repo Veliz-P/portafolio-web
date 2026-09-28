@@ -227,31 +227,42 @@
     align-items: center;
     flex-wrap: wrap;
     gap: var(--space-4);
-    background-color: var(--bg-400);
+    /* background-color: var(--bg-400); */
     padding: var(--space-3) var(--space-4);
     border-radius: var(--rounded-xl);
     margin-left: var(--space-3);
     margin-right: var(--space-3);
     margin-bottom: var(--space-4);
-    box-shadow: var(--shadow-sm);
+    /* box-shadow: var(--shadow-sm); */
   }
-  :global(.dark) .slider-buttons {
+  /* :global(.dark) .slider-buttons {
     background-color: var(--bg-500);
-  }
+  } */
   .slider-buttons button {
-    color: var(--text-muted);
+    /* color: var(--text-muted); */
     font-weight: 600;
     font-size: var(--fs-sm);
-    padding: var(--space-1) var(--space-3);
+    padding: var(--space-2) var(--space-3);
     border-radius: var(--rounded-lg);
     cursor: pointer;
     transition:
       background-color 0.3s ease-in-out,
       color 0.3s ease-in-out;
+    border: 2px solid var(--border);
+    background-color: var(--bg-200);
   } 
+  :global(.dark) .slider-buttons button {
+    background-color: var(--bg-800);
+  }
   .active-button {
+    background-color: var(--primary-200) !important;
+    color: var(--primary-800) !important;
+    border-color: var(--primary-500) !important;
+  }
+  :global(.dark) .active-button {
     background-color: var(--primary-700) !important;
-    color: var(--light) !important;
+    color: var(--primary-100) !important;
+    border-color: var(--primary-500) !important;
   }
   #slider-wrapper {
     overflow: hidden;
