@@ -83,6 +83,10 @@ export interface LangSchema {
     send: string;
     successMsg: string;
     errorMsg: string;
+    subjectPlaceholder: string;
+    namePlaceholder: string;
+    emailPlaceholder: string;
+    messagePlaceholder: string;
   };
   about: {
     title: string;

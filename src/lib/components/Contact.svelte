@@ -3,7 +3,6 @@
   import { asset } from '$app/paths';
   import Github from '$lib/assets/icons/github.svg';
   import Linkedin from '$lib/assets/icons/linkedin.svg';
-  import Fiverr from '$lib/assets/icons/fiverr.svg';
   import Gmail from "$lib/assets/icons/gmail.svg";
   import { translationStore } from '$lib/stores/langStore';
   import emailjs from '@emailjs/browser';
@@ -62,15 +61,6 @@
       <img src={Github} alt="GitHub" width="45" height="45" />
     </a>
     <a
-      id="fiverr-link"
-      aria-label="Fiverr profile"
-      href="https://es.fiverr.com/carlos_velizz?source=gig_page"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <img src={Fiverr} alt="Fiverr" width="45" height="45" />
-    </a>
-    <a
       id="gmail-link"
       aria-label="Send an email"
       href="mailto:paucarcarlos2108@gmail.com"
@@ -82,13 +72,19 @@
   </div>
   <div id="contact-row">
     <form onsubmit={sendEmail} id="form">
-      <h3 id="form-title">{$translationStore.contact.formTitle}</h3>
       <div class="field-div">
         <label for="subject">
           <Megaphone size={20} />
           <span>{$translationStore.contact.subject}</span>
         </label>
-        <input type="text" id="subject" name="subject" required minlength="10" maxlength="60" />
+        <input 
+          type="text" 
+          id="subject" 
+          name="subject" 
+          required 
+          minlength="10" 
+          maxlength="60" 
+          placeholder="{$translationStore.contact.subjectPlaceholder}" />
       </div>
       <div id="name-and-email-fields">
         <div class="field-div">
@@ -96,14 +92,27 @@
             <User size={20} />
             <span>{$translationStore.contact.name}</span>
           </label>
-          <input type="text" id="name" name="name" required minlength="3" maxlength="50" />
+          <input 
+            type="text" 
+            id="name" 
+            name="name" 
+            placeholder="{$translationStore.contact.namePlaceholder}" 
+            required 
+            minlength="3" 
+            maxlength="50" />
         </div>
         <div class="field-div">
           <label for="email">
             <Mail size={20} />
             <span>Email</span>
           </label>
-          <input type="email" id="email" name="email" required maxlength="255" />
+          <input 
+            type="email" 
+            id="email" 
+            name="email" 
+            placeholder="{$translationStore.contact.emailPlaceholder}" 
+            required 
+            maxlength="255" />
         </div>
       </div>
 
@@ -120,6 +129,7 @@
           minlength="15"
           maxlength="500"
           required
+          placeholder="{$translationStore.contact.messagePlaceholder}"
           bind:value={message}
         ></textarea>
         <p id="message-word-counter">
@@ -141,13 +151,6 @@
     <div id="ready-to-collaborate">
       <h3>{$translationStore.contact.readyToWork}</h3>
       <p>{$translationStore.contact.contactMeMsg}</p>
-      <img
-        id="work-together-img"
-        src={asset('/images/work-together-img.svg')}
-        alt="let's work together"
-        width="100"
-        height="250"
-      />
       <div class="social-media-links">
         <a
           id="linkedin-link"
@@ -168,15 +171,6 @@
           <img src={Github} alt="GitHub" width="45" height="45" />
         </a>
         <a
-          id="fiverr-link"
-          aria-label="Fiverr profile"
-          href="https://es.fiverr.com/carlos_velizz?source=gig_page"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img src={Fiverr} alt="Fiverr" width="45" height="45" />
-        </a>
-        <a
           id="gmail-link"
           aria-label="Send an email"
           href="mailto:paucarcarlos2108@gmail.com"
@@ -186,6 +180,15 @@
           <img src={Gmail} alt="Gmail" width="45" height="45" />
         </a>
       </div>
+      <img
+        id="work-together-img"
+        src={asset('/images/work-together-img.svg')}
+        alt="let's work together"
+        width="100"
+        height="250"
+        class="bounce-animation"
+      />
+      
     </div>
   </div>
 </section>
@@ -240,9 +243,6 @@
   #contact-row form {
     flex-grow: 1;
   }
-  #form-title {
-    margin-bottom: var(--space-6) !important;
-  }
   #form input,
   #form textarea {
     padding: var(--space-2);
@@ -263,6 +263,11 @@
     box-shadow: var(--shadow-sm);
     border-color: none;
     outline: 1.5px solid var(--primary-600);
+  }
+  #form input::placeholder,
+  #form textarea::placeholder {
+    font-size: var(--fs-sm);
+    font-style: italic;
   }
   #form label {
     display: flex;
@@ -385,9 +390,8 @@
     }
     #form {
       padding: var(--space-8) var(--space-12);
-    }
-    #form-title {
-      margin-bottom: var(--space-8) !important;
+      width: 100%;
+      max-width: 600px;
     }
     #form input,
     #form textarea {
@@ -395,6 +399,8 @@
     }
     .field-div {
       margin-bottom: var(--space-8);
+      font-size: var(--fs-sm);
+      font-weight: 500
     }
     #name-and-email-fields {
       justify-content: space-between;
@@ -410,6 +416,7 @@
     }
     #ready-to-collaborate > h3 ~ p {
       color: var(--text-muted);
+      margin-bottom: var(--space-8)
     }
     #work-together-img {
       width: 100%;
@@ -423,6 +430,17 @@
   @media (min-width: 1024px) {
     #contact-row {
       gap: calc(var(--space-16) + 1rem);
+    }
+  }
+  .bounce-animation {
+    animation: bounce 1.5s linear alternate infinite;
+  }
+  @keyframes bounce {
+    from {
+      transform: translateY(-8px);
+    }
+    to {
+      transform: translateY(8px);
     }
   }
 </style>

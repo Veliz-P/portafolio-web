@@ -4,7 +4,6 @@
   import { localStore, translationStore } from '$lib/stores/langStore';
   import Github from '$lib/assets/icons/github.svg';
   import Linkedin from '$lib/assets/icons/linkedin.svg';
-  import Fiverr from '$lib/assets/icons/fiverr.svg';
   import Gmail from "$lib/assets/icons/gmail.svg";
   let isMenuOpen = $state(false);
   const closeMenu = () => (isMenuOpen = false);
@@ -165,17 +164,6 @@
                 rel="noopener noreferrer"
               >
                 <img src={Github} alt="GitHub" width="30" height="30" />
-              </a>
-            </li>
-            <li>
-              <a
-                id="fiverr-link"
-                aria-label="Fiverr profile"
-                href="https://es.fiverr.com/carlos_velizz?source=gig_page"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img src={Fiverr} alt="Fiverr" width="30" height="30" />
               </a>
             </li>
             <li>

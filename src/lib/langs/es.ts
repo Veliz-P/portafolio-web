@@ -86,7 +86,11 @@ export const es: LangSchema = {
     contactMeMsg: 'Contáctame para discutir sobre tus ideas o proyectos.',
     send: 'Enviar',
     successMsg: '¡Mensaje enviado con éxito!',
-    errorMsg: 'Error al enviar el mensaje. Por favor, inténtelo más tarde.'
+    errorMsg: 'Error al enviar el mensaje. Por favor, inténtelo más tarde.',
+    subjectPlaceholder: 'Ej. Cotización sitio web',
+    namePlaceholder: 'Juan Pérez',
+    emailPlaceholder: "juan@example.com",
+    messagePlaceholder: "Cuéntame sobre tu proyecto, consulta o idea",
   },
   about: {
     title: 'Sobre mí',
