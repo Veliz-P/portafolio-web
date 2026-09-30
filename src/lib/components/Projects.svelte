@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Lightbulb, CodeXml, ExternalLink, CalendarDays, Gauge, Plus, ChevronsUp } from '@lucide/svelte';
+  import { FolderKanban, CodeXml, ExternalLink, CalendarDays, Gauge, Plus, ChevronsUp } from '@lucide/svelte';
   import { translationStore } from '$lib/stores/langStore';
   import { asset } from '$app/paths';
   import TS from '$lib/assets/icons/typescript.svg';
@@ -63,7 +63,7 @@
 <section id="projects-container" class="animate-on-scroll">
   <h2 class="section-title">
     <span>{$translationStore.projects.title}</span>
-    <Lightbulb size={30} />
+    <FolderKanban size={30} />
   </h2>
   <div id="projects">
     <div id="desktop-projects-view">

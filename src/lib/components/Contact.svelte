@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Mail, Megaphone, Send, TextAlignJustify, User, Phone } from '@lucide/svelte';
+  import { Mail, Megaphone, Send, TextAlignJustify, User } from '@lucide/svelte';
   import { asset } from '$app/paths';
   import Github from '$lib/assets/icons/github.svg';
   import Linkedin from '$lib/assets/icons/linkedin.svg';
@@ -38,7 +38,7 @@
 
 <section id="contact-section" class="animate-on-scroll">
   <h2 class="section-title">
-    <Phone size={30} />
+    <Send size={30} />
     <span> {$translationStore.contact.title}</span>
   </h2>
   <div id="social-media-links-mobile" class="social-media-links">

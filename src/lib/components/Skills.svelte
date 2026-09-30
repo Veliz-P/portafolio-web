@@ -1,7 +1,6 @@
 <script lang="ts">
   import {
-    Settings,
-    Code,
+    CodeXml,
     Paintbrush,
     Brain,
     User,
@@ -60,7 +59,7 @@
   [
     {
       title: $translationStore.skills.techStackSection.programmingLangs,
-      icon: Code,
+      icon: CodeXml,
       iconList: [
         { name: 'Python', icon: Python },
         { name: 'Javascript', icon: JS },
@@ -147,7 +146,7 @@
 
 <section id="skills" class="animate-on-scroll">
   <h2 class="section-title">
-    <Settings size={30} />
+    <CodeXml size={30} />
     <span> {$translationStore.skills.title}</span>
   </h2>
   <div class="slider-buttons">

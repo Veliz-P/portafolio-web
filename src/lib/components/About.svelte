@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { User, Download } from '@lucide/svelte';
+  import { UserRound, Download } from '@lucide/svelte';
   import { translationStore } from '$lib/stores/langStore';
   import { asset } from '$app/paths';
 </script>
@@ -7,7 +7,7 @@
 <section id="about" class="animate-on-scroll">
   <h2 class="section-title">
     <span data-i18n="about">{$translationStore.about.title}</span>
-    <User size={30} />
+    <UserRound size={30} />
   </h2>
   <div id="bento-grid">
     <div id="about-text-wrapper">

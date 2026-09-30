@@ -309,7 +309,7 @@
     align-items: center;
     flex-wrap: wrap;
     padding: var(--space-3) var(--space-4);
-    border-bottom: var(--space-2) solid var(--primary-500);
+    border-bottom: 2px solid var(--primary-500);
     z-index: 3;
   }
 
