@@ -1,8 +1,38 @@
 <script lang="ts">
-import { translationStore } from '$lib/stores/langStore';
+  import { translationStore } from '$lib/stores/langStore';
+  import { onMount, onDestroy } from 'svelte';
+  let observer : IntersectionObserver | null = null;
+  let footer : HTMLElement | null = null;
+
+  function setupObserver() {
+    const footerId = "#floating-navbar-desktop"
+    const hideClass = "hide-nav"
+    footer = document.querySelector(footerId)
+    observer = new IntersectionObserver((entries) => {
+      const entry = entries[0];
+      if (entry) {
+        footer?.classList.toggle(hideClass, entry.isIntersecting)
+      }
+    }, 
+    {
+      threshold: 0.10,
+    })
+    let el = document.querySelector("#portfolio-end")
+    if (el) {
+        observer?.observe(el)
+    }
+  }
+
+  onMount(() => {
+    setupObserver()
+  });
+  
+  onDestroy(() => {
+    observer?.disconnect()
+  })
 </script>
 
-<footer>
+<footer id="portfolio-end">
     <p>
         &copy; {new Date().getFullYear()}, Carlos Veliz | {$translationStore.footer.rightsReserved}
     </p>

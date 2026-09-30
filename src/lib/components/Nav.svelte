@@ -8,7 +8,7 @@
     Moon,
     Sun,
     Menu,
-    ChevronsLeft
+    ChevronsLeft,
   } from '@lucide/svelte';
 
   import { themeStore } from '$lib/stores/themeStore';
@@ -23,9 +23,9 @@
   const closeMenu = () => (isMenuOpen = false);
 
   let isScrolled = $state(false);
-
   const handleScroll = () => {
-    isScrolled = window.scrollY > 50;
+    const scrollPosition = window.scrollY;
+    isScrolled =  scrollPosition > 50;
   };
 
   onMount(() => {
@@ -309,7 +309,7 @@
     align-items: center;
     flex-wrap: wrap;
     padding: var(--space-3) var(--space-4);
-    border-bottom: 2px solid var(--primary-500);
+    border-bottom: 3px solid var(--primary-500);
     z-index: 3;
   }
 
