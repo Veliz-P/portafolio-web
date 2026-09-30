@@ -3,7 +3,7 @@
   import { asset } from '$app/paths';
 </script>
 
-<div id="hero-section-wrapper">
+<div class="animate-on-scroll" id="hero-section-wrapper">
   <section id="hero-section">
     <img id="profile-pic" src={asset('/images/hero-img.svg')} alt="Profile Pic" />
     <div id="hero-text">
