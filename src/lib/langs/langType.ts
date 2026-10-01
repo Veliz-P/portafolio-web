@@ -9,6 +9,7 @@ export interface LangSchema {
     theme: string;
     language: string;
     socialMedia: string;
+    start: string
   };
   hero: {
     gretting: string;

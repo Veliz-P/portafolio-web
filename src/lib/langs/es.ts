@@ -11,6 +11,7 @@ export const es: LangSchema = {
     theme: 'Tema',
     language: 'Idioma',
     socialMedia: "Perfiles",
+    start: 'Inicio'
   },
   hero: {
     gretting: 'Hola, mi nombre es',
