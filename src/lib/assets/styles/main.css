@@ -5,6 +5,13 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("/fonts/JetBrainsMono/JetBrainsMono-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 800;
+  font-style: normal;
+}
+
 :root {
   --dark: hsl(0, 0%, 10%);
   --light: hsl(0, 0%, 95%);
@@ -118,7 +125,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Inter', sans-serif, system-ui, Avenir, Helvetica, Arial !important;
+  font-family: 'JetBrains Mono', sans-serif, system-ui, Avenir, Helvetica, Arial !important;
   accent-color: var(--primary-400);
   outline-color: var(--primary-400);
 }
