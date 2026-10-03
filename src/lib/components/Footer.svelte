@@ -1,6 +1,7 @@
 <script lang="ts">
   import { translationStore } from '$lib/stores/langStore';
   import { onMount, onDestroy } from 'svelte';
+  import { resolve } from '$app/paths';
   import Linkedin from '$lib/assets/icons/linkedin.svg';
   import Github from '$lib/assets/icons/github.svg';
   let observer : IntersectionObserver | null = null;
@@ -68,7 +69,7 @@
     <div class="footer-explore-links">
       <ul>
         <li>
-          <a href="/">{ $translationStore.navbar.start }</a>
+          <a href={resolve('/')}>{ $translationStore.navbar.start }</a>
         </li>
         <li>
           <a href="#skills">{ $translationStore.navbar.skills }</a>
