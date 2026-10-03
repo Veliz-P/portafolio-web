@@ -1,7 +1,15 @@
 <script lang="ts">
   import { UserRound, Download } from '@lucide/svelte';
-  import { translationStore } from '$lib/stores/langStore';
+  import { localStore, translationStore } from '$lib/stores/langStore';
   import { asset } from '$app/paths';
+  function getFilePath () {
+    switch ($localStore) {
+      case "en":
+        return '/files/CV-en.pdf';
+      case "es":
+        return '/files/CV.pdf';
+    }
+  }
 </script>
 
 <section id="about" class="animate-on-scroll">
@@ -37,7 +45,7 @@
         </div>
         <div id="cv-download-div">
           <a download
-            href={asset('/files/CV.pdf')}>
+            href={asset(getFilePath())}>
             {$translationStore.about.downloadCV}
             <Download size={22} strokeWidth={2.5} />
           </a>

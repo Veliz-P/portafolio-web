@@ -4,7 +4,7 @@ import { en } from '$lib/langs/en';
 import { es } from '$lib/langs/es';
 
 const dictionaries = { en, es };
-type Locale = keyof typeof dictionaries;
+export type Locale = keyof typeof dictionaries;
 
 function createLocalStore() {
   let savedLocal = browser ? localStorage.getItem('locale') : 'es';
