@@ -15,12 +15,15 @@ export const es: LangSchema = {
   },
   hero: {
     gretting: 'Hola, mi nombre es',
-    name: 'Carlos Veliz',
     tagDeveloper: 'Desarrollador Web Full Stack',
     tagTechnician: 'Técnico Informático',
-    description: 'Me apasiona transformar ideas en experiencias digitales innovadoras.',
     contactMe: 'Contáctame',
-    myProjects: 'Mis proyectos'
+    myProjects: 'Mis proyectos',
+    loading: 'Cargando...',
+    done: '¡Listo!',
+    workAsTitle: 'Trabajo como:',
+    myMotivationTitle: 'Mi motivación:',
+    motivation: 'Impulsado por la curiosidad, guiado por la lógica e inspirado por las infinitas posibilidades de crear.',
   },
   skills: {
     title: 'Habilidades',

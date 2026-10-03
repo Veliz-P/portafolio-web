@@ -13,12 +13,15 @@ export interface LangSchema {
   };
   hero: {
     gretting: string;
-    name: string;
     tagDeveloper: string;
     tagTechnician: string;
-    description: string;
     contactMe: string;
     myProjects: string;
+    loading: string;
+    done: string;
+    workAsTitle: string;
+    myMotivationTitle: string
+    motivation: string;
   };
   skills: {
     title: string;

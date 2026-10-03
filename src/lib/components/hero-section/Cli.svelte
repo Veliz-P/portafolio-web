@@ -1,4 +1,5 @@
 <script lang="ts">
+import { translationStore } from '$lib/stores/langStore';
 </script>
 
 <div class="dark" id="cli">
@@ -18,37 +19,37 @@
       bash load-presentation.sh
     </p>
     <div class="cli-output">
-      Loading...
+      {$translationStore.hero.loading}
     </div>
     <div class="presentation-output">
       <div>
-        <h1>Hello! My name is <span class="neon">Carlos Veliz</span></h1>
+        <h1>{$translationStore.hero.gretting} <span class="neon">Carlos Veliz</span></h1>
       </div>
       <div class="presentation-details">
         <div>
-          <h4>I work as a:</h4>
+          <h4>{$translationStore.hero.workAsTitle}</h4>
           <ul>
-            <li> + Full-Stack Developer</li>
+            <li> + {$translationStore.hero.tagDeveloper}</li>
             <li> + Freelancer</li>
-            <li> + Technician</li>
+            <li> + {$translationStore.hero.tagTechnician}</li>
           </ul>
         </div>
         <div>
-          <h4>My motivation:</h4>
-          <p class="motivation-text">To create innovative solutions that make a positive impact on the world.</p>
+          <h4>{$translationStore.hero.myMotivationTitle}</h4>
+          <p class="motivation-text">{$translationStore.hero.motivation}</p>
         </div>
       </div>
     </div>
     <p class="cli-output">
-      Done!
+      {$translationStore.hero.done}
     </p>
   </div>
   <div class="cli-footer">
     <a href="#projects-container" id="hero-button" class="dark">
-      <span>My Projects</span>
+      <span>{$translationStore.hero.myProjects}</span>
     </a>
     <a href="#contact-section" id="hero-button-secondary">
-      <span>Contact Me</span>
+      <span>{$translationStore.hero.contactMe}</span>
     </a>
     
   </div>
