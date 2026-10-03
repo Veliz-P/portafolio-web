@@ -214,9 +214,11 @@
     align-items: center;
     position: relative;
   }
+
   #skills .section-title {
     margin-bottom: var(--space-8);
   }
+
   .slider-buttons {
     position: sticky;
     top: 5rem;
@@ -226,19 +228,14 @@
     align-items: center;
     flex-wrap: wrap;
     gap: var(--space-4);
-    /* background-color: var(--bg-400); */
     padding: var(--space-3) var(--space-4);
     border-radius: var(--rounded-xl);
     margin-left: var(--space-3);
     margin-right: var(--space-3);
     margin-bottom: var(--space-4);
-    /* box-shadow: var(--shadow-sm); */
   }
-  /* :global(.dark) .slider-buttons {
-    background-color: var(--bg-500);
-  } */
+
   .slider-buttons button {
-    /* color: var(--text-muted); */
     font-weight: 600;
     font-size: var(--fs-sm);
     padding: var(--space-2) var(--space-3);
@@ -249,31 +246,37 @@
       color 0.3s ease-in-out;
     border: 2px solid var(--border);
     background-color: var(--bg-200);
-  } 
+  }
+
   :global(.dark) .slider-buttons button {
     background-color: var(--bg-800);
   }
+
   .active-button {
     background-color: var(--primary-200) !important;
     color: var(--primary-800) !important;
     border-color: var(--primary-500) !important;
   }
+
   :global(.dark) .active-button {
     background-color: var(--primary-700) !important;
     color: var(--primary-100) !important;
     border-color: var(--primary-500) !important;
   }
+
   #slider-wrapper {
     overflow: hidden;
     width: 100%;
     max-width: 1300px;
   }
+
   #slider-tracker {
     display: flex;
     width: 100%;
     justify-content: space-between;
     transition: transform 0.3s ease-in-out;
   }
+
   .skill-section {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -282,6 +285,7 @@
     transition: opacity 0.3s ease-in-out;
     padding: var(--space-4);
   }
+
   .skill-card {
     border-radius: var(--rounded);
     padding: var(--space-4);
@@ -292,6 +296,7 @@
     box-shadow: var(--shadow-sm);
     transition: border-color 0.3s ease-in-out, opacity 0.3s ease-in-out;
   }
+
   .skill-icon {
     width: 2rem;
     height: 2rem;
@@ -300,6 +305,7 @@
     align-items: center;
     justify-content: center;
   }
+
   .skill-card h3 {
     margin-bottom: var(--space-6);
     text-align: left;
@@ -313,6 +319,7 @@
     font-size: var(--fs-base);
     font-weight: 500;
   }
+
   .skill-header-icon {
     font-size: var(--fs-md);
     color: var(--light);
@@ -323,11 +330,13 @@
     align-items: center;
     justify-content: center;
   }
+
   :global(.dark) .skill-header-icon {
     background-color: var(--light);
     color: var(--dark);
     opacity: 0.9;
   }
+
   .skill-list {
     display: flex;
     justify-content: start;
@@ -335,6 +344,7 @@
     flex-wrap: wrap;
     gap: var(--space-4);
   }
+
   .skill-item {
     background-color: var(--bg-300);
     padding: var(--space-2) var(--space-4);
@@ -345,15 +355,18 @@
     position: relative;
     transition: border-color 0.3s ease-in-out;
   }
+
   .skill-item:hover,
   .skill-item:focus {
     border-color: var(--primary-500);
   }
+
   .skill-item:hover .skill-name,
   .skill-item:focus .skill-name {
     opacity: 1;
     transition: opacity 0.4s ease-in-out;
   }
+
   .skill-name {
     position: absolute;
     top: 100%;
@@ -372,26 +385,32 @@
     text-align: center;
     z-index: 1;
   }
+
   #what-i-can-do p {
     color: var(--text-muted);
   }
+
   @media (min-width: 480px) {
     .skill-section {
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     }
   }
+
   @media (min-width: 640px) {
     .skill-section {
       grid-template-columns: repeat(2, 1fr);
       gap: var(--space-8);
     }
+
     .skill-card:hover {
       border-color: var(--primary-600);
       cursor: pointer;
     }
+
     .skill-card:hover ~ .skill-card{
       opacity: 0.4;
     }
+
     #skills {
       margin-bottom: calc(var(--space-16) * 2.5) !important;
     }
@@ -401,21 +420,25 @@
       margin: auto var(--space-8);
       margin-bottom: var(--space-16);
     }
+
     #skills .section-title {
       margin-bottom: var(--space-10);
     }
+
     .skill-section {
       grid-template-columns: repeat(3, 1fr);
       gap: var(--space-10);
       justify-content: center;
       align-items: center;
     }
+
     .skill-card {
       padding: var(--space-6) var(--space-8);
     }
+    
     .skill-card h3 {
       gap: var(--space-4);
-      font-size: var(--fs-md);
+      font-size: var(--fs-base);
     }
   }
 </style>
