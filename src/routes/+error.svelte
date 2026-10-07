@@ -4,6 +4,7 @@
   import { themeStore } from '$lib/stores/themeStore';
   import { translationStore } from '$lib/stores/langStore';
   import { onMount } from 'svelte';
+  import { resolve } from '$app/paths';
   onMount(() => {
     themeStore.loadTheme()
   })
@@ -28,7 +29,7 @@
         <p>{$translationStore.errorPage.defaultErrorMsg}</p>
       {/if}
       <p id="invitation">{$translationStore.errorPage.caption}</p>
-      <a href="/" aria-label="{$translationStore.errorPage.goHome}">
+      <a href={resolve('/')} aria-label="{$translationStore.errorPage.goHome}">
           <House size={20} />
           {$translationStore.errorPage.goHome}
       </a>
