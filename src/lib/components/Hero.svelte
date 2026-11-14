@@ -5,8 +5,10 @@
 
 <div class="animate-on-scroll" id="hero-section-wrapper">
   <section id="hero-section">
-    <img id="profile-pic" src={asset('/images/hero-img.svg')} alt="Profile Pic" />
-    <Cli/>
+    <img id="profile-pic" class="animate-scale-up" src={asset('/images/hero-img.svg')} alt="Profile Pic" />
+    <div class="animate-scale-up">
+      <Cli/>
+    </div>
   </section>
 </div>
 
@@ -76,8 +78,23 @@
       padding: var(--space-6) 0;
       gap: var(--space-16);
       flex-direction: row;
-
     }
   }
-    
+
+  .animate-scale-up {
+    animation: scale-up 1s ease-in-out 0s 1;
+  }
+
+  @keyframes scale-up {
+    from {
+      transform: translateY(300px);
+      scale: 0.1;
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      scale: 1;
+      opacity: 1;
+    }
+  } 
 </style>

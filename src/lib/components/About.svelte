@@ -1,6 +1,7 @@
 <script lang="ts">
   import { UserRound, Download } from '@lucide/svelte';
   import { localStore, translationStore } from '$lib/stores/langStore';
+  import { onMount } from 'svelte';
   import { asset } from '$app/paths';
   function getFilePath () {
     switch ($localStore) {
@@ -10,6 +11,22 @@
         return '/files/CV.pdf';
     }
   }
+  let animationTriggered = $state(false);
+  onMount(() => {
+    const observer = new IntersectionObserver((entries) => {
+      const entry = entries[0];
+      if (entry.isIntersecting) {
+        animationTriggered = true;
+      }
+    },
+    {
+      threshold: 0.2
+    });
+    const el = document.getElementById('github-profile-pic');
+    if (el) {
+      observer.observe(el);
+    }
+  })
 </script>
 
 <section id="about" class="animate-on-scroll">
@@ -54,6 +71,7 @@
     </div>
     <img
       class="bento-img"
+      class:scale-animation={animationTriggered}
       id="light-bulb"
       loading="lazy"
       src={asset('/images/light-bulb.webp')}
@@ -61,6 +79,7 @@
     />
     <img
       class="bento-img"
+      class:scale-animation={animationTriggered}
       id="design"
       loading="lazy"
       src={asset('/images/design.webp')}
@@ -68,6 +87,7 @@
     />
     <img
       class="bento-img"
+      class:scale-animation={animationTriggered}
       id="texture"
       loading="lazy"
       src={asset('/images/texture.webp')}
@@ -75,6 +95,7 @@
     />
     <img
       class="bento-img"
+      class:scale-animation={animationTriggered}
       id="planes"
       loading="lazy"
       src={asset('/images/planes.webp')}
@@ -82,6 +103,7 @@
     />
     <img
       class="bento-img"
+      class:scale-animation={animationTriggered}
       id="computer"
       loading="lazy"
       src={asset('/images/computer.webp')}
@@ -138,6 +160,8 @@
     height: auto;
     border-radius: var(--rounded-xl);
     object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.4s ease;
   }
   @property --angle {
     syntax: '<angle>';
@@ -315,6 +339,20 @@
     }
     #computer {
       max-height: 300px;
+    }
+  }
+
+  .scale-animation {
+    animation: scaling 1.5s ease 0s 2 alternate;
+    opacity: 1;
+  }
+
+  @keyframes scaling {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(0.8);
     }
   }
 </style>
