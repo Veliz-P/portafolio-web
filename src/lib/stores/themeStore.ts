@@ -17,17 +17,12 @@ function createThemeStore() {
       if (browser) {
         localStorage.setItem('theme', theme);
       }
-      this.loadTheme();
       set(theme);
+      this.loadTheme();
     },
     loadTheme() {
       const currentTheme = get(this);
       document.documentElement.classList.toggle('dark', currentTheme === 'dark');
-    },
-    toggleTheme() {
-      let current = get(this);
-      current = current === 'dark' ? 'light' : 'dark';
-      this.set(current);
     }
   };
 }

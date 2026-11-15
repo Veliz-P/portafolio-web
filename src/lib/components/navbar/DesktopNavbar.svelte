@@ -8,10 +8,8 @@
     Sun,
     UserRound,
   } from '@lucide/svelte';
-
   import { localStore, translationStore } from '$lib/stores/langStore';
   import { themeStore } from '$lib/stores/themeStore';
-
   let {
     isScrolled,
     onOpenMenu,
@@ -19,6 +17,11 @@
     isScrolled: boolean;
     onOpenMenu: () => void;
   } = $props();
+  function toggleTheme() {
+    let current = $themeStore;
+    current = current === 'dark' ? 'light' : 'dark';
+    $themeStore = current;
+  }
 </script>
 
 <nav id="navbar-desktop" class="dark" class:hide-nav={isScrolled}>
@@ -56,22 +59,14 @@
   <ul id="navbar-options">
     <li>
       <button
-        onclick={() => themeStore.toggleTheme()}
+        onclick={toggleTheme}
         aria-label="Toggle theme"
         class="btn-toggle-mode"
       >
         {#if $themeStore === 'light'}
-          <Moon
-            class="fa-solid fa-moon moon-icon toggle-icon"
-            size={27}
-            strokeWidth={2}
-          />
+          <Moon size={27} strokeWidth={2} />
         {:else}
-          <Sun
-            class="fa-solid fa-sun sun-icon toggle-icon"
-            size={27}
-            strokeWidth={2}
-          />
+          <Sun size={27} strokeWidth={2} />
         {/if}
       </button>
     </li>

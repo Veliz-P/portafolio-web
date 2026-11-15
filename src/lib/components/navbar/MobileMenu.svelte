@@ -14,9 +14,12 @@
   import Linkedin from '$lib/assets/icons/linkedin.svg';
   import { localStore, translationStore } from '$lib/stores/langStore';
   import { themeStore } from '$lib/stores/themeStore';
-
-  let { isMenuOpen = $bindable(false) } = $props<{ isMenuOpen: boolean }>();
-
+  let { isMenuOpen = $bindable(false) } = $props();
+  function toggleTheme() {
+    let current = $themeStore;
+    current = current === 'dark' ? 'light' : 'dark';
+    $themeStore = current;
+  }
   const closeMenu = () => (isMenuOpen = false);
 </script>
 
@@ -95,22 +98,14 @@
             <li>
               <p>{$translationStore.navbar.theme}</p>
               <button
-                onclick={() => ($themeStore = !$themeStore)}
+                onclick={toggleTheme}
                 aria-label="Toggle theme"
                 class="navbar-item btn-toggle-mode"
               >
-                {#if $themeStore}
-                  <Moon
-                    class="fa-solid fa-moon moon-icon toggle-icon"
-                    size={27}
-                    strokeWidth={2}
-                  />
+                {#if $themeStore === 'light'}
+                  <Moon size={27} strokeWidth={2} />
                 {:else}
-                  <Sun
-                    class="fa-solid fa-sun sun-icon toggle-icon"
-                    size={27}
-                    strokeWidth={2}
-                  />
+                  <Sun size={27} strokeWidth={2} />
                 {/if}
               </button>
             </li>

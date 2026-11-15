@@ -80,7 +80,7 @@
       icon: Brain,
       iconList: [
         { name: 'Django REST Framework', icon: Django },
-        { name: 'Express', icon: $themeStore ? ExpressLight : ExpressDark },
+        { name: 'Express', icon: $themeStore === "dark" ? ExpressLight : ExpressDark },
         { name: 'Node.js', icon: Node }
       ]
     },
@@ -97,7 +97,7 @@
       title: $translationStore.skills.techStackSection.databases,
       icon: Database,
       iconList: [
-        { name: 'MySQL', icon: $themeStore ? MysqlLight : MysqlDark },
+        { name: 'MySQL', icon: $themeStore === "dark" ? MysqlLight : MysqlDark },
         { name: 'PostgreSQL', icon: Postgres },
         { name: 'MongoDB', icon: Mongo }
       ]
