@@ -1,24 +1,33 @@
 import { writable, get } from 'svelte/store';
 import { browser } from '$app/environment';
 
-function toggleTheme(isDarkMode: boolean) {
-  document.documentElement.classList.toggle('dark', isDarkMode);
-}
 function createThemeStore() {
-  const savedTheme = browser ? localStorage.getItem('darkMode') : 'false';
-  const { subscribe, set } = writable(savedTheme === 'true');
+  const prefersDark = browser  
+    ? window.matchMedia('(prefers-color-scheme: dark)').matches 
+    : false;
+  const defaultTheme = prefersDark ? 'dark' : 'light';
+  let savedTheme = browser ? localStorage.getItem('theme') : defaultTheme;
+  if (savedTheme !== 'dark' && savedTheme !== 'light') {
+    savedTheme = defaultTheme;
+  }
+  const { subscribe, set } = writable<'dark' | 'light'>(savedTheme as 'dark' | 'light');
   return {
     subscribe,
-    set(isDarkMode: boolean) {
+    set(theme: 'dark' | 'light') {
       if (browser) {
-        localStorage.setItem('darkMode', String(isDarkMode));
+        localStorage.setItem('theme', theme);
       }
-      toggleTheme(isDarkMode);
-      set(isDarkMode);
+      this.loadTheme();
+      set(theme);
     },
     loadTheme() {
-      const isDarkMode = get(this);
-      toggleTheme(isDarkMode);
+      const currentTheme = get(this);
+      document.documentElement.classList.toggle('dark', currentTheme === 'dark');
+    },
+    toggleTheme() {
+      let current = get(this);
+      current = current === 'dark' ? 'light' : 'dark';
+      this.set(current);
     }
   };
 }

@@ -56,11 +56,11 @@
   <ul id="navbar-options">
     <li>
       <button
-        onclick={() => ($themeStore = !$themeStore)}
+        onclick={() => themeStore.toggleTheme()}
         aria-label="Toggle theme"
         class="btn-toggle-mode"
       >
-        {#if $themeStore}
+        {#if $themeStore === 'light'}
           <Moon
             class="fa-solid fa-moon moon-icon toggle-icon"
             size={27}
