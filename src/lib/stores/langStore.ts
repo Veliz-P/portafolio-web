@@ -7,9 +7,10 @@ const dictionaries = { en, es };
 export type Locale = keyof typeof dictionaries;
 
 function createLocalStore() {
-  let savedLocal = browser ? localStorage.getItem('locale') : 'es';
+  let userLang = browser ? navigator.language.split('-')[0] : 'es';
+  let savedLocal = browser ? localStorage.getItem('locale') : userLang;
   if (!savedLocal || !Object.keys(dictionaries).includes(savedLocal)) {
-    savedLocal = 'es';
+    savedLocal = 'en';
   }
   const store = writable<Locale>(savedLocal as Locale);
   if (browser) {
