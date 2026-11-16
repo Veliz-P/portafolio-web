@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { UserRound, Download } from '@lucide/svelte';
+  import { UserRound, Eye } from '@lucide/svelte';
   import { localStore, translationStore } from '$lib/stores/langStore';
   import { onMount } from 'svelte';
   import { asset } from '$app/paths';
@@ -60,11 +60,11 @@
             {$translationStore.about.line2}
           </p>
         </div>
-        <div id="cv-download-div">
-          <a download
+        <div id="cv_view_div">
+          <a target="_blank" rel="noopener noreferrer"
             href={asset(getFilePath())}>
-            {$translationStore.about.downloadCV}
-            <Download size={22} strokeWidth={2.5} />
+            {$translationStore.about.viewCV}
+            <Eye size={22} strokeWidth={2.5} />
           </a>
         </div>
       </div>
@@ -123,12 +123,12 @@
   #about .section-title {
     margin-bottom: var(--space-8);
   }
-  #cv-download-div {
+  #cv_view_div {
     width: 100%;
     display: flex;
     justify-content: center;
   }
-  #cv-download-div a {
+  #cv_view_div a {
     text-decoration: none;
     margin-top: var(--space-6);
     display: flex;
@@ -144,7 +144,7 @@
     cursor: pointer;
     transition: background-color 0.3s ease;
   }
-  #cv-download-div a:hover {
+  #cv_view_div a:hover {
     background-color: var(--primary-700);
   }
   #bento-grid {
@@ -255,7 +255,7 @@
     text-align: left;
   }
   @media (min-width: 640px) {
-    #cv-download-div {
+    #cv_view_div {
       justify-content: end;
     }
     #bento-grid {
