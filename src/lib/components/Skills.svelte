@@ -39,6 +39,7 @@
   import { translationStore } from '$lib/stores/langStore';
   import type { LucideProps} from '@lucide/svelte';
   import type { Component } from 'svelte';
+  import { onMount } from 'svelte';
   let activeSkillSection = $state<'tech-stack' | 'what-i-can-do'>('tech-stack');
   interface TechStackItem {
     name: string;
@@ -54,7 +55,12 @@
     icon: Component<LucideProps>;
     description: string;
   }
-
+  let theme : "dark" | "light" = $state("dark");
+  onMount(() => {
+    theme = $themeStore;
+  })
+  let mysqlIcon = $derived.by(() => $themeStore === "dark" ? MysqlLight : MysqlDark);
+  let expressIcon = $derived.by(() => $themeStore === "dark" ? ExpressLight : ExpressDark);
   let techStackCards : TechStackCard[] = $derived.by(() => 
   [
     {
@@ -80,7 +86,7 @@
       icon: Brain,
       iconList: [
         { name: 'Django REST Framework', icon: Django },
-        { name: 'Express', icon: $themeStore === "dark" ? ExpressLight : ExpressDark },
+        { name: 'Express', icon: expressIcon },
         { name: 'Node.js', icon: Node }
       ]
     },
@@ -97,7 +103,7 @@
       title: $translationStore.skills.techStackSection.databases,
       icon: Database,
       iconList: [
-        { name: 'MySQL', icon: $themeStore === "dark" ? MysqlLight : MysqlDark },
+        { name: 'MySQL', icon: mysqlIcon },
         { name: 'PostgreSQL', icon: Postgres },
         { name: 'MongoDB', icon: Mongo }
       ]

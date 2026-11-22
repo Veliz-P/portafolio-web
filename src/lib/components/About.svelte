@@ -42,6 +42,8 @@
             <img
               id="github-profile-pic"
               src={asset('/images/gitpic.jpg')}
+              loading="lazy"
+              fetchpriority="low"
               alt="github profile pic"
             />
           </a>
@@ -73,7 +75,8 @@
       class="bento-img"
       class:scale-animation={animationTriggered}
       id="light-bulb"
-      loading="lazy"
+      loading="eager"
+      fetchpriority="high"
       src={asset('/images/light-bulb.webp')}
       alt="light-bulb"
     />
@@ -81,7 +84,8 @@
       class="bento-img"
       class:scale-animation={animationTriggered}
       id="design"
-      loading="lazy"
+      loading="eager"
+      fetchpriority="high"
       src={asset('/images/design.webp')}
       alt="design"
     />
@@ -90,6 +94,7 @@
       class:scale-animation={animationTriggered}
       id="texture"
       loading="lazy"
+      fetchpriority="low"
       src={asset('/images/texture.webp')}
       alt="texture"
     />
@@ -98,6 +103,7 @@
       class:scale-animation={animationTriggered}
       id="planes"
       loading="lazy"
+      fetchpriority="low"
       src={asset('/images/planes.webp')}
       alt="planes"
     />
@@ -105,7 +111,8 @@
       class="bento-img"
       class:scale-animation={animationTriggered}
       id="computer"
-      loading="lazy"
+      loading="eager"
+      fetchpriority="high"
       src={asset('/images/computer.webp')}
       alt="computer"
     />

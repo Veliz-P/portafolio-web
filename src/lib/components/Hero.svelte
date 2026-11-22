@@ -5,7 +5,7 @@
 
 <div class="animate-on-scroll" id="hero-section-wrapper">
   <section id="hero-section">
-    <img id="profile-pic" class="animate-scale-up" src={asset('/images/hero-img.svg')} alt="Profile Pic" />
+    <img fetchpriority="high" id="profile-pic" class="animate-scale-up" src={asset('/images/hero-img.svg')} alt="Profile Pic" />
     <div class="animate-scale-up">
       <Cli/>
     </div>
