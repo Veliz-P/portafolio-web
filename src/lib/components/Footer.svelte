@@ -75,13 +75,16 @@
           <a href="#skills">{ $translationStore.navbar.skills }</a>
         </li>
         <li>
+          <a href="#education">{ $translationStore.navbar.education }</a>
+        </li>
+        <li>
           <a href="#projects-container">{ $translationStore.navbar.projects }</a>
         </li>
         <li>
-          <a href="#contact-section">{ $translationStore.navbar.contact }</a>
+          <a href="#about">{ $translationStore.navbar.about }</a>
         </li>
         <li>
-          <a href="#about">{ $translationStore.navbar.about }</a>
+          <a href="#contact-section">{ $translationStore.navbar.contact }</a>
         </li>
       </ul>
     </div>

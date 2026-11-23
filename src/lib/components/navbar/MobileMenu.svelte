@@ -65,6 +65,12 @@
               </a>
             </li>
             <li>
+              <a class="navbar-item" onclick={closeMenu} href="#education">
+                <div class="mobile-icon"><GraduationCap /></div>
+                {$translationStore.navbar.education}
+              </a>
+            </li>
+            <li>
               <a
                 class="navbar-item"
                 onclick={closeMenu}
@@ -75,9 +81,9 @@
               </a>
             </li>
             <li>
-              <a class="navbar-item" onclick={closeMenu} href="#education">
-                <div class="mobile-icon"><GraduationCap /></div>
-                {$translationStore.navbar.education}
+              <a class="navbar-item" onclick={closeMenu} href="#about">
+                <div class="mobile-icon"><UserRound /></div>
+                {$translationStore.navbar.about}
               </a>
             </li>
             <li>
@@ -88,12 +94,6 @@
               >
                 <div class="mobile-icon"><Send /></div>
                 {$translationStore.navbar.contact}
-              </a>
-            </li>
-            <li>
-              <a class="navbar-item" onclick={closeMenu} href="#about">
-                <div class="mobile-icon"><UserRound /></div>
-                {$translationStore.navbar.about}
               </a>
             </li>
           </ul>

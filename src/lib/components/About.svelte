@@ -262,6 +262,9 @@
     text-align: left;
   }
   @media (min-width: 640px) {
+    #about {
+      margin: calc(var(--space-16) + 2rem) auto;
+    }
     #cv_view_div {
       justify-content: end;
     }

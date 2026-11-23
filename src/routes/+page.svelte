@@ -2,10 +2,10 @@
   import Nav from '$lib/components/Nav.svelte';
   import Hero from '$lib/components/Hero.svelte';
   import Skills from '$lib/components/Skills.svelte';
-  import Projects from '$lib/components/Projects.svelte';
   import Education from '$lib/components/Education.svelte';
-  import Contact from '$lib/components/Contact.svelte';
+  import Projects from '$lib/components/Projects.svelte';
   import About from '$lib/components/About.svelte';
+  import Contact from '$lib/components/Contact.svelte';
   import Footer from '$lib/components/Footer.svelte';
   import { onDestroy, onMount } from 'svelte';
   import { themeStore } from '$lib/stores/themeStore';
@@ -37,10 +37,10 @@
 <main>
   <Hero />
   <Skills />
-  <Projects />
   <Education />
-  <Contact />
+  <Projects />
   <About />
+  <Contact />
 </main>
 <Footer />
 

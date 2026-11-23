@@ -15,27 +15,27 @@
       </a>
     </li>
     <li>
-      <a href="#projects-container">
-        <FolderKanban />
-        <span>{$translationStore.navbar.projects}</span>
-      </a>
-    </li>
-    <li>
       <a href="#education">
         <GraduationCap />
         <span>{$translationStore.navbar.education}</span>
       </a>
     </li>
     <li>
-      <a href="#contact-section">
-        <Send />
-        <span>{$translationStore.navbar.contact}</span>
+      <a href="#projects-container">
+        <FolderKanban />
+        <span>{$translationStore.navbar.projects}</span>
       </a>
     </li>
     <li>
       <a href="#about">
         <UserRound />
         <span>{$translationStore.navbar.about}</span>
+      </a>
+    </li>
+    <li>
+      <a href="#contact-section">
+        <Send />
+        <span>{$translationStore.navbar.contact}</span>
       </a>
     </li>
   </ul>
