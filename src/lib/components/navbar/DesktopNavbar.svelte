@@ -2,6 +2,7 @@
   import {
     CodeXml,
     FolderKanban,
+    GraduationCap,
     Menu,
     Moon,
     Send,
@@ -40,6 +41,12 @@
       <a class="navbar-item" href="#projects-container">
         <FolderKanban />
         <span>{$translationStore.navbar.projects}</span>
+      </a>
+    </li>
+    <li>
+      <a class="navbar-item" href="#education">
+        <GraduationCap />
+        <span>{$translationStore.navbar.education}</span>
       </a>
     </li>
     <li>

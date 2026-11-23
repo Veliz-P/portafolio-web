@@ -6,6 +6,7 @@ export const en: LangSchema = {
     skills: 'Skills',
     contact: 'Contact',
     projects: 'Projects',
+    education: 'Education',
     explore: 'Explore',
     settings: 'Settings',
     theme: 'Theme',
@@ -79,6 +80,31 @@ export const en: LangSchema = {
     },
     completionTimeTitle: 'Duration',
     difficultyTitle: 'Difficulty'
+  },
+  education: {
+    title: 'Education & Certifications',
+    items: [
+      {
+        title: 'Full-Stack Web Developer',
+        period: '2026',
+        institution: 'IBM Skills Build'
+      },
+      {
+        title: 'Cyber Threat Management',
+        period: '2025',
+        institution: 'Cisco Network Academy'
+      },
+      {
+        title: 'Introduction to Cybersecurity',
+        period: '2025',
+        institution: 'Cisco Network Academy'
+      },
+      {
+        title: 'Software Developer',
+        period: '2023 - 2025',
+        institution: 'Instituto Superior Tecnológico Rumiñahui'
+      }
+    ]
   },
   contact: {
     title: 'Contact',

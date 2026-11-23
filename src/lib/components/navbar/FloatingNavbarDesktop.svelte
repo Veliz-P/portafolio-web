@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { CodeXml, FolderKanban, Send, UserRound } from '@lucide/svelte';
+  import { CodeXml, FolderKanban, GraduationCap, Send, UserRound } from '@lucide/svelte';
 
   import { translationStore } from '$lib/stores/langStore';
 
@@ -18,6 +18,12 @@
       <a href="#projects-container">
         <FolderKanban />
         <span>{$translationStore.navbar.projects}</span>
+      </a>
+    </li>
+    <li>
+      <a href="#education">
+        <GraduationCap />
+        <span>{$translationStore.navbar.education}</span>
       </a>
     </li>
     <li>

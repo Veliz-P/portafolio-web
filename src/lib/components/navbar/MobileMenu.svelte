@@ -3,6 +3,7 @@
     ChevronsLeft,
     CodeXml,
     FolderKanban,
+    GraduationCap,
     Moon,
     Send,
     Sun,
@@ -71,6 +72,12 @@
               >
                 <div class="mobile-icon"><FolderKanban /></div>
                 {$translationStore.navbar.projects}
+              </a>
+            </li>
+            <li>
+              <a class="navbar-item" onclick={closeMenu} href="#education">
+                <div class="mobile-icon"><GraduationCap /></div>
+                {$translationStore.navbar.education}
               </a>
             </li>
             <li>

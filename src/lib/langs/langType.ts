@@ -4,6 +4,7 @@ export interface LangSchema {
     skills: string;
     contact: string;
     projects: string;
+    education: string;
     explore: string;
     settings: string;
     theme: string;
@@ -75,6 +76,14 @@ export interface LangSchema {
     };
     completionTimeTitle: string;
     difficultyTitle: string;
+  };
+  education: {
+    title: string;
+    items: {
+      title: string;
+      period: string;
+      institution: string;
+    }[];
   };
   contact: {
     title: string;

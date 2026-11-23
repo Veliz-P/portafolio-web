@@ -3,6 +3,7 @@
   import Hero from '$lib/components/Hero.svelte';
   import Skills from '$lib/components/Skills.svelte';
   import Projects from '$lib/components/Projects.svelte';
+  import Education from '$lib/components/Education.svelte';
   import Contact from '$lib/components/Contact.svelte';
   import About from '$lib/components/About.svelte';
   import Footer from '$lib/components/Footer.svelte';
@@ -37,6 +38,7 @@
   <Hero />
   <Skills />
   <Projects />
+  <Education />
   <Contact />
   <About />
 </main>
